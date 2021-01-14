@@ -15,6 +15,15 @@
       <ctrl-diapositiva slot="toolbar"></ctrl-diapositiva>
       <h1>Patrón Singleton</h1>
       <div class="marco-lectura">
+        <p>Es un mecanismo para tener una sola instancia de una clase.</p>
+        <p>
+          <a href="https://es.wikipedia.org/wiki/Singleton"
+            target="_blank">Explicación en Wikipedia.</a>
+        </p>
+        <p>
+          <a href="https://www.oodesign.com/singleton-pattern.html"
+            target="_blank">Explicación en oodesign.</a>
+        </p>
         <p>
           <a href="http://pythontutor.com/javascript.html#code=class%20Singleton%20%7B%0A%20%20static%20getInstancia%28%29%20%7B%0A%20%20%20%20if%20%28!this.instancia%29%20%7B%0A%20%20%20%20%20%20this.instancia%20%3D%20new%20this%28%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%20this.instancia%3B%0A%20%20%7D%0A%20%20constructor%28%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20%22%22%3B%0A%20%20%7D%0A%20%20saluda%28%29%20%7B%0A%20%20%20%20console.log%28%60Hola%20%24%7Bthis.nombre%7D%60%29%3B%0A%20%20%7D%0A%7D%0Aconst%20s1%20%3D%20Singleton.getInstancia%28%29%3B%0As1.nombre%20%3D%20%22Sam%22%3B%0As1.saluda%28%29%3B%0Aconst%20s2%20%3D%20Singleton.getInstancia%28%29%3B%0As2.saluda%28%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
             target="_blank">

@@ -10,7 +10,7 @@ customElements.define("nav-local", class extends HTMLElement {
         <li><p><a href="2_contenido.html">Contenido</a></p></li>
         <li><p><a href="3_concepto.html">Concepto de Patrón de Diseño</a></p></li>
         <li><p><a href="4_singleton.html">Patrón Singleton</a></p></li>
-        <li><p><a href="5_factory.html">Patrón Factory</a></p></li>
+        <li><p><a href="5_factory.html">Patrón Abstract Factory</a></p></li>
         <li><p><a href="6_proxy.html">Patrón Proxy</a></p></li>
         <li><p><a href="7_mvc.html">Patrón MVC</a></p></li>
         <li><p><a href="8_ejemplo.html">Ejemplo con Patrones de Diseño</a></p></li>
