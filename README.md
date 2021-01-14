@@ -1,4 +1,4 @@
-# gilpgprap.github.io
-Apuntes de Programación con Objetos.
+# gilpgpoojs.github.io
+Apuntes de Programación Orientada a Objetos.
 
-https://gilpgprap.github.io
+https://gilpgpoojs.github.io
