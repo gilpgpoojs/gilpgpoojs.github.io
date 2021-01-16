@@ -18,6 +18,7 @@ class MiNav extends HTMLElement {
         <li><p><a href="/9_polimorfismo">Polimorfismo</a></p></li>
         <li><p><a href="/10_excepciones">Excepciones</a></p></li>
         <li><p><a href="/11_cajas">Modelo de Cajas de CSS</a></p></li>
+        <li><p><a href="/12_promesas">Promesas</a></p></li>
       </ol>`;
   }
 }
