@@ -7,16 +7,17 @@ class MiNav extends HTMLElement {
     this.innerHTML = /* html */
       `<h2>Contenido</h2>
       <ol>
-        <li><a href="/index.html">Inicio</a></li>
-        <li><a href="/2_sw.html">Software a Instalar</a></li>
-        <li><a href="/3_funciones">Funciones Mejoradas</a></li>
-        <li><a href="/4_obj_basicos">Objetos Básicos</a></li>
-        <li><a href="/5_clases">Clases</a></li>
-        <li><a href="/6_herencia">Herencia</a></li>
-        <li><a href="/7_arreglos">Arreglos</a></li>
-        <li><a href="/8_asociaciones">Asociaciones</a></li>
-        <li><a href="/9_polimorfismo">Polimorfismo</a></li>
-        <li><a href="/10_excepciones">Excepciones</a></li>
+        <li><p><a href="/index.html">Inicio</a></p></li>
+        <li><p><a href="/2_sw.html">Software a Instalar</a></p></li>
+        <li><p><a href="/3_funciones">Funciones Mejoradas</a></p></li>
+        <li><p><a href="/4_obj_basicos">Objetos Básicos</a></p></li>
+        <li><p><a href="/5_clases">Clases</a></p></li>
+        <li><p><a href="/6_herencia">Herencia</a></p></li>
+        <li><p><a href="/7_arreglos">Arreglos</a></p></li>
+        <li><p><a href="/8_asociaciones">Asociaciones</a></p></li>
+        <li><p><a href="/9_polimorfismo">Polimorfismo</a></p></li>
+        <li><p><a href="/10_excepciones">Excepciones</a></p></li>
+        <li><p><a href="/11_cajas">Modelo de Cajas de CSS</a></p></li>
       </ol>`;
   }
 }

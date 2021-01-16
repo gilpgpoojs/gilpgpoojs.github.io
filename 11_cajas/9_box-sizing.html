@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../js/registraServiceWorker.js"></script>
+    <link rel="icon" sizes="32x32" href="../favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="../manifest.json">
+    <script type="module" src="../cmp/base.js"></script>
+    <script type="module" src="./cmp/ctrl-diapositiva.js"></script>
+    <script type="module" src="../lib/muestra-codigo.js"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../lib/ctrl-diapositiva.css">
+  </head>
+  <body>
+    <layout-cajon>
+      <mi-nav slot="nav"></mi-nav>
+      <ctrl-diapositiva slot="toolbar"></ctrl-diapositiva>
+      <h1>La Propiedad <strong>box-sizing</strong></h1>
+      <div class="marco-lectura">
+        <dl>
+          <dt><dfn><code class="language-css">width</code></dfn></dt>
+          <dd>
+            <p>
+              Ancho de un elemento. Se indica usando un número decimal,
+              opcionalmente fraccionario, seguido de la unidad.
+            </p>
+            <p>
+              Solo aplica para para los elementos con
+              <code class="language-css">display</code>
+              <code class="language-css">block</code> o
+              <code class="language-css">inline-block</code>.
+            </p>
+            <p>Ejemplo:</p>
+            <p><code class="language-css">width: 100%</code></p>
+          </dd>
+          <dt><dfn><code class="language-css">height</code></dfn></dt>
+          <dd>
+            <p>
+              Altura de un elemento. Se indica usando un número decimal,
+              opcionalmente fraccionario, seguido de la unidad.
+            </p>
+            <p>
+              Solo aplica para para los elementos con
+              <code class="language-css">display</code>
+              <code class="language-css">block</code> o
+              <code class="language-css">inline-block</code>.
+            </p>
+            <p>Ejemplo:</p>
+            <p><code class="language-css">height: 3em</code></p>
+          </dd>
+          <dt><dfn><code class="language-css">box-sizing</code></dfn></dt>
+          <dd>
+            <p>
+              Indica como calcular el tamaño de un componente. Aplica para las
+              propiedades
+              <dfn><code class="language-css">width</code>
+              y
+              <code class="language-css">height</code>.
+            </p>
+            <p>Los valores que puede tomar esta propiedad son:</p>
+            <dl>
+              <dt><dfn><code class="language-css">content-box</code></dfn></dt>
+              <dd>
+                <p>
+                  El tamaño es solo el tamaño del contenido. Cuando en se
+                  especifica esta propiedad para un elemento, este es el valor
+                  que se utiliza (valor por omisión).
+                </p>
+              </dd>
+              <dt><dfn><code class="language-css">border-box</code></dfn></dt>
+              <dd>
+                <p>
+                  El tamaño incluye el tamaño del contenido, más el espacio
+                  ocupado por los bordes y el relleno.
+                  </p>
+              </dd>
+            </dl>
+          </dd>
+        </dl>
+      </div>
+      <mi-footer></mi-footer>
+    </layout-cajon>
+    <script type="module" src="../js/title.js"></script>
+  </body>
+</html>

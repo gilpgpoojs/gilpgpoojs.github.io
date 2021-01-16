@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../js/registraServiceWorker.js"></script>
+    <link rel="icon" sizes="32x32" href="../favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="../manifest.json">
+    <script type="module" src="../cmp/base.js"></script>
+    <script type="module" src="./cmp/ctrl-diapositiva.js"></script>
+    <script type="module" src="../lib/muestra-codigo.js"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../lib/ctrl-diapositiva.css">
+  </head>
+  <body>
+    <layout-cajon>
+      <mi-nav slot="nav"></mi-nav>
+      <ctrl-diapositiva slot="toolbar"></ctrl-diapositiva>
+      <h1>Partes de un Borde</h1>
+      <div class="marco-lectura">
+        <dl>
+          <dt><dfn>Ancho</dfn></dt>
+          <dd>
+            <p>
+              Puede expresarse como un tamaño o con alguno de estos valores:
+            </p>
+            <dl>
+              <dt><dfn><code class="language-css">thin</code></dfn></dt>
+              <dd>Borde delgado.</dd>
+              <dt><dfn><code class="language-css">medium</code></dfn></dt>
+              <dd>Borde de ancho mediano.</dd>
+              <dt><dfn><code class="language-css">thick</code></dfn></dt>
+              <dd>Borde grueso.</dd>
+            </dl>
+            <p>
+              Si no se pone, su valor por omisión es:
+              <code class="language-css">medium</code>.
+            </p>
+          </dd>
+          <dt><dfn>Estilo</dfn></dt>
+          <dd>
+            <p>Puede expresarse con alguno de estos valores:</p>
+            <dl>
+              <dt><dfn><code class="language-css">none</code></dfn></dt>
+              <dd><p>Sin borde.</p></dd>
+              <dt><dfn><code class="language-css">dotted</code></dfn></dt>
+              <dd><p>El borde es una serie de puntos redondos.</p></dd>
+              <dt><dfn><code class="language-css">dashed</code></dfn></dt>
+              <dd>
+                <p>El borde es una serie de guiones de esquinas cuadradas.</p>
+              </dd>
+              <dt><dfn><code class="language-css">solid</code></dfn></dt>
+              <dd><p>El borde es una sola línea sólida.</p></dd>
+              <dt><dfn><code class="language-css">double</code></dfn></dt>
+              <dd>
+                <p>
+                  El borde consiste en 2 líneas sólidas paralelas con espacio
+                  entre ellas.
+                </p>
+                <p>
+                  La suma del ancho de las líneas y espacio debe ser igual al
+                  ancho del borde.
+                </p>
+              </dd>
+              <dt><dfn><code class="language-css">groove</code></dfn></dt>
+              <dd>
+                <p>
+                  El borde parece como si estuviera tallado dentro de la
+                  superficie.
+                </p>
+              </dd>
+              <dt><dfn><code class="language-css">ridge</code></dfn></dt>
+              <dd>
+                <p>El borde parece como si saliera de la superficie.</p>
+              </dd>
+              <dt><dfn><code class="language-css">inset</code></dfn></dt>
+              <dd>
+                <p>
+                  Parece como si el contenido dentro del borde estuviera
+                  hundido en la superficie.
+                </p>
+              </dd>
+              <dt><dfn><code class="language-css">outset</code></dfn></dt>
+              <dd>
+                <p>
+                  Parece como si el contenido dentro del borde saliera de la
+                  superficie.
+                </p>
+              </dd>
+            </dl>
+            <p>
+              Si no se pone, su valor por omisión es:
+              <code class="language-css">none</code>.
+            </p>
+          </dd>
+          <dt><dfn>Color</dfn></dt>
+          <dd>
+            <p>Se especifica como un color cualquiera.</p>
+            <p>
+              Si no se pone, su valor por omisión es el color del texto del
+              elemento.
+            </p>
+          </dd>
+        </dl>
+      </div>
+      <mi-footer></mi-footer>
+    </layout-cajon>
+    <script type="module" src="../js/title.js"></script>
+  </body>
+</html>

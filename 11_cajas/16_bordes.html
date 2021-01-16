@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../js/registraServiceWorker.js"></script>
+    <link rel="icon" sizes="32x32" href="../favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="../manifest.json">
+    <script type="module" src="../cmp/base.js"></script>
+    <script type="module" src="./cmp/ctrl-diapositiva.js"></script>
+    <script type="module" src="../lib/muestra-codigo.js"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../lib/ctrl-diapositiva.css">
+  </head>
+  <body>
+    <layout-cajon>
+      <mi-nav slot="nav"></mi-nav>
+      <ctrl-diapositiva slot="toolbar"></ctrl-diapositiva>
+      <h1>Propiedades para Bordes</h1>
+      <div class="marco-lectura">
+        <h2>Estilo Detallado</h2>
+        <dl>
+          <dt><dfn><code class="language-css">border-top-width</code></dfn></dt>
+          <dd><p>Ancho del borde en la parte superior de la caja.</p></dd>
+          <dt><dfn><code class="language-css">border-top-style</code></dfn></dt>
+          <dd><p>Estilo del borde en la parte superior de la caja.</p></dd>
+          <dt><dfn><code class="language-css">border-top-color</code></dfn></dt>
+          <dd><p>Color del borde en la parte superior de la caja.</p></dd>
+          <dt><dfn><code class="language-css">border-bottom-width</code></dfn></dt>
+          <dd><p>Ancho del borde en la parte inferior de la caja.</p></dd>
+          <dt><dfn><code class="language-css">border-bottom-style</code></dfn></dt>
+          <dd><p>Estilo del borde en la parte inferior de la caja.</p></dd>
+          <dt><dfn><code class="language-css">border-bottom-color</code></dfn></dt>
+          <dd><p>Color del borde en la parte inferior de la caja.</p></dd>
+          <dt><dfn><code class="language-css">border-left-width</code></dfn></dt>
+          <dd><p>Ancho del borde en el lado izquierdo de la caja.</p></dd>
+          <dt><dfn><code class="language-css">border-left-style</code></dfn></dt>
+          <dd><p>Estilo del borde en el lado izquierdo de la caja.</p></dd>
+          <dt><dfn><code class="language-css">border-left-color</code></dfn></dt>
+          <dd><p>Color del borde en el lado izquierdo de la caja.</p></dd>
+          <dt><dfn><code class="language-css">border-right-width</code></dfn></dt>
+          <dd><p>Ancho del borde en el lado derecho de la caja.</p></dd>
+          <dt><dfn><code class="language-css">border-right-style</code></dfn></dt>
+          <dd><p>Estilo del borde en el lado derecho de la caja.</p></dd>
+          <dt><dfn><code class="language-css">border-right-color</code></dfn></dt>
+          <dd><p>Color del borde en el lado derecho de la caja.</p></dd>
+        </dl>
+        <h2>Combinando las Partes del Borde</h2>
+        <p>
+          Combina las tres partes de un borde. Las partes pueden ir en
+          cualquier orden y 1 o 2 de los valores pueden faltar, en cuyo caso
+          se toman los valores por omisión
+          (<code class="language-css">medium</code>,
+          <code class="language-css">none</code>
+          y color actual).
+        </p>
+        <dl>
+          <dt><dfn><code class="language-css">border-top</code></dfn></dt>
+          <dd>
+            <p>
+              Ancho, estilo y color del borde en la parte superior de la caja.
+            </p>
+          </dd>
+          <dt><dfn><code class="language-css">border-bottom</code></dfn></dt>
+          <dd>
+            <p>
+              Ancho, estilo y color del borde en la parte inferior de la caja.
+            </p>
+          </dd>
+          <dt><dfn><code class="language-css">border-left</code></dfn></dt>
+          <dd>
+            <p>
+              Ancho, estilo y color del borde en el lado izquierdo de la caja.
+            </p>
+          </dd>
+          <dt><dfn><code class="language-css">border-right</code></dfn></dt>
+          <dd>
+            <p>
+              Ancho, estilo y color del borde en el lado derecho de la caja.
+            </p>
+          </dd>
+          <dt><dfn><code class="language-css">border</code></dfn></dt>
+          <dd>
+            <p>
+              Ancho, estilo y color del borde único en las partes izquierda,
+              derecha, superior e inferior de la caja.
+            </p>
+          </dd>
+        </dl>
+      </div>
+      <mi-footer></mi-footer>
+    </layout-cajon>
+    <script type="module" src="../js/title.js"></script>
+  </body>
+</html>

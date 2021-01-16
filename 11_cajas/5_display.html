@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../js/registraServiceWorker.js"></script>
+    <link rel="icon" sizes="32x32" href="../favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="../manifest.json">
+    <script type="module" src="../cmp/base.js"></script>
+    <script type="module" src="./cmp/ctrl-diapositiva.js"></script>
+    <script type="module" src="../lib/muestra-codigo.js"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../lib/ctrl-diapositiva.css">
+  </head>
+  <body>
+    <layout-cajon>
+      <mi-nav slot="nav"></mi-nav>
+      <ctrl-diapositiva slot="toolbar"></ctrl-diapositiva>
+      <h1>La Propiedad <strong>display</strong></h1>
+      <div class="marco-lectura">
+        <p>Indica la forma en que un elemento se depliega.</p>
+        <p>
+          La definición oficial de esta propiedad está en proceso de cambio.
+        </p>
+        <p>El contenido de texto no tiene la propiedad display.</p>
+        <p>
+          Esta propiedad no afecta la semántica de los elementos, pero si
+          puede cambiar como se despliegan.
+        </p>
+        <p>Algunos valores posibles son:</p>
+        <dl>
+          <dt><dfn><code class="language-css">display: none</code></dfn></dt>
+          <dd>
+            <p>
+              El elemento completo, incluyendo todo su contenido, el contenido
+              de su contenido y así sucesivamente no se muestra, incluyendo
+              texto y cajas.
+            </p>
+          </dd>
+          <dt><dfn><code class="language-css">display: block</code></dfn></dt>
+          <dd>
+            <p>Contiene elementos de cualquir tipo de despliegue.</p>
+            <p>
+              De forma predeterminada, los elementos de agrupamiento como
+              <code class="language-html">p</code>,
+              <code class="language-html">header</code>
+              <code class="language-html">footer</code>
+              o
+              <code class="language-html">div</code>
+              tienen este tipo de despliegue, pero se puede cambiar.
+            </p>
+            <p>
+              Si contiene solo elementos de despliegue
+              <code class="language-css">inline</code>,
+              <code class="language-css">inline-block</code>
+              y texto, estos se despliegan de forma horizontal uno tras otro,
+              iniciando en la parte superior del elemento. Si llega al final
+              de un renglón, continuá al inicio del siguiente.
+            </p>
+            <p>
+              Si contiene solo elementos de despliegue
+              <code class="language-css">block</code>,
+              estos se despliegan de forma vertical uno tras otro,
+              utilizando todo el ancho permitido por el elemento que los
+              contiene.
+            </p>
+            <p>
+              Si contiene mezclados elementos
+              <code class="language-css">inline</code>,
+              <code class="language-css">inline-block</code>,
+              texto y
+              <code class="language-css">block</code>,
+              los
+              <code class="language-css">inline</code>,
+              <code class="language-css">inline-block</code>
+              y textos consecutivos se agrupan en una caja de tipo
+              <code class="language-css">block</code>
+              imaginaria y se aplica el despliegue cuando todos los elementos
+              son de tipo
+              <code class="language-css">block</code>.
+            </p>
+          </dd>
+          <dt><dfn><code class="language-css">display: inline</code></dfn></dt>
+          <dd>
+            <p>
+              Solo contiene elementos de tipo
+              <code class="language-css">inline</code>,
+              <code class="language-css">inline-block</code>
+              y texto.
+            </p>
+            <p>
+              De forma predeterminada, los elementos de fraseo como
+              <code class="language-html">span</code>,
+              <code class="language-html">em</code>,
+              <code class="language-html">del</code>,
+              o
+              <code class="language-html">strong</code>
+              tienen este tipo de despliegue, pero se puede cambiar.
+            </p>
+            <p>
+              El contenido se despliega de forma horizontal, uno tras otro. Si
+              llega al final del elemento padre más próximo que sea
+              <code class="language-css">block</code> o
+              <code class="language-css">inline-block</code>,
+              continuá al inicio del siguiente renglón.
+            </p>
+          </dd>
+          <dt><dfn><code class="language-css">display: inline-block</code></dfn></dt>
+          <dd>
+            <p>El nombre de este tipo de despliegue está por cambiar.</p>
+            <p>
+              De forma predeterminada, los elementos como
+              <code class="language-html">button</code>,
+              o
+              <code class="language-html">input</code>
+              tienen este tipo de despliegue, pero se puede cambiar.
+            </p>
+            <p>
+              Su contenido sigue las reglas de un display
+              <code class="language-css">block</code>.
+            </p>
+            <p>
+              Sus padres lo ven como un elemento
+              <code class="language-css">inline</code>,
+              pero el elemento ocupa un solo renglón del elemento padre más
+              próximo que sea
+              <code class="language-css">block</code> o
+              <code class="language-css">inline-block</code>.
+            </p>
+          </dd>
+          <p>
+            Su especificación está en
+            <a href="https://www.w3.org/TR/css-display-3/#propdef-display"
+              target="_blank">https://www.w3.org/TR/css-display-3/#propdef-display</a>
+          </p>
+          </dl>
+      </div>
+      <mi-footer></mi-footer>
+    </layout-cajon>
+    <script type="module" src="../js/title.js"></script>
+  </body>
+</html>

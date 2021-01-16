@@ -87,12 +87,6 @@ a strong {
   }
 }
 
-mi-nav li {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-family: sans-serif;
-}
-
 a.actual {
   font-weight: bold;
   color: var(--color-nav-resaltada);

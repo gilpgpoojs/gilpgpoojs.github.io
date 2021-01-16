@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../js/registraServiceWorker.js"></script>
+    <link rel="icon" sizes="32x32" href="../favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="../manifest.json">
+    <script type="module" src="../cmp/base.js"></script>
+    <script type="module" src="./cmp/ctrl-diapositiva.js"></script>
+    <script type="module" src="../lib/muestra-codigo.js"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../lib/ctrl-diapositiva.css">
+  </head>
+  <body>
+    <layout-cajon>
+      <mi-nav slot="nav"></mi-nav>
+      <ctrl-diapositiva slot="toolbar"></ctrl-diapositiva>
+      <h1>El Elemento <strong>div</strong></h1>
+      <div class="marco-lectura">
+        <p>Es un elemento sin significado que agrupa otros elementos.</p>
+        <p>
+          Puede usarse con los atributos
+          <code class="language-html">class</code>,
+          <code class="language-html">lang</code>
+          y
+          <code class="language-html">title</code>
+          para definir la semántica común a un grupo de elementos
+          consecutivos.
+        </p>
+        <p>
+          Puede usarse en un elemento
+          <code class="language-html">dl</code>
+          para envolver grupos de elementos
+          <code class="language-html">dt</code>
+          y
+          <code class="language-html">dd</code>.
+        </p>
+        <p>
+          Se recomienda que el elemento
+          <code class="language-html">div</code>
+          se utilice como último recurso cuando no se pueda usar ningún otro
+          elemento.
+        </p>
+        <p>
+          El uso de elementos más apropiados propicia una mejor accesibilidad
+          para lectores y un mantenimiento más fácil para los autores.
+        </p>
+        <p>
+          Su especificación está en
+          <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element"
+            target="_blank">https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element</a>
+        </p>
+      </div>
+      <mi-footer></mi-footer>
+    </layout-cajon>
+    <script type="module" src="../js/title.js"></script>
+  </body>
+</html>
