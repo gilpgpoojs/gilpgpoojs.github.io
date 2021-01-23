@@ -11,8 +11,7 @@ customElements.define("nav-local", class extends HTMLElement {
         <li><p><a href="3_clases.html">Clases</a></p></li>
         <li><p><a href="4_instancias.html">Instancias</a></p></li>
         <li><p><a href="5_constructor.html">Constructor</a></p></li>
-        <li><p><a href="6_privado.html">Acceso Privado</a></p></li>
-        <li><p><a href="7_setters.html">Setters y Getters</a></p></li>
+        <li><p><a href="6_setters.html">Setters y Getters</a></p></li>
       </ol>`;
   }
 });
