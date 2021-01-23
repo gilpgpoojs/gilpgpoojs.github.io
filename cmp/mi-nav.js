@@ -19,6 +19,8 @@ class MiNav extends HTMLElement {
         <li><p><a href="/10_excepciones">Excepciones</a></p></li>
         <li><p><a href="/11_cajas">Modelo de Cajas de CSS</a></p></li>
         <li><p><a href="/12_promesas">Promesas</a></p></li>
+        <li><p><a href="/13_posicionamiento">Posicionamiento con CSS3</a></p></li>
+        <li><p><a href="/14_patrones">Patrones de Diseño</a></p></li>
       </ol>`;
   }
 }
