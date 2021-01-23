@@ -162,7 +162,6 @@ const ARCHIVOS = [
   "14_patrones/5_factory.html",
   "14_patrones/6_proxy.html",
   "14_patrones/7_mvc.html",
-  "14_patrones/8_ejemplo.html",
   "14_patrones/index.html",
   "cmp/base.js",
   "cmp/mi-footer.js",

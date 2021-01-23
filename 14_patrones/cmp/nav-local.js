@@ -13,7 +13,6 @@ customElements.define("nav-local", class extends HTMLElement {
         <li><p><a href="5_factory.html">Patrón Abstract Factory</a></p></li>
         <li><p><a href="6_proxy.html">Patrón Proxy</a></p></li>
         <li><p><a href="7_mvc.html">Patrón MVC</a></p></li>
-        <li><p><a href="8_ejemplo.html">Ejemplo con Patrones de Diseño</a></p></li>
       </ol>`;
   }
 });
