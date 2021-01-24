@@ -21,6 +21,7 @@ class MiNav extends HTMLElement {
         <li><p><a href="/12_promesas">Promesas</a></p></li>
         <li><p><a href="/13_posicionamiento">Posicionamiento con CSS3</a></p></li>
         <li><p><a href="/14_patrones">Patrones de Diseño</a></p></li>
+        <li><p><a href="/15_mas_css">Más CSS y HTML</a></p></li>
       </ol>`;
   }
 }

@@ -3,10 +3,18 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-    <title>Posicionamiento Sticky</title>
+      content="width=device-width,
+       initial-scale=1.0">
+    <title>
+      Posicionamiento Sticky
+    </title>
     <style>
       header {
+        /* Algunas versiones de
+         * Safari no soportan
+         * "sticky", pero sí
+         * "-webkit-sticky".  */
+        position: -webkit-sticky;
         position: sticky;
         top: 1rem;
         background-color: yellow;
@@ -15,7 +23,9 @@
   </head>
   <body>
     <header>
-      <h1>Posicionamiento Sticky</h1>
+      <h1>
+        Posicionamiento Sticky
+      </h1>
     </header>
     <ol>
       <li>X</li>
@@ -58,7 +68,10 @@
       <li>X</li>
     </ol>
     <footer>
-      <p>&copy; 2020 Gilberto Pacheco Gallegos.</p>
+      <p>
+        &copy; 2020
+        Gilberto Pacheco Gallegos.
+      </p>
     </footer>
   </body>
 </html>

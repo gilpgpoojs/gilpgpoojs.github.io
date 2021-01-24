@@ -6,28 +6,26 @@
       content="width=device-width,
        initial-scale=1.0">
     <title>
-      Posicionamiento Relative
+      Custom Properties
     </title>
     <style>
-      .fuera {
-        position: relative;
-        top: 1rem;
-        left: 1rem;
-        background-color: yellow;
+      :root {
+        --colorTexto: blue;
+        --colorFondo: yellow;
+      }
+      h1 {
+        color: var(--colorTexto);
+        background-color:
+         var(--colorFondo);
+      }
+      footer {
+        color: var(--colorTexto);
       }
     </style>
   </head>
   <body>
-    <h1>
-      Posicionamiento Relative
-    </h1>
-    <p>
-      En este texto mostramos
-      <span class=fuera>
-        estas letras movidas
-      </span>
-      en este párrafo.
-    </p>
+    <h1>Custom Properties</h1>
+    <p>Hola</p>
     <footer>
       <p>
         &copy; 2020

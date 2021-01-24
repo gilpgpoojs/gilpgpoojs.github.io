@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+      content="width=device-width,
+       initial-scale=1.0">
+    <title>
+      Selector #identificador
+    </title>
+    <style>
+      /* Seleciona el elemento
+       * con
+       *  id="neg" */
+      #neg {
+        /* negritas */
+        font-weight: bold;
+      }
+      /* Seleciona el elemento
+       * de tipo
+       *  p
+       * con
+       *  id="otro" */
+      p#otro {
+        /* mayúsculas */
+        text-transform: uppercase;
+      }
+      /* Seleciona el elemento
+       * de tipo h1 con
+       *  id="chas".
+       * No se aplica porque el
+       * único elemento con
+       *   id="chas"
+       * es de tipo
+       *    p */
+      h1#chas {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+      Selector #identificador
+    </h1>
+    <p>Uno.</p>
+    <p id="chas">Dos.</p>
+    <p>Tres.</p>
+    <p id="otro">Cuatro.</p>
+    <footer id="neg">
+      <p>
+        &copy; 2020
+        Gilberto Pacheco Gallegos.
+      </p>
+    </footer>
+  </body>
+</html>

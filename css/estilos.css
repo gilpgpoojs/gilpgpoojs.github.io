@@ -4,7 +4,9 @@
 
 @import "./mi-footer.css";
 @import "./material-icons.css";
-@import "./xahn-mono.css";
+@import "ubuntu-mono.css";
+@import "ubuntu.css";
+@import "gentium-book-basic.css";
 
 :root {
   --intro-duracion: 2s;
@@ -31,6 +33,10 @@
   --color-nav-resaltada: #dd8b11;
   --padding-mi-nav: 2rem 0.5rem 0.5rem 0.5rem;
   --padding-diapositiva: 0.5rem;
+  --font-mono: 'Ubuntu Mono', monospace;
+  --font-sans: 'Ubuntu', sans-serif;
+  --font-serif: 'Gentium Book Basic', serif;
+  font-family: var(--font-serif);
   color: var(--color-letra);
   background-color: var(--color-fondo);
   scrollbar-width: thin;
@@ -65,7 +71,7 @@ body::-webkit-scrollbar-thumb:active {
 
 h1:not(.default),
 h2:not(.default) {
-  font-family: sans-serif;
+  font-family: var(--font-sans);
   color: var(--color-titulo-letra);
   text-shadow: 3px 1px 2px #cccccc;
 }
@@ -74,9 +80,10 @@ h1:not(.default) strong,
 h2:not(.default) strong,
 mi-nav a,
 ctrl-diapositiva a {
-  font-family: sans-serif;
+  font-family: var(--font-sans);
 }
 
+h1 strong,
 a strong {
   color: var(--color-titulo-strong);
 }
@@ -142,22 +149,22 @@ iframe {
 }
 
 pre {
-  font-family: 'Xanh Mono', monospace;
+  font-family: var(--font-mono);
 }
 
 code.language-html {
   color: #880000;
-  font-family: 'Xanh Mono', monospace;
+  font-family: var(--font-mono);
 }
 
 code.language-css {
   color: #ff0000;
-  font-family: 'Xanh Mono', monospace;
+  font-family: var(--font-mono);
 }
 
 code.language-javascript {
   color: blue;
-  font-family: 'Xanh Mono', monospace;
+  font-family: var(--font-mono);
 }
 
 figure {
