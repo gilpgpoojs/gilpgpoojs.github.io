@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="../js/registraServiceWorker.js"></script>
+    <link rel="icon" sizes="32x32" href="../favicon.ico">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="../manifest.json">
+    <script type="module" src="../cmp/base.js"></script>
+    <script type="module" src="./cmp/ctrl-diapositiva.js"></script>
+    <script type="module" src="../lib/muestra-codigo.js"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../lib/ctrl-diapositiva.css">
+  </head>
+  <body>
+    <layout-cajon>
+      <mi-nav slot="nav"></mi-nav>
+      <ctrl-diapositiva slot="toolbar"></ctrl-diapositiva>
+      <h1>Datos de Ejemplo</h1>
+      <div class="marco-lectura">
+        <h2>Firestore</h2>
+        <dl class="datos">
+          <dt><strong>Rol</strong></dt>
+          <dd>
+            <dl>
+              <dt>(id) Administrador</dt>
+              <dd>
+                <table class="documento">
+                  <tr>
+                    <th>Propiedad</th>
+                    <th>Tipo</th>
+                    <th>Valor</th>
+                  </tr>
+                  <tr>
+                    <td>descripción</td>
+                    <td>string</td>
+                    <td>
+                      Administra el sistema.
+                    </td>
+                  </tr>
+                </table>
+              </dd>
+              <dt>(id) Cliente</dt>
+              <dd>
+                <table class="documento">
+                  <tr>
+                    <th>Propiedad</th>
+                    <th>Tipo</th>
+                    <th>Valor</th>
+                  </tr>
+                  <tr>
+                    <td>descripción</td>
+                    <td>string</td>
+                    <td>
+                      Usa el sistema.
+                    </td>
+                  </tr>
+                </table>
+              </dd>
+            </dl>
+          </dd>
+          <dt><strong>Pasatiempo</strong></dt>
+          <dd>
+            <dl>
+              <dt>(id automático) NXYMNYPXQ1</dt>
+              <dd>
+                <table class="documento">
+                  <tr>
+                    <th>Propiedad</th>
+                    <th>Tipo</th>
+                    <th>Valor</th>
+                  </tr>
+                  <tr>
+                    <td>nombre</td>
+                    <td>string</td>
+                    <td>Futbol</td>
+                  </tr>
+                </table>
+              </dd>
+              <dt>(id automático) PHXDGCAI66</dt>
+              <dd>
+                <table class="documento">
+                  <tr>
+                    <th>Propiedad</th>
+                    <th>Tipo</th>
+                    <th>Valor</th>
+                  </tr>
+                  <tr>
+                    <td>nombre</td>
+                    <td>string</td>
+                    <td>Estudiar</td>
+                  </tr>
+                </table>
+              </dd>
+            </dl>
+          </dd>
+          <dt><strong>Usuario</strong></dt>
+          <dd>
+            <dl>
+              <dt>(id) pp@gm.com</dt>
+              <dd>
+                <table class="documento">
+                  <tr>
+                    <th>Propiedad</th>
+                    <th>Tipo</th>
+                    <th>Valor</th>
+                  </tr>
+                  <tr>
+                    <td>pasatiempoId</td>
+                    <td>string</td>
+                    <td>PHXDGCAI66 (apunta a Pasatiempo)</td>
+                  </tr>
+                  <tr>
+                    <td>rolIds</td>
+                    <td>arreglo</td>
+                    <td>
+                      <ol start="0">
+                        <li>Administrador (apunta a Rol)</li>
+                        <li>Cliente (apunta a Rol)</li>
+                      </ol>
+                    </td>
+                  </tr>
+                </table>
+              </dd>
+              <dt>(id) qk@gm.com</dt>
+              <dd>
+                <table class="documento">
+                  <tr>
+                    <th>Propiedad</th>
+                    <th>Tipo</th>
+                    <th>Valor</th>
+                  </tr>
+                  <tr>
+                    <td>pasatiempoId</td>
+                    <td>string</td>
+                    <td>NXYMNYPXQ1 (apunta a Pasatiempo)</td>
+                  </tr>
+                  <tr>
+                    <td>rolIds</td>
+                    <td>arreglo</td>
+                    <td>
+                      <ol start="0">
+                        <li>Cliente (apunta a Rol)</li>
+                      </ol>
+                    </td>
+                  </tr>
+                </table>
+              </dd>
+            </dl>
+          </dd>
+          <dt><strong>Mensaje</strong></dt>
+          <dd>
+            <dl>
+              <dt>(id automático) SDGHKLGFSDI</dt>
+              <dd>
+                <table class="documento">
+                  <tr>
+                    <th>Propiedad</th>
+                    <th>Tipo</th>
+                    <th>Valor</th>
+                  </tr>
+                  <tr>
+                    <td>usuarioId</td>
+                    <td>string</td>
+                    <td>pp@gm.com (apunta a Usuario)</td>
+                  </tr>
+                  <tr>
+                    <td>texto</td>
+                    <td>string</td>
+                    <td>Hola</td>
+                  </tr>
+                  <tr>
+                    <td>timestamp</td>
+                    <td>Timestamp</td>
+                    <td>25/01/2021 15:30.00 Z</td>
+                  </tr>
+                </table>
+              </dd>
+              <dt>(id automático) QWETFSGNC</dt>
+              <dd>
+                <table class="documento">
+                  <tr>
+                    <th>Propiedad</th>
+                    <th>Tipo</th>
+                    <th>Valor</th>
+                  </tr>
+                  <tr>
+                    <td>usuarioId</td>
+                    <td>string</td>
+                    <td>pp@gm.com (apunta a Usuario)</td>
+                  </tr>
+                  <tr>
+                    <td>texto</td>
+                    <td>string</td>
+                    <td>😁</td>
+                  </tr>
+                  <tr>
+                    <td>timestamp</td>
+                    <td>Timestamp</td>
+                    <td>25/01/2021 15:33.00 Z</td>
+                  </tr>
+                </table>
+              </dd>
+            </dl>
+          </dd>
+        </dl>
+        <h2>Storage</h2>
+        <p>
+          El servicio de Storage almacena archivos por su nombre y va
+          separado de los datos.
+        </p>
+        <table class="documento">
+          <tr>
+            <th>Nombre</th>
+            <th>Contenido</th>
+          </tr>
+          <tr>
+            <td>pp@gm.com (apunta a Usuario)</td>
+            <td>
+              <figure>
+                <img src="img/pp.gif" alt="Avatar de pp">
+              </figure>
+            </td>
+          </tr>
+          <tr>
+            <td>qk@gm.com (apunta a Usuario)</td>
+            <td>
+              <figure>
+                <img src="img/qk.gif" alt="Avatar de qk">
+              </figure>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <mi-footer></mi-footer>
+    </layout-cajon>
+    <script type="module" src="../js/title.js"></script>
+  </body>
+</html>
