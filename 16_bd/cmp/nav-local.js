@@ -20,8 +20,8 @@ customElements.define("nav-local", class extends HTMLElement {
         <li><p><a href="11_tipos.html">js/tipos.js</a></p></li>
         <li><p><a href="12_util.html">lib/util.js</a></p></li>
 
-        <li><p><a href="13_index.html">index.html</a></p></li>
-        <li><p><a href="14_init.html">js/init.js</a></p></li>
+        <li><p><a href="13_init.html">js/init.js</a></p></li>
+        <li><p><a href="14_index.html">index.html</a></p></li>
         <li><p><a href="15_CtrlSesion.html">js/CtrlSesion.js</a></p></li>
         <li><p><a href="16_fabrica.html">lib/fabrica.js</a></p></li>
         <li><p><a href="17_seguridad.html">js/seguridad.js</a></p></li>
@@ -58,8 +58,8 @@ customElements.define("nav-local", class extends HTMLElement {
         <li><p><a href="39_nav_css.html">css/mi-nav.css</a></p></li>
 
         <li><p><a href="40_favicon.html">favicon.ico</a></p></li>
-        <li><p><a href="41_LICENSE.html">LICENSE</a></p></li>
-        <li><p><a href="42_README.html">README.md</a></p></li>
+        <li><p><a href="41_README.html">README.md</a></p></li>
+        <li><p><a href="42_LICENSE.html">LICENSE</a></p></li>
       </ol>`;
   }
 });
