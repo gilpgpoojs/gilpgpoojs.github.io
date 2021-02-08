@@ -3,28 +3,42 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-    <title>Ejemplo de Excepciones Anidadas</title>
+      content="width=device-width,
+       initial-scale=1.0">
+    <title>
+      Excepciones Anidadas
+    </title>
   </head>
   <body>
-    <h1>Ejemplo de Excepciones Anidadas</h1>
-    <pre><output id="salida"></output></pre>
+    <h1>Excepciones Anidadas</h1>
+    <pre><output
+       id="salida"></output></pre>
     <footer>
-      <p>&copy; 2021 Gilberto Pacheco Gallegos.</p>
+      <p>
+        &copy; 2021
+        Gilberto Pacheco Gallegos.
+      </p>
     </footer>
     <script>
       try {
-        salida.value += "Empezamos.\n";
+        salida.value +=
+          "Empezamos.\n";
         fallo();
-        salida.value += "No me ignores.\n";
+        salida.value +=
+          "No me ignores.\n";
       } catch (e) {
-        salida.value += e.message + "\n";
+        salida.value +=
+          e.message + "\n";
       }
-      salida.value += "Terminamos.";
+      salida.value +=
+        "Terminamos.";
       function fallo() {
-        salida.value += "¿Fallaremos?\n";
-        throw new Error("Fallamos");
-        salida.value += "Tampoco me ignores.\n";
+        salida.value +=
+          "¿Fallaremos?\n";
+        throw new Error(
+          "Fallamos");
+        salida.value +=
+          "Tampoco me ignores.\n";
       }
     </script>
   </body>

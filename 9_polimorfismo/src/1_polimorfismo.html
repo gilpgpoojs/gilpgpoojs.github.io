@@ -78,13 +78,14 @@
       class ControladorWeb
         extends HTMLElement {
         connectedCallback() {
-          this.muévete =
-            this.muévete.bind(this);
-          this.innerHTML = /* html */
+          this.muévete = this.
+            muévete.bind(this);
+          this.innerHTML =
+            /* html */
             `<button
               onclick="this.
-               parentElement.
-               muévete();">
+                parentElement.
+                muévete();">
               Mueve
             </button>`;
           this.figuras =
