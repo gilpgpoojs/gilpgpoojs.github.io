@@ -20,7 +20,7 @@ customElements.define("nav-local", class extends HTMLElement {
         <li><p><a href="12_lista.html">Lista de Selectores <em>sel1</em> <strong>,</strong> <em>sel2</em></a></p></li>
         <li><p><a href="13_active.html">Selector <strong>:active</strong></a></p></li>
         <li><p><a href="14_focus.html">Selector <strong>:focus</strong></a></p></li>
-        <li><p><a href="15_custom.html">Customm Properties</a></p></li>
+        <li><p><a href="15_custom.html">Custom Properties</a></p></li>
       </ol>`;
   }
 });
