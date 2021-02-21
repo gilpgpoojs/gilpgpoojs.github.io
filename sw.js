@@ -1,7 +1,7 @@
 // @ts-nocheck
 /* Espera 11 minutos después de hacer los cambios en tu sitio, para depués
  * actualizar este archivo. */
-const CACHE = "gilpgpoojs-1.15";
+const CACHE = "gilpgpoojs-1.16";
 
 /**  Archivos requeridos para que la aplicación funcione fuera de línea. */
 const ARCHIVOS = [
