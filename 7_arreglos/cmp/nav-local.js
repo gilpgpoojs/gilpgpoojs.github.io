@@ -10,6 +10,7 @@ customElements.define("nav-local", class extends HTMLElement {
         <li><p><a href="2_contenido.html">Contenido</a></p></li>
         <li><p><a href="3_basicos.html">Arreglos Básicos</a></p></li>
         <li><p><a href="4_objetos.html">Arreglos de Objetos</a></p></li>
+        <li><p><a href="5_set.html">Set</a></p></li>
       </ol>`;
   }
 });
