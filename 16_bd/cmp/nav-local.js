@@ -14,10 +14,13 @@ customElements.define("nav-local", class extends HTMLElement {
         <li><p><a href="6_ejemplo.html">Datos de Ejemplo</a></p></li>
         <li><p><a href="7_instrucciones.html">Instrucciones</a></p></li>
         <li><p><a href="8_archivos.html">Archivos</a></p></li>
+
+        <li><p><a href="11_tipos.html">js/tipos.js</a></p></li>
+        <li><p><a href="36_tiposFire.html">lib/tiposFire.js</a></p></li>
+
         <li><p><a href="9_footer.html">cmp/mi-footer.js</a></p></li>
         <li><p><a href="10_progreso.html">cmp/mi-progreso.js</a></p></li>
 
-        <li><p><a href="11_tipos.html">js/tipos.js</a></p></li>
         <li><p><a href="12_util.html">lib/util.js</a></p></li>
 
         <li><p><a href="13_init.html">js/init.js</a></p></li>
@@ -51,10 +54,9 @@ customElements.define("nav-local", class extends HTMLElement {
         <li><p><a href="34_js_usuarios.html">js/usuarios.js</a></p></li>
         <li><p><a href="35_storage.html">lib/storage.js</a></p></li>
 
-        <li><p><a href="36_tiposFire.html">lib/tiposFire.js</a></p></li>
-
         <li><p><a href="37_estilos.html">css/estilos.css</a></p></li>
         <li><p><a href="38_listas.html">css/listas.css</a></p></li>
+        <li><p><a href="39_footer_css.html">css/mi-footer.css</a></p></li>
         <li><p><a href="39_nav_css.html">css/mi-nav.css</a></p></li>
 
         <li><p><a href="40_favicon.html">favicon.ico</a></p></li>
