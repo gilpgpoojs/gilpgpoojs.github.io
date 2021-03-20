@@ -88,6 +88,10 @@ a strong {
   color: var(--color-titulo-strong);
 }
 
+muestra-codigo>div>div {
+  white-space: nowrap;
+}
+
 @media screen and (max-width: 999px) {
   h1.presentación {
     font-size: 2.5rem;
