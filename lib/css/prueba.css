@@ -1,8 +1,8 @@
 /*TODO Pintar stacks y números de distinto color, de acuerdo a la activación.*/
 section {
-  display       : inline-block;
+  display: inline-block;
   vertical-align: top;
-  margin        : 1em;
+  margin: 1em;
 }
 
 section pre {
@@ -14,11 +14,11 @@ samp {
 }
 
 .activo {
-  display         : inline-block;
-  margin          : 0 0.2rem 0 0;
-  vertical-align  : top;
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  vertical-align: top;
   background-color: var(--colSecundario);
-  border          : 1px solid var(--colSecundario);
+  border: 1px solid var(--colSecundario);
 }
 
 :target,
@@ -28,21 +28,21 @@ samp {
 
 .numero-1 {
   display: inline-block;
-  margin : 0 0.2rem 0 0;
-  color  : var(--colStack1);
-  border : 1px solid var(--colStack1);
+  margin: 0 0.2rem 0 0;
+  color: var(--colStack1);
+  border: 1px solid var(--colStack1);
 }
 
 .numero-2 {
   display: inline-block;
-  color  : var(--colStack2);
-  border : 1px solid var(--colStack2);
+  color: var(--colStack2);
+  border: 1px solid var(--colStack2);
 }
 
 .numero-3 {
   display: inline-block;
-  color  : var(--colStack3);
-  border : 1px solid var(--colStack3);
+  color: var(--colStack3);
+  border: 1px solid var(--colStack3);
 }
 
 a.parametro-1,
@@ -78,7 +78,7 @@ table.tabla-3 td {
 }
 
 .frame {
-  font-family    : var(--fontMono);
+  font-family: var(--fontMono);
   border-collapse: collapse;
 }
 
@@ -94,7 +94,7 @@ table.tabla-3 td {
 
 .objeto caption {
   text-decoration: underline;
-  font-style     : italic;
+  font-style: italic;
 }
 
 .creación {
