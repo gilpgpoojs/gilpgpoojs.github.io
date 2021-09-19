@@ -3,6 +3,8 @@
  * http://creativecommons.org/licenses/by/4.0/. */
 import "../1_funciones/cmp/funciones-contenido.js";
 import "../2_obj_basicos/cmp/basicos-contenido.js";
+import "../3_clases/cmp/clases-contenido.js";
+
 class MiNav extends HTMLElement {
  connectedCallback() {
   this.innerHTML = /* html */
@@ -29,44 +31,14 @@ class MiNav extends HTMLElement {
          <basicos-contenido></basicos-contenido>
         </details>
        </li>
-      <li>
+       <li>
         <details>
-          <summary>
-            <h4>Clases</h4>
-          </summary>
-          <ol>
-            <li><p><a href="/3_clases/1_clases.html">Clases</a></p></li>
-            <li>
-              <details>
-                <summary>Prueba de escritorio de 1 objeto</summary>
-                <ol start="0">
-                  <li><p><a href="/3_clases/2_objetos/objeto0101.html">Prueba de escritorio de 1 objeto</a></p></li>
-                  <li><p><a href="/3_clases/2_objetos/objeto0102.html">Inicializa</a></p></li>
-                  <li><p><a href="/3_clases/2_objetos/objeto0103.html">Ejecuta <code>new Cl01(4)</code></a></p></li>
-                  <li><p><a href="/3_clases/2_objetos/objeto0104.html">Congela el Stack</a></p></li>
-                  <li><p><a href="/3_clases/2_objetos/objeto0105.html">Crea el registro de activación del constructor</a></p></li>
-                  <li><p><a href="/3_clases/2_objetos/objeto0106.html">Ejecuta <code>this.a = b;</code></a></p></li>
-                  <li><p><a href="/3_clases/2_objetos/objeto0107.html">Termina el registro de activación del constructor</a></p></li>
-                  <li><p><a href="/3_clases/2_objetos/objeto0108.html">Descongela el registro del Script</a></p></li>
-                  <li><p><a href="/3_clases/2_objetos/objeto0109.html">Crea la constante a</a></p></li>
-                  <li><p><a href="/3_clases/2_objetos/objeto0110.html">Invoca <code>a.mensaje(2)</code></a></p></li>
-                  <li><p><a href="/3_clases/2_objetos/objeto0111.html">Crea el registro de activación para <code>Cl01.mensaje</code></a></p></li>
-                  <li><p><a href="/3_clases/2_objetos/objeto0112.html">Calcula <code>c + this.a</code></a></p></li>
-                  <li><p><a href="/3_clases/2_objetos/objeto0113.html">Ejecuta <code>console.log(c + this.a);</code></a></p></li>
-                  <li><p><a href="/3_clases/2_objetos/objeto0114.html">Elimina el registro de activación</a></p></li>
-                  <li><p><a href="/3_clases/2_objetos/objeto0115.html">Descongela y termina</a></p></li>
-                </ol>
-              </details>
-            </li>
-            <li>
-              <p><a href="/3_clases/3_inst_obj.html">Instancias y Objetos</a></p>
-            </li>
-            <li>
-              <p><a href="/3_clases/4_setters.html">Setters y Getters</a></p>
-            </li>
-          </ol>
+         <summary>
+          <h4><a href="/3_clases/index.html">Clases</a></h4>
+         </summary>
+          <clases-contenido></clases-contenido>
         </details>
-      </li>
+       </li>
       <li>
         <details>
           <summary>

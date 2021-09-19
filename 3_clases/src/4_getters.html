@@ -1,0 +1,23 @@
+<script>
+ debugger
+ class ClX {
+  constructor() {
+   /** @private */
+   this._nombre = ""
+  }
+  get nombre() {
+   return (this._nombre)
+  }
+  set nombre(nombre) {
+   this._nombre = nombre
+  }
+  /** @public */
+  get juega() {
+   return (`${this.nombre} juega`)
+  }
+ }
+ const tt1 = new ClX()
+ tt1.nombre = "pp"
+ document.write(tt1.nombre, "<br>")
+ document.write(tt1.juega)
+</script>
