@@ -7,7 +7,6 @@ export class G1Recursividad extends Diapositiva {
   super.connectedCallback();
   this.innerHTML = /* html */
    `<h1>G. Recursividad</h1>
-   <h1>Recursividad</h1>
   <div class="horizontal">
    <div>
     <h2>Salida</h2>
