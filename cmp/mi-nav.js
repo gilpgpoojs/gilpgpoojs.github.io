@@ -2,12 +2,13 @@
  * Atribución 4.0 Internacional License. To view a copy of this license, visit
  * http://creativecommons.org/licenses/by/4.0/. */
 import "../1_funciones/cmp/funciones-contenido.js";
+import "../2_obj_basicos/cmp/basicos-contenido.js";
 class MiNav extends HTMLElement {
  connectedCallback() {
   this.innerHTML = /* html */
    `<nav>
    <h2>Contenido</h2>
-    <ol type="A">
+    <ul>
      <li><p><a href="/index.html">Inicio</a></p></li>
      <li>
       <h3>Lecciones</h3>
@@ -20,32 +21,14 @@ class MiNav extends HTMLElement {
          <funciones-contenido></funciones-contenido>
         </details>
        </li>
-     <li>
+       <li>
         <details>
-          <summary>
-            <h4>Objetos básicos</h4>
-          </summary>
-          <ol>
-            <li>
-              <p>
-                <a href="/2_obj_basicos/1_paso.html">Objetos paso a paso</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                <a href="/2_obj_basicos/2_literales.html">Literales de
-                  objeto</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                <a href="/2_obj_basicos/3_string.html">Propiedades y
-                  métodos de string</a>
-              </p>
-            </li>
-          </ol>
+         <summary>
+         <h4><a href="/2_obj_basicos/index.html">Objetos básicos</a></h4>
+         </summary>
+         <basicos-contenido></basicos-contenido>
         </details>
-      </li>
+       </li>
       <li>
         <details>
           <summary>
@@ -124,77 +107,29 @@ class MiNav extends HTMLElement {
       <li>
         <details>
           <summary>
-            <h4>Asociaciones</h4>
-          </summary>
-          <ol>
-            <li>
-              <p>
-                <a href="/6_asociaciones/1_uno.html">Asociaciones a uno</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                <a href="/6_asociaciones/2_muchos.html">Asociaciones a
-                  muchos</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                <a href="/6_asociaciones/3_uno_a_uno.html">Asociaciones uno a
-                  uno</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                <a href="/6_asociaciones/4_uno_a_muchos.html">Asociaciones uno
-                  a muchos</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                <a href="/6_asociaciones/5_muchos_a_muchos.html">Asociaciones
-                  muchos a muchos</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                <a href="/6_asociaciones/6_agregacion.html">Agregación</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                <a href="/6_asociaciones/7_composicion.html">Composición</a>
-              </p>
-            </li>
-          </ol>
-        </details>
-      </li>
-      <li>
-        <details>
-          <summary>
             <h4>Polimorfismo</h4>
           </summary>
           <ol>
             <li>
               <p>
-                <a href="/7_polimorfismo/1_sobreescritura.html">Sobrescritura
+                <a href="/6_polimorfismo/1_sobreescritura.html">Sobrescritura
                   de métodos</a>
               </p>
             </li>
             <li>
               <p>
-                <a href="/7_polimorfismo/2_interfaces.html">Interfaces</a>
+                <a href="/6_polimorfismo/2_interfaces.html">Interfaces</a>
               </p>
             </li>
             <li>
               <p>
-                <a href="/7_polimorfismo/3_interfaces_js.html">Interfaces en
+                <a href="/6_polimorfismo/3_interfaces_js.html">Interfaces en
                   JavaScript</a>
               </p>
             </li>
             <li>
               <p>
-                <a href="/7_polimorfismo/4_abstractas.html">Clases
+                <a href="/6_polimorfismo/4_abstractas.html">Clases
                   abstractas</a>
               </p>
             </li>
@@ -207,30 +142,101 @@ class MiNav extends HTMLElement {
             <h4>Excepciones</h4>
           </summary>
           <ol>
-            <li><p><a href="/8_excepciones/1_throw.html">throw</a></p></li>
+            <li><p><a href="/7_excepciones/1_throw.html">throw</a></p></li>
             <li>
-              <p><a href="/8_excepciones/2_try-catch.html">try-catch</a></p>
+              <p><a href="/7_excepciones/2_try-catch.html">try-catch</a></p>
             </li>
             <li>
               <p>
-                <a href="/8_excepciones/3_try-finally.html">try-finally</a>
+                <a href="/7_excepciones/3_try-finally.html">try-finally</a>
               </p>
             </li>
             <li>
               <p>
-                <a href="/8_excepciones/4_try-catch-finally.html">try-catch-finally</a>
+                <a href="/7_excepciones/4_try-catch-finally.html">try-catch-finally</a>
               </p>
             </li>
             <li>
               <p>
-                <a href="/8_excepciones/5_anidado.html">Procesamiento
+                <a href="/7_excepciones/5_anidado.html">Procesamiento
                   anidado</a>
               </p>
             </li>
             <li>
               <p>
-                <a href="/8_excepciones/6_formulario.html">Formulario con
+                <a href="/7_excepciones/6_formulario.html">Formulario con
                   validaciones</a>
+              </p>
+            </li>
+          </ol>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>
+            <h4>Promesas</h4>
+          </summary>
+          <ol>
+            <li>
+              <p>
+                <a href="/8_promesas/1_original.html">Promesas originales</a>
+              </p>
+            </li>
+            <li>
+              <p><a href="/8_promesas/2_async-await.html">async-await</a></p>
+            </li>
+            <li>
+              <p><a href="/8_promesas/3_crea.html">Creando promesas</a></p>
+            </li>
+            <li>
+              <p><a href="/8_promesas/4_all.html">Promise.all</a></p>
+            </li>
+          </ol>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>
+            <h4>Asociaciones</h4>
+          </summary>
+          <ol>
+            <li>
+              <p>
+                <a href="/9_asociaciones/1_uno.html">Asociaciones a uno</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="/9_asociaciones/2_muchos.html">Asociaciones a
+                  muchos</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="/9_asociaciones/3_uno_a_uno.html">Asociaciones uno a
+                  uno</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="/9_asociaciones/4_uno_a_muchos.html">Asociaciones uno
+                  a muchos</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="/9_asociaciones/5_muchos_a_muchos.html">Asociaciones
+                  muchos a muchos</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="/9_asociaciones/6_agregacion.html">Agregación</a>
+              </p>
+            </li>
+            <li>
+              <p>
+                <a href="/9_asociaciones/7_composicion.html">Composición</a>
               </p>
             </li>
           </ol>
@@ -244,48 +250,25 @@ class MiNav extends HTMLElement {
           <ol>
             <li>
               <p>
-                <a href="/9_patrones/1_concepto.html">Concepto de patrón de
+                <a href="/10_patrones/1_concepto.html">Concepto de patrón de
                   diseño</a>
               </p>
             </li>
             <li>
               <p>
-                <a href="/9_patrones/2_singleton.html">Patrón Singleton</a>
+                <a href="/10_patrones/2_singleton.html">Patrón Singleton</a>
               </p>
             </li>
             <li>
               <p>
-                <a href="/9_patrones/3_factory.html">Patrón Abstract
+                <a href="/10_patrones/3_factory.html">Patrón Abstract
                   Factory</a>
               </p>
             </li>
             <li>
-              <p><a href="/9_patrones/4_proxy.html">Patrón Proxy</a></p>
+              <p><a href="/10_patrones/4_proxy.html">Patrón Proxy</a></p>
             </li>
-            <li><p><a href="/9_patrones/5_mvc.html">Patrón MVC</a></p></li>
-          </ol>
-        </details>
-      </li>
-      <li>
-        <details>
-          <summary>
-            <h4>Promesas</h4>
-          </summary>
-          <ol>
-            <li>
-              <p>
-                <a href="/10_promesas/1_original.html">Promesas originales</a>
-              </p>
-            </li>
-            <li>
-              <p><a href="/10_promesas/2_async-await.html">async-await</a></p>
-            </li>
-            <li>
-              <p><a href="/10_promesas/3_crea.html">Creando promesas</a></p>
-            </li>
-            <li>
-              <p><a href="/10_promesas/4_all.html">Promise.all</a></p>
-            </li>
+            <li><p><a href="/10_patrones/5_mvc.html">Patrón MVC</a></p></li>
           </ol>
         </details>
       </li>

@@ -52,7 +52,7 @@ export class A1Funciones extends Diapositiva {
   </div>
   <div class="horizontal">
    <div>
-    <h2>Salida</h2>
+    <h3>Salida</h3>
     <iframe src="/1_funciones/src/1_funciones.html"></iframe>
     <p class="noPrint">
      <a target="_blank" href="/1_funciones/src/1_funciones.html">Ábrelo en otra

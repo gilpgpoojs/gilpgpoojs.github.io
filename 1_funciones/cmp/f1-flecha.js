@@ -78,7 +78,9 @@ export class F1Flecha extends Diapositiva {
         style="color: #098658;">3</span>),&nbsp;<span
         style="color: #a31515;">"&lt;br&gt;"</span>)</div>
      <div><span style="color: #800000;">&lt;/script&gt;</span></div>
-    </div>`;
+    </div>
+   </muestra-codigo>
+  </div>`;
  }
 }
 
