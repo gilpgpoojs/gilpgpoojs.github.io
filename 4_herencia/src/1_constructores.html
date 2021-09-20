@@ -1,0 +1,21 @@
+<script>
+ debugger
+ class ClM1 {
+  constructor(p) {
+   document.write(p, "<br>")
+   this.m = p
+  }
+ }
+ class ClH1 extends ClM1 {
+  constructor(b, c) {
+   super(b)
+   document.write(c, "<br>")
+   this.h = c
+  }
+ }
+ const th1 = new ClH1(4, -2)
+ document.write(th1.m, "<br>")
+ document.write(th1.h, "<br>")
+ const tm1 = new ClM1(8)
+ document.write(tm1.m, "<br>")
+</script>
