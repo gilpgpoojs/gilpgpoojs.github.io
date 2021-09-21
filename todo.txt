@@ -1,4 +1,4 @@
-
+1. Modificar los archivos con meta para que no usen cache.
 
 Comando para generar el listado:
 Get-ChildItem -path . -Recurse | Select Directory,Name | Out-File archivos.txt

@@ -1,0 +1,22 @@
+<script>
+ debugger
+ try {
+  document.write("Sin error.<br>")
+ } finally {
+  document.
+   write("Si se ejecuta.<br>")
+ }
+ document.write("Continuamos ",
+  "porque no hay falla.<br>")
+ try {
+  throw new Error("A volar.")
+  document.
+   write("Esto no se ejecuta.")
+ } finally {
+  document.write("Se ejecuta, ",
+   "pero no normaliza el flujo.",
+   "<br>")
+ }
+ document.write("Esta ",
+  "instrucción no se realiza.<br>")
+</script>

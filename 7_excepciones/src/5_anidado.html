@@ -1,0 +1,18 @@
+<script>
+ debugger
+ try {
+  document.write("Empezamos.<br>")
+  fallo()
+  document.write("No me ignores.")
+ } catch (e) {
+  document.write(e, "<br>")
+ }
+ document.write("Terminamos.")
+ function fallo() {
+  document.
+   write("¿Fallaremos?<br>")
+  throw new Error("Fallamos")
+  document.write(
+   "Tampoco me ignores.")
+ }
+</script>

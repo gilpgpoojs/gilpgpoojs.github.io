@@ -1,0 +1,25 @@
+<script>
+ debugger
+ try {
+  throw new Error("Ouch")
+ } catch (e) {
+  document.write("Restablece. ",
+   e.message, "<br>")
+ } finally {
+  document.write(
+   "finally se ejecuta.<br>")
+ }
+ document.
+  write("Esto se realiza.<br>")
+ try {
+  document.write("Try exitoso.")
+ } catch (e) {
+  document.
+   write("catch no se hace")
+ } finally {
+  document.
+   write("finally se hace.<br>")
+ }
+ document.
+  write("Esto se hace.<br>")
+</script>

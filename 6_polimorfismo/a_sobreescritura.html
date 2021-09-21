@@ -8,11 +8,13 @@
  <meta name="theme-color" content="#ffffff">
  <link rel="manifest" href="/site.webmanifest">
  <link rel="stylesheet" href="/css/estilos.css">
- <script type="module" src="cmp/poli-print.js"></script>
+ <script type="module" src="cmp/a6-sobreescritura.js"></script>
 </head>
-<body class="print">
- <h1 class="presentación">6. Polimorfismo</h1>
- <poli-print></poli-print>
- <mi-footer></mi-footer>
+<body>
+ <layout-cajon>
+  <mi-nav slot="nav"></mi-nav>
+  <a6-sobreescritura></a6-sobreescritura>
+  <mi-footer></mi-footer>
+ </layout-cajon>
 </body>
 </html>

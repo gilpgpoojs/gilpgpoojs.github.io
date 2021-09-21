@@ -1,16 +1,16 @@
 import { Diapositiva } from "../../lib/Diapositiva.js";
-import "./arreglos-contenido.js"
+import "./poli-contenido.js"
 
-export class ArreglosIndex extends Diapositiva {
+export class PoliIndex extends Diapositiva {
  /** @override */
  connectedCallback() {
   super.connectedCallback();
   this.innerHTML = /* html */
    `<div class="lectura">
      <h2>Contenido</h2>
-     <arreglos-contenido></arreglos-contenido>
+     <poli-contenido></poli-contenido>
     </div>`;
  }
 }
 
-customElements.define("arreglos-index", ArreglosIndex);
+customElements.define("poli-index", PoliIndex);

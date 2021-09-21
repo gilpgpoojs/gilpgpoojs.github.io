@@ -6,6 +6,7 @@ import "../2_obj_basicos/cmp/basicos-contenido.js";
 import "../3_clases/cmp/clases-contenido.js";
 import "../4_herencia/cmp/herencia-contenido.js";
 import "../5_arreglos/cmp/arreglos-contenido.js";
+import "../6_polimorfismo/cmp/poli-contenido.js";
 
 class MiNav extends HTMLElement {
  connectedCallback() {
@@ -58,36 +59,12 @@ class MiNav extends HTMLElement {
         </details>
       </li>
       <li>
-        <details>
-          <summary>
-            <h4>Polimorfismo</h4>
-          </summary>
-          <ol>
-            <li>
-              <p>
-                <a href="/6_polimorfismo/1_sobreescritura.html">Sobrescritura
-                  de métodos</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                <a href="/6_polimorfismo/2_interfaces.html">Interfaces</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                <a href="/6_polimorfismo/3_interfaces_js.html">Interfaces en
-                  JavaScript</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                <a href="/6_polimorfismo/4_abstractas.html">Clases
-                  abstractas</a>
-              </p>
-            </li>
-          </ol>
-        </details>
+       <details>
+        <summary>
+         <h4><a href="/6_polimorfismo/index.html">Polimorfismo</a></h4>
+        </summary>
+        <poli-contenido></poli-contenido>
+       </details>
       </li>
       <li>
         <details>
@@ -95,29 +72,29 @@ class MiNav extends HTMLElement {
             <h4>Excepciones</h4>
           </summary>
           <ol>
-            <li><p><a href="/7_excepciones/1_throw.html">throw</a></p></li>
+            <li><p><a href="/7_excepciones/a_throw.html">throw</a></p></li>
             <li>
-              <p><a href="/7_excepciones/2_try-catch.html">try-catch</a></p>
+              <p><a href="/7_excepciones/b_try-catch.html">try-catch</a></p>
             </li>
             <li>
               <p>
-                <a href="/7_excepciones/3_try-finally.html">try-finally</a>
+                <a href="/7_excepciones/c_try-finally.html">try-finally</a>
               </p>
             </li>
             <li>
               <p>
-                <a href="/7_excepciones/4_try-catch-finally.html">try-catch-finally</a>
+                <a href="/7_excepciones/d_try-catch-finally.html">try-catch-finally</a>
               </p>
             </li>
             <li>
               <p>
-                <a href="/7_excepciones/5_anidado.html">Procesamiento
+                <a href="/7_excepciones/e_anidado.html">Procesamiento
                   anidado</a>
               </p>
             </li>
             <li>
               <p>
-                <a href="/7_excepciones/6_formulario.html">Formulario con
+                <a href="/7_excepciones/f_formulario.html">Formulario con
                   validaciones</a>
               </p>
             </li>
