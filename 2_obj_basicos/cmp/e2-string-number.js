@@ -86,6 +86,8 @@ export class E2StringNumber extends Diapositiva {
       style="color: #0070c1;">g</span>,&nbsp;<span
       style="color: #a31515;">"&lt;br&gt;"</span>)</div>
    <div><span style="color: #800000;">&lt;/script&gt;</span></div>
+  </div>
+  </muestra-codigo>
   </div>`;
  }
 }

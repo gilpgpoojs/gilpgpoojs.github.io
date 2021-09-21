@@ -69,6 +69,8 @@ export class E1FuncionesReturn extends Diapositiva {
     <code class="language-javascript">return</code>
     y el paréntesis que le sigue, <strong>siempre</strong> deben ir en el mismo renglón.
    </p>
+  </div>
+  </muestra-codigo>
   </div>`;
  }
 }

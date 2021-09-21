@@ -1,0 +1,22 @@
+<script>
+ debugger
+
+ class MensajeIng2 {
+  saludo() {
+   document.write("Hi<br>")
+  }
+ }
+
+ class MensajeEsp2 {
+  saludo() {
+   document.write("Hola<br>")
+  }
+ }
+
+ const mensajes = [
+  new MensajeEsp2(),
+  new MensajeIng2()]
+ for (var mens of mensajes) {
+  mens.saludo()
+ }
+</script>

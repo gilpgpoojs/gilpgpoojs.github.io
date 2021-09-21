@@ -5,6 +5,7 @@ import "../1_funciones/cmp/funciones-contenido.js";
 import "../2_obj_basicos/cmp/basicos-contenido.js";
 import "../3_clases/cmp/clases-contenido.js";
 import "../4_herencia/cmp/herencia-contenido.js";
+import "../5_arreglos/cmp/arreglos-contenido.js";
 
 class MiNav extends HTMLElement {
  connectedCallback() {
@@ -48,21 +49,12 @@ class MiNav extends HTMLElement {
          <herencia-contenido></herencia-contenido>
         </details>
        </li>
-      <li>
+       <li>
         <details>
-          <summary>
-            <h4>Arreglos</h4>
-          </summary>
-          <ol>
-            <li>
-              <p><a href="/5_arreglos/1_basicos.html">Arreglos básicos</a></p>
-            </li>
-            <li>
-              <p>
-                <a href="/5_arreglos/2_objetos.html">Arreglos de objetos</a>
-              </p>
-            </li>
-          </ol>
+         <summary>
+          <h4><a href="/5_arreglos/index.html">Arreglos</a></h4>
+         </summary>
+         <arreglos-contenido></arreglos-contenido>
         </details>
       </li>
       <li>

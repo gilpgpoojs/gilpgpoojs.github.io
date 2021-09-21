@@ -1,0 +1,24 @@
+<script>
+ debugger
+
+ class Despedida {
+  despídete() {
+   document.write("Adios.<br>")
+  }
+ }
+
+ class DespedidaEnInglés
+  extends Despedida {
+  /** @override */
+  despídete() {
+   document.write("Bye<br>")
+  }
+ }
+
+ const despedidas = [
+  new Despedida(),
+  new DespedidaEnInglés()]
+ for (var d of despedidas) {
+  d.despídete()
+ }
+</script>

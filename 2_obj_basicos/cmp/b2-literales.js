@@ -77,8 +77,6 @@ export class B2Literales extends Diapositiva {
      <div><span style="color: #800000;">&lt;/script&gt;</span></div>
     </div>
    </muestra-codigo>
-  </div>
-   </muestra-codigo>
   </div>`;
  }
 }
