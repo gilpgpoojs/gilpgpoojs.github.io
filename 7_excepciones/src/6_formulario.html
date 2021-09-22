@@ -1,23 +1,21 @@
 <script>
  debugger
  try {
-  document.write(
-   "Cálculo de a / b.<br>")
   const a = leeA()
   const b = leeB()
   /* Debe cumplirse que a sea un
    * número. */
-  if (!isNaN(a)) throw new Error(
+  if (isNaN(a)) throw new Error(
    "El valor de a debe ser un " +
    "número.")
   /* Debe cumplirse que a sea un
    * número. */
-  if (!isNaN(b)) throw new Error(
+  if (isNaN(b)) throw new Error(
    "El valor de b debe ser un " +
    "número.")
   /* Debe cumplirse que b sea
    * diferente de 0. */
-  if (b !== 0) throw new Error(
+  if (b === 0) throw new Error(
    "El valor de b no puede ser 0.")
   const resultado = procesa(a, b)
   document.write(

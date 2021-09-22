@@ -7,6 +7,7 @@ import "../3_clases/cmp/clases-contenido.js";
 import "../4_herencia/cmp/herencia-contenido.js";
 import "../5_arreglos/cmp/arreglos-contenido.js";
 import "../6_polimorfismo/cmp/poli-contenido.js";
+import "../7_excepciones/cmp/excepciones-contenido.js";
 
 class MiNav extends HTMLElement {
  connectedCallback() {
@@ -67,39 +68,12 @@ class MiNav extends HTMLElement {
        </details>
       </li>
       <li>
-        <details>
-          <summary>
-            <h4>Excepciones</h4>
-          </summary>
-          <ol>
-            <li><p><a href="/7_excepciones/a_throw.html">throw</a></p></li>
-            <li>
-              <p><a href="/7_excepciones/b_try-catch.html">try-catch</a></p>
-            </li>
-            <li>
-              <p>
-                <a href="/7_excepciones/c_try-finally.html">try-finally</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                <a href="/7_excepciones/d_try-catch-finally.html">try-catch-finally</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                <a href="/7_excepciones/e_anidado.html">Procesamiento
-                  anidado</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                <a href="/7_excepciones/f_formulario.html">Formulario con
-                  validaciones</a>
-              </p>
-            </li>
-          </ol>
-        </details>
+       <details>
+        <summary>
+         <h4><a href="/7_excepciones/index.html">Excepciones</a></h4>
+        </summary>
+        <excepciones-contenido></excepciones-contenido>
+       </details>
       </li>
       <li>
         <details>
