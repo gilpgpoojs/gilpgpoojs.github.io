@@ -83,17 +83,17 @@ class MiNav extends HTMLElement {
           <ol>
             <li>
               <p>
-                <a href="/8_promesas/1_original.html">Promesas originales</a>
+                <a href="/8_promesas/a_original.html">Promesas originales</a>
               </p>
             </li>
             <li>
-              <p><a href="/8_promesas/2_async-await.html">async-await</a></p>
+              <p><a href="/8_promesas/b_async-await.html">async-await</a></p>
             </li>
             <li>
-              <p><a href="/8_promesas/3_crea.html">Creando promesas</a></p>
+              <p><a href="/8_promesas/c_crea.html">Creando promesas</a></p>
             </li>
             <li>
-              <p><a href="/8_promesas/4_all.html">Promise.all</a></p>
+              <p><a href="/8_promesas/d_all.html">Promise.all</a></p>
             </li>
           </ol>
         </details>
