@@ -85,52 +85,52 @@ class MiNav extends HTMLElement {
        </details>
       </li>
       <li>
-        <details>
-          <summary>
-            <h4>Asociaciones</h4>
-          </summary>
-          <ol>
-            <li>
-              <p>
-                <a href="/9_asociaciones/1_uno.html">Asociaciones a uno</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                <a href="/9_asociaciones/2_muchos.html">Asociaciones a
-                  muchos</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                <a href="/9_asociaciones/3_uno_a_uno.html">Asociaciones uno a
-                  uno</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                <a href="/9_asociaciones/4_uno_a_muchos.html">Asociaciones uno
-                  a muchos</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                <a href="/9_asociaciones/5_muchos_a_muchos.html">Asociaciones
-                  muchos a muchos</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                <a href="/9_asociaciones/6_agregacion.html">Agregación</a>
-              </p>
-            </li>
-            <li>
-              <p>
-                <a href="/9_asociaciones/7_composicion.html">Composición</a>
-              </p>
-            </li>
-          </ol>
-        </details>
+       <details>
+        <summary>
+          <h4>Asociaciones</h4>
+        </summary>
+        <ol type="A">
+         <li>
+          <p>
+           <a href="/9_asociaciones/a_uno.html">Asociaciones a uno</a>
+          </p>
+         </li>
+          <li>
+            <p>
+              <a href="/9_asociaciones/b_muchos.html">Asociaciones a
+                muchos</a>
+            </p>
+          </li>
+          <li>
+            <p>
+              <a href="/9_asociaciones/c_uno_a_uno.html">Asociaciones uno a
+                uno</a>
+            </p>
+          </li>
+          <li>
+            <p>
+              <a href="/9_asociaciones/d_uno_a_muchos.html">Asociaciones uno
+                a muchos</a>
+            </p>
+          </li>
+          <li>
+            <p>
+              <a href="/9_asociaciones/e_muchos_a_muchos.html">Asociaciones
+                muchos a muchos</a>
+            </p>
+          </li>
+          <li>
+            <p>
+              <a href="/9_asociaciones/f_agregacion.html">Agregación</a>
+            </p>
+          </li>
+          <li>
+            <p>
+              <a href="/9_asociaciones/g_composicion.html">Composición</a>
+            </p>
+          </li>
+         </ol>
+       </details>
       </li>
       <li>
         <details>

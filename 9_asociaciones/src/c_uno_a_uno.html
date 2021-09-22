@@ -1,0 +1,19 @@
+<script>
+ debugger
+ class Avión {
+  constructor(modelo) {
+   this.modelo = modelo
+   this.piloteado = null
+  }
+ }
+ class Piloto {
+  constructor(nombre) {
+   this.nombre = nombre
+   this.pilotea = null
+  }
+ }
+ const tToin = new Avión("toin121")
+ let tQk = new Piloto("qk")
+ tToin.piloteado = tQk
+ tQk.pilotea = tToin
+</script>
