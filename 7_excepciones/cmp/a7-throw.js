@@ -30,7 +30,7 @@ export class A7Throw extends Diapositiva {
     </p>
     <p class="noPrint">
      <a target="_blank"
-       href="https://gilpgedit.github.io/#%3Cscript%3E%0A%20debugger%0A%20document.write(%22En%20este%20ejemplo%22%2C%0A%20%20%22la%20instruci%C3%B3n%22)%0A%20throw%20new%20Error(%0A%20%20%22throw%20aborta%20el%20programa.%22)%0A%20document.write(%22Estas%20l%C3%ADneas%22)%0A%20document.write(%22no%20se%20ejecutan%22)%0A%3C%2Fscript%3E">
+       href="https://gilpgedit.github.io/#%3Cscript%3E%0A%20debugger%0A%20document.write(%22En%20este%20ejemplo%20%22%2C%0A%20%20%22la%20instruci%C3%B3n%22)%0A%20throw%20new%20Error(%0A%20%20%22throw%20aborta%20el%20programa.%22)%0A%20document.write(%22Estas%20l%C3%ADneas%22)%0A%20document.write(%22no%20se%20ejecutan%22)%0A%3C%2Fscript%3E">
       Revísalo en gilpgedit.
      </a>
     </p>
@@ -41,7 +41,7 @@ export class A7Throw extends Diapositiva {
      <div>&nbsp;<span style="color: #0000ff;">debugger</span></div>
      <div>&nbsp;<span style="color: #001080;">document</span>.<span
         style="color: #795e26;">write</span>(<span
-        style="color: #a31515;">"En&nbsp;este&nbsp;ejemplo"</span>,</div>
+        style="color: #a31515;">"En&nbsp;este&nbsp;ejemplo&nbsp;"</span>,</div>
      <div>&nbsp;&nbsp;<span style="color: #a31515;">"la&nbsp;instrución"</span>)
      </div>
      <div>&nbsp;<span style="color: #af00db;">throw</span>&nbsp;<span

@@ -8,6 +8,7 @@ import "../4_herencia/cmp/herencia-contenido.js";
 import "../5_arreglos/cmp/arreglos-contenido.js";
 import "../6_polimorfismo/cmp/poli-contenido.js";
 import "../7_excepciones/cmp/excepciones-contenido.js";
+import "../8_promesas/cmp/promesas-contenido.js";
 
 class MiNav extends HTMLElement {
  connectedCallback() {
@@ -76,27 +77,12 @@ class MiNav extends HTMLElement {
        </details>
       </li>
       <li>
-        <details>
-          <summary>
-            <h4>Promesas</h4>
-          </summary>
-          <ol>
-            <li>
-              <p>
-                <a href="/8_promesas/a_original.html">Promesas originales</a>
-              </p>
-            </li>
-            <li>
-              <p><a href="/8_promesas/b_async-await.html">async-await</a></p>
-            </li>
-            <li>
-              <p><a href="/8_promesas/c_crea.html">Creando promesas</a></p>
-            </li>
-            <li>
-              <p><a href="/8_promesas/d_all.html">Promise.all</a></p>
-            </li>
-          </ol>
-        </details>
+       <details>
+        <summary>
+         <h4><a href="/8_promesas/index.html">Promesas</a></h4>
+        </summary>
+        <promesas-contenido></promesas-contenido>
+       </details>
       </li>
       <li>
         <details>
