@@ -14,7 +14,7 @@
 
 const CACHE = "cache"
 
-const VERSION = "3.0"
+const VERSION = "3.1"
 
 const ARCHIVOS = [
   "/docs/index.html",
