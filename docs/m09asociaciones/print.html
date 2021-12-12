@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon.ico">
+<meta name="theme-color" content="#039623">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/js/muestra-codigo.js"></script>
+ <title>Asociaciones - GilPG POOJS</title>
+ <meta name="description" content="Página para imprimir de la lección «9. Asociaciones».">
+ <style>
+ :root {
+  --introDuracion: 2s;
+  --introFuncion: ease-out;
+  --padCont: 0.5rem;
+  --padNav: 0.75rem 0.5rem;
+  --anchoNav: 300px;
+  --anchoLectura: 900px;
+  --colLetra: black;
+  --colFondo: white;
+  --colTituloLetra: #00811c;
+  --colTituloShadow: 3px 1px 2px #bdbdbd;
+  --colTituloStrong: #684601;
+  --colTituloStrongSel: #ffdc97;
+  --colTarget: #cef4ff;
+  --colSombra: #49494980;
+  --navSombra: 0.5rem 0 0.5rem var(--colSombra);
+  --padCtrl: 0.2rem 0.3rem;
+  --borderCtrl: solid thin;
+  --colFondoNav: #f2f2f2;
+  --colNavResaltada: #7a2c99;
+  --colSecundario: #ffff82;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
+  --gap: 0.5rem;
+  --fontMono: monospace;
+  --fontSans: sans-serif;
+  --fontSerif: serif;
+  font-family: var(--fontSerif);
+  color: var(--colLetra);
+  background-color: var(--colFondo);
+ }
+
+ .anterior,
+ .siguiente {
+  display: inline-block;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ .anterior.bye,
+ .siguiente.bye {
+  display: none;
+ }
+
+ a[data-logo] {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 54px;
+  margin-top: 1rem;
+  background-image: url("/img/icono/maskable_icon_x48.png");
+  background-position: 3px center;
+  background-repeat: no-repeat;
+ }
+
+ a strong,
+ a code,
+ h1 strong,
+ h1 code {
+  color: var(--colTituloStrong);
+ }
+
+ nav a {
+  font-family: var(--fontSans);
+ }
+
+ pre {
+  font-family: var(--fontMono);
+  font-size: 1em;
+ }
+
+ samp {
+  font-size: 1em;
+ }
+
+ code {
+  color: var(--colTituloStrong);
+  font-family: var(--fontMono);
+  font-size: 1em;
+ }
+
+ a code {
+  font-size: 1rem;
+ }
+
+ h1:not(.default) {
+  font-family: var(--fontSans);
+  color: var(--colTituloLetra);
+ }
+
+ h1.sitio {
+  font-size: 3rem;
+ }
+
+ h1.leccion {
+  font-size: 2.5rem;
+ }
+
+ .autor {
+  font-family: var(--fontSans);
+  font-size: 1.5rem;
+  color: var(--colTituloLetra);
+ }
+
+ figure {
+  text-align: center;
+ }
+
+ figure img {
+  max-width: 100%;
+  max-height: 65vh;
+ }
+
+ figure img.med {
+  max-height: 55vh;
+ }
+
+ figcaption {
+  font-family: var(--fontMono);
+ }
+
+ .print .noPrint {
+  display: none;
+ }
+
+ @media print {
+  .noPrint {
+   display: none;
+  }
+  .pruebaDeEscritorio {page-break-before: always;}
+ }
+
+ iframe {
+  box-sizing: border-box;
+  width: 100%;
+ }
+
+ .lectura {
+  max-width: var(--anchoLectura);
+  margin: 1rem auto;
+ }
+
+ .lectura p,
+ .lectura blockquote {
+  text-align: justify;
+ }
+
+ /* No funciona bien con display:flex en pantallas pequeñas. */
+ .horizontal {
+  text-align: center;
+ }
+
+ .horizontal>* {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+ }
+
+ .horizontal>*:not(:first-child) {
+  margin-left: 1rem;
+ }
+
+ .columnas4 {
+  columns: 4 180px;
+  column-gap: 1rem;
+ }
+
+ .columnas2 {
+  columns: 2 360px;
+  column-gap: 1rem;
+ }
+
+ .resaltado {
+  background-color: rgb(255, 255, 89);
+ }
+
+ .resaltado2 {
+  background-color: rgb(255, 214, 139);
+ }
+
+ table.borde {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ table.borde,
+ table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+ }
+
+ table.borde th,
+ table.borde td {
+  padding: 0.4rem;
+ }
+
+ muestra-codigo>div>div {
+  white-space: nowrap;
+ }
+
+ footer {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--fontSans);
+  font-size: small;
+ }
+</style>
+ <style>
+ /*TODO Pintar stacks y números de distinto color, de acuerdo a la activación.*/
+ .pruebaDeEscritorio section {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1em;
+ }
+
+ .pruebaDeEscritorio section pre {
+  margin: 0;
+ }
+
+ .pruebaDeEscritorio samp {
+  font-weight: bold;
+ }
+
+ .pruebaDeEscritorio .activo {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  vertical-align: top;
+  background-color: var(--colSecundario);
+  border: 1px solid var(--colSecundario);
+ }
+
+ .pruebaDeEscritorio :target,
+ .pruebaDeEscritorio :target caption {
+  background-color: var(--colTarget);
+ }
+
+ .pruebaDeEscritorio .numero1 {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  color: var(--colStack1);
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio .numero2 {
+  display: inline-block;
+  color: var(--colStack2);
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio .numero3 {
+  display: inline-block;
+  color: var(--colStack3);
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio a.parametro1,
+ .pruebaDeEscritorio .parametro1 {
+  color: var(--colPar1);
+ }
+
+ .pruebaDeEscritorio a.parametro2,
+ .pruebaDeEscritorio .parametro2 {
+  color: var(--colPar2);
+ }
+
+ .pruebaDeEscritorio .descongela {
+  color: var(--colDescongela);
+ }
+
+ .pruebaDeEscritorio table.tabla1,
+ .pruebaDeEscritorio table.tabla1 th,
+ .pruebaDeEscritorio table.tabla1 td {
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio table.tabla2,
+ .pruebaDeEscritorio table.tabla2 th,
+ .pruebaDeEscritorio table.tabla2 td {
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio table.tabla2,
+ .pruebaDeEscritorio table.tabla2 th,
+ .pruebaDeEscritorio table.tabla2 td {
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio .frame {
+  font-family: var(--fontMono);
+  border-collapse: collapse;
+ }
+
+ .pruebaDeEscritorio .frame,
+ .pruebaDeEscritorio .frame th,
+ .pruebaDeEscritorio .frame td {
+  border: thin solid;
+ }
+
+ .pruebaDeEscritorio .frame caption {
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .objeto caption {
+  text-decoration: underline;
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .creación {
+  display: flex;
+ }
+</style>
+</head>
+<body class="print">
+   <h1 class="leccion">9. Asociaciones</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se presentan distintos tipos de asociaciones.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m09asociaciones/mAaUno.html">Asociaciones a uno</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m09asociaciones/mBaMuchos.html">Asociaciones a muchos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m09asociaciones/mCunoAuno.html">Asociaciones de uno a uno</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m09asociaciones/mDunoAmuchos.html">Asociaciones de uno a muchos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m09asociaciones/mEmuchosAmuchos.html">Asociaciones de muchos a muchos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m09asociaciones/mFagregacion.html">Agregación</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m09asociaciones/mGcomposicion.html">Composición</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m09asociaciones/mHresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. Asociaciones a uno</h1><div class="lectura">
+ <section>
+  <h1>Imagina</h1>
+  <figure>
+   <img src="/img/m09asociaciones/a_uno.svg"
+     alt="Imagina asociaciones a uno">
+  </figure>
+ </section>
+ <section>
+  <h1>Diagrama de Clases</h1>
+  <figure>
+   <img src="/img/m09asociaciones/clases_a_uno.svg"
+     alt="Diagrama de clases a uno">
+  </figure>
+ </section>
+ <section>
+  <h1>Frases</h1>
+  <ul>
+   <li>
+    <p>Una sonaja tiene como <em>dueño</em> a <strong>un bebé</strong>.</p>
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h1>Código</h1>
+  <p>
+   <a href="http://pythontutor.com/javascript.html#code=class%20Beb%C3%A9%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%7D%0A%7D%0Aclass%20Sonaja%20%7B%0A%20%20constructor%28modelo%29%20%7B%0A%20%20%20%20this.modelo%20%3D%20modelo%3B%0A%20%20%20%20this.due%C3%B1o%20%3D%20null%3B%0A%20%20%7D%20%20%0A%7D%0Aconst%20telSonajita1%20%3D%20new%20Sonaja%28%22sonajita1%22%29%3B%0Alet%20telQk%20%3D%20new%20Beb%C3%A9%28%22qk%22%29%3B%0AtelSonajita1.due%C3%B1o%20%3D%20telQk%3B%0AtelQk%20%3D%20null%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+     target="_blank" rel="noopener">
+    Programa animado de asociaciones a uno.
+   </a>
+  </p>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >B. Asociaciones a muchos</h1><div class="lectura">
+ <section>
+  <h1>Imagina</h1>
+  <figure>
+   <img src="/img/m09asociaciones/a_muchos.svg"
+     alt="Imagina asociaciones a muchos">
+  </figure>
+ </section>
+ <section>
+  <h1>Diagrama de Clases</h1>
+  <figure>
+   <img src="/img/m09asociaciones/clases_a_muchos.svg"
+     alt="Diagrama de clases a muchos">
+  </figure>
+ </section>
+ <section>
+  <h1>Frases</h1>
+  <ul>
+   <li>
+    <p>Una infante tiene <strong>muchos juguetes</strong>.</p>
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h1>Código</h1>
+  <p>
+   <a href="http://pythontutor.com/javascript.html#code=class%20Juguete%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%7D%0A%7D%0Aclass%20Infante%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%20%20this.tiene%20%3D%20%5B%5D%3B%0A%20%20%7D%0A%7D%0Aconst%20tTt%20%3D%20new%20Infante%28%22tt%22%29%3B%0Alet%20tSpid%20%3D%20new%20Juguete%28%22spiderant%22%29%3B%0Alet%20tWon%20%3D%20new%20Juguete%28%22wonderant%22%29%3B%0AtTt.tiene%20%3D%20%5BtSpid,%20tWon%5D%3B%0AtSpid%20%3D%20null%3B%0AtWon%20%3D%20null%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+     target="_blank" rel="noopener">
+    Programa animado de asociaciones a muchos.
+   </a>
+  </p>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >C. Asociaciones de uno a uno</h1><div class="lectura">
+ <section>
+  <h1>Imagina</h1>
+  <figure>
+   <img src="/img/m09asociaciones/uno_a_uno.svg"
+     alt="Imagina asociaciones uno a uno">
+  </figure>
+ </section>
+ <section>
+  <h1>Diagrama de Clases</h1>
+  <figure>
+   <img src="/img/m09asociaciones/clases_uno_a_uno_flechas.svg"
+     alt="Diagrama de clases a uno a uno con flechas">
+  </figure>
+  <figure>
+   <img src="/img/m09asociaciones/clases_a_uno.svg"
+     alt="Diagrama de clases a uno a uno">
+  </figure>
+ </section>
+ <section>
+  <h1>Frases</h1>
+  <ul>
+   <li>
+    <p>Un piloto <em>pilotea</em> <strong>un avión</strong>.</p>
+   </li>
+   <li>
+    <p>Un avión es <em>piloteado</em> por <strong>un piloto</strong>.</p>
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h1>Código</h1>
+  <p>
+   <a href="http://pythontutor.com/javascript.html#code=class%20Avi%C3%B3n%20%7B%0A%20%20constructor%28modelo%29%20%7B%0A%20%20%20%20this.modelo%20%3D%20modelo%3B%0A%20%20%20%20this.piloteado%20%3D%20null%3B%0A%20%20%7D%0A%7D%0Aclass%20Piloto%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%20%20this.pilotea%20%3D%20null%3B%0A%20%20%7D%0A%7D%0Aconst%20tToin121%20%3D%20new%20Avi%C3%B3n%28%22toin121%22%29%3B%0Alet%20tQk%20%3D%20new%20Piloto%28%22qk%22%29%3B%0AtToin121.piloteado%20%3D%20tQk%3B%0AtQk.pilotea%20%3D%20tToin121%3B%0AtQk%20%3D%20null%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+     target="_blank" rel="noopener">
+    Programa animado de asociaciones uno a uno.
+   </a>
+  </p>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >D. Asociaciones de uno a muchos</h1><div class="lectura">
+ <section>
+  <h1>Imagina</h1>
+  <figure>
+   <img src="/img/m09asociaciones/uno_a_muchos.svg"
+     alt="Imagina asociaciones uno a muchos">
+  </figure>
+ </section>
+ <section>
+  <h1>Diagrama de Clases</h1>
+  <figure>
+   <img src="/img/m09asociaciones/clases_uno_a_muchos.svg"
+     alt="Diagrama de clases a uno a muchos">
+  </figure>
+ </section>
+ <section>
+  <h1>Frases</h1>
+  <ul>
+   <li>
+    <p>Un juguete2 <em>pertenece</em> a <strong>un infante2</strong>.</p>
+   </li>
+   <li>
+    <p>Un infante2 <em>tiene</em> <strong>muchos juguetes2</strong>.</p>
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h1>Código</h1>
+  <p>
+   <a href="http://pythontutor.com/javascript.html#code=class%20Juguete2%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%20%20this.pertenece%20%3D%20null%3B%0A%20%20%7D%0A%7D%0Aclass%20Infante2%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%20%20this.tiene%20%3D%20%5B%5D%3B%0A%20%20%7D%0A%7D%0Aconst%20tTt%20%3D%20new%20Infante2%28%22tt%22%29%3B%0Alet%20tSpid%20%3D%20new%20Juguete2%28%22spiderant%22%29%3B%0Alet%20tWon%20%3D%20new%20Juguete2%28%22wonderant%22%29%3B%0AtTt.tiene%20%3D%20%5BtSpid,%20tWon%5D%3B%0AtSpid.pertenece%20%3D%20tTt%3B%0AtWon.pertenece%20%3D%20tTt%3B%0AtSpid%20%3D%20null%3B%0AtWon%20%3D%20null%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+     target="_blank" rel="noopener">
+    Programa animado de asociaciones uno a muchos.
+   </a>
+  </p>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >D. Asociaciones de muchos a muchos</h1><div class="lectura">
+ <section>
+  <h1>Imagina</h1>
+  <figure>
+   <img src="/img/m09asociaciones/muchos_a_muchos.svg"
+     alt="Imagina asociaciones muchos a muchos">
+  </figure>
+ </section>
+ <section>
+  <h1>Diagrama de Clases</h1>
+  <figure>
+   <img src="/img/m09asociaciones/clases_muchos_a_muchos.svg"
+     alt="Diagrama de clases a muchos a muchos">
+  </figure>
+ </section>
+ <section>
+  <h1>Frases</h1>
+  <ul>
+   <li>
+    <p>Un usuario <em>usa</em> <strong>muchas computadoras</strong>.</p>
+   </li>
+   <li>
+    <p>Una computadora es <em>usada</em> por <strong>muchos usuarios</strong>.
+    </p>
+   </li>
+  </ul>
+ </section>
+ <section>
+  <h1>Código</h1>
+  <p>
+   <a href="http://pythontutor.com/javascript.html#code=class%20Computadora%20%7B%0A%20%20constructor%28modelo%29%20%7B%0A%20%20%20%20this.modelo%20%3D%20modelo%3B%0A%20%20%20%20this.usada%20%3D%20%5B%5D%3B%0A%20%20%7D%0A%7D%0Aclass%20Usuario%20%7B%0A%20%20constructor%28nombre%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20nombre%3B%0A%20%20%20%20this.usa%20%3D%20%5B%5D%3B%0A%20%20%7D%0A%7D%0Aconst%20tQk%20%3D%20new%20Usuario%28%22qk%22%29%3B%0Alet%20tPp%20%3D%20new%20Usuario%28%22pp%22%29%3B%0Alet%20tChp1%20%3D%20new%20Computadora%28%22chp%201%22%29%3B%0Alet%20tDella2%20%3D%20new%20Computadora%28%22della%202%22%29%3B%0AtQk.usa%20%3D%20%5BtChp1,%20tDella2%5D%3B%0AtPp.usa%20%3D%20%5BtDella2%5D%3B%0AtChp1.usada%20%3D%20%5BtQk%5D%3B%0AtDella2.usada%20%3D%20%5BtQk,%20tPp%5D%3B%0AtPp%20%3D%20null%3B%0AtChp1%20%3D%20null%3B%0AtDella2%20%3D%20null%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+     target="_blank" rel="noopener">
+    Programa animado de asociaciones muchos a muchos.
+   </a>
+  </p>
+ </section>
+</div>
+      </section>
+     <section >
+         <h1 >F. Agregación</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Asociación binaria.</p>
+  </li>
+  <li>
+   <p>Un objeto se forma con partes independientes.</p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img class="dc" src="/img/m09asociaciones/agregacion.svg"
+   alt="Diagrama de clases de agregación">
+ <figcaption>Ejemplo de diagrama de clases de agregación.</figcaption>
+</figure>
+      </section>
+     <section >
+         <h1 >G. Composición</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>Asociación binaria.</p>
+  </li>
+  <li>
+   <p>
+    Un objeto se forma con partes que no pueden existir sin el objeto principal.
+   </p>
+  </li>
+ </ul>
+</div>
+<figure>
+ <img class="dc" src="/img/m09asociaciones/composicion.svg"
+   alt="Diagrama de clases de composición">
+</figure>
+      </section>
+     <section >
+         <h1 >H. Resumen</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>En esta lección se revisaron los siguientes de asociaciones:</p>
+   <ul>
+    <li>
+     <p><code class='language-javascript'>A uno.</code></p>
+    </li>
+    <li>
+     <p><code class='language-javascript'>A muchos.</code></p>
+    </li>
+    <li>
+     <p><code class='language-javascript'>Uno a uno</code>.</p>
+    </li>
+    <li>
+     <p><code class='language-javascript'>Uno a muchos</code>.</p>
+    </li>
+    <li>
+     <p><code class='language-javascript'>Muchos a muchos</code>.</p>
+    </li>
+    <li>
+     <p>Agregación.</p>
+    </li>
+    <li>
+     <p>Composición.</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+</body>
+</html>

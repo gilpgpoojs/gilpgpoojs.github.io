@@ -1,0 +1,49 @@
+<div class="horizontal">
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">c1</span>() {</div>
+   <div>&nbsp;<span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"c1-1"</span>)</div>
+   <div>&nbsp;<span style="color: #795e26;">c2</span>()</div>
+   <div>&nbsp;<span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"c1-2"</span>)</div>
+   <div>}</div>
+   <div><span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">c2</span>() {</div>
+   <div>&nbsp;<span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"c2"</span>)</div>
+   <div>}</div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"global-1"</span>)</div>
+   <div><span style="color: #795e26;">c2</span>()</div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"global-2"</span>)</div>
+   <div><span style="color: #795e26;">c1</span>()</div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"global-3"</span>)</div>
+  </div>
+ </muestra-codigo>
+ <section>
+  <h1>Salida</h1>
+  <pre><samp>global-1
+c2
+global-2
+c1-1
+c2
+c1-2
+global-3</samp></pre>
+ </section>
+</div>
+<div class="noPrint lectura">
+ <p>
+  <a href="https://pythontutor.com/javascript.html#code=function%20c1%28%29%20%7B%0A%20console.log%28%22c1-1%22%29%0A%20c2%28%29%0A%20console.log%28%22c1-2%22%29%0A%7D%0Afunction%20c2%28%29%20%7B%0A%20console.log%28%22c2%22%29%0A%7D%0Aconsole.log%28%22global-1%22%29%0Ac2%28%29%0Aconsole.log%28%22global-2%22%29%0Ac1%28%29%0Aconsole.log%28%22global-3%22%29&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+    target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+ </p>
+</div>

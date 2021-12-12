@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon.ico">
+<meta name="theme-color" content="#039623">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/js/muestra-codigo.js"></script>
+ <title>Funciones - GilPG POOJS</title>
+ <meta name="description" content="Página para imprimir de la lección «1. Funciones».">
+ <style>
+ :root {
+  --introDuracion: 2s;
+  --introFuncion: ease-out;
+  --padCont: 0.5rem;
+  --padNav: 0.75rem 0.5rem;
+  --anchoNav: 300px;
+  --anchoLectura: 900px;
+  --colLetra: black;
+  --colFondo: white;
+  --colTituloLetra: #00811c;
+  --colTituloShadow: 3px 1px 2px #bdbdbd;
+  --colTituloStrong: #684601;
+  --colTituloStrongSel: #ffdc97;
+  --colTarget: #cef4ff;
+  --colSombra: #49494980;
+  --navSombra: 0.5rem 0 0.5rem var(--colSombra);
+  --padCtrl: 0.2rem 0.3rem;
+  --borderCtrl: solid thin;
+  --colFondoNav: #f2f2f2;
+  --colNavResaltada: #7a2c99;
+  --colSecundario: #ffff82;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
+  --gap: 0.5rem;
+  --fontMono: monospace;
+  --fontSans: sans-serif;
+  --fontSerif: serif;
+  font-family: var(--fontSerif);
+  color: var(--colLetra);
+  background-color: var(--colFondo);
+ }
+
+ .anterior,
+ .siguiente {
+  display: inline-block;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ .anterior.bye,
+ .siguiente.bye {
+  display: none;
+ }
+
+ a[data-logo] {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 54px;
+  margin-top: 1rem;
+  background-image: url("/img/icono/maskable_icon_x48.png");
+  background-position: 3px center;
+  background-repeat: no-repeat;
+ }
+
+ a strong,
+ a code,
+ h1 strong,
+ h1 code {
+  color: var(--colTituloStrong);
+ }
+
+ nav a {
+  font-family: var(--fontSans);
+ }
+
+ pre {
+  font-family: var(--fontMono);
+  font-size: 1em;
+ }
+
+ samp {
+  font-size: 1em;
+ }
+
+ code {
+  color: var(--colTituloStrong);
+  font-family: var(--fontMono);
+  font-size: 1em;
+ }
+
+ a code {
+  font-size: 1rem;
+ }
+
+ h1:not(.default) {
+  font-family: var(--fontSans);
+  color: var(--colTituloLetra);
+ }
+
+ h1.sitio {
+  font-size: 3rem;
+ }
+
+ h1.leccion {
+  font-size: 2.5rem;
+ }
+
+ .autor {
+  font-family: var(--fontSans);
+  font-size: 1.5rem;
+  color: var(--colTituloLetra);
+ }
+
+ figure {
+  text-align: center;
+ }
+
+ figure img {
+  max-width: 100%;
+  max-height: 65vh;
+ }
+
+ figure img.med {
+  max-height: 55vh;
+ }
+
+ figcaption {
+  font-family: var(--fontMono);
+ }
+
+ .print .noPrint {
+  display: none;
+ }
+
+ @media print {
+  .noPrint {
+   display: none;
+  }
+  .pruebaDeEscritorio {page-break-before: always;}
+ }
+
+ iframe {
+  box-sizing: border-box;
+  width: 100%;
+ }
+
+ .lectura {
+  max-width: var(--anchoLectura);
+  margin: 1rem auto;
+ }
+
+ .lectura p,
+ .lectura blockquote {
+  text-align: justify;
+ }
+
+ /* No funciona bien con display:flex en pantallas pequeñas. */
+ .horizontal {
+  text-align: center;
+ }
+
+ .horizontal>* {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+ }
+
+ .horizontal>*:not(:first-child) {
+  margin-left: 1rem;
+ }
+
+ .columnas4 {
+  columns: 4 180px;
+  column-gap: 1rem;
+ }
+
+ .columnas2 {
+  columns: 2 360px;
+  column-gap: 1rem;
+ }
+
+ .resaltado {
+  background-color: rgb(255, 255, 89);
+ }
+
+ .resaltado2 {
+  background-color: rgb(255, 214, 139);
+ }
+
+ table.borde {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ table.borde,
+ table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+ }
+
+ table.borde th,
+ table.borde td {
+  padding: 0.4rem;
+ }
+
+ muestra-codigo>div>div {
+  white-space: nowrap;
+ }
+
+ footer {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--fontSans);
+  font-size: small;
+ }
+</style>
+ <style>
+ /*TODO Pintar stacks y números de distinto color, de acuerdo a la activación.*/
+ .pruebaDeEscritorio section {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1em;
+ }
+
+ .pruebaDeEscritorio section pre {
+  margin: 0;
+ }
+
+ .pruebaDeEscritorio samp {
+  font-weight: bold;
+ }
+
+ .pruebaDeEscritorio .activo {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  vertical-align: top;
+  background-color: var(--colSecundario);
+  border: 1px solid var(--colSecundario);
+ }
+
+ .pruebaDeEscritorio :target,
+ .pruebaDeEscritorio :target caption {
+  background-color: var(--colTarget);
+ }
+
+ .pruebaDeEscritorio .numero1 {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  color: var(--colStack1);
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio .numero2 {
+  display: inline-block;
+  color: var(--colStack2);
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio .numero3 {
+  display: inline-block;
+  color: var(--colStack3);
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio a.parametro1,
+ .pruebaDeEscritorio .parametro1 {
+  color: var(--colPar1);
+ }
+
+ .pruebaDeEscritorio a.parametro2,
+ .pruebaDeEscritorio .parametro2 {
+  color: var(--colPar2);
+ }
+
+ .pruebaDeEscritorio .descongela {
+  color: var(--colDescongela);
+ }
+
+ .pruebaDeEscritorio table.tabla1,
+ .pruebaDeEscritorio table.tabla1 th,
+ .pruebaDeEscritorio table.tabla1 td {
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio table.tabla2,
+ .pruebaDeEscritorio table.tabla2 th,
+ .pruebaDeEscritorio table.tabla2 td {
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio table.tabla2,
+ .pruebaDeEscritorio table.tabla2 th,
+ .pruebaDeEscritorio table.tabla2 td {
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio .frame {
+  font-family: var(--fontMono);
+  border-collapse: collapse;
+ }
+
+ .pruebaDeEscritorio .frame,
+ .pruebaDeEscritorio .frame th,
+ .pruebaDeEscritorio .frame td {
+  border: thin solid;
+ }
+
+ .pruebaDeEscritorio .frame caption {
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .objeto caption {
+  text-decoration: underline;
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .creación {
+  display: flex;
+ }
+</style>
+</head>
+<body class="print">
+   <h1 class="leccion">1. Funciones</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se presenta el concepto de función.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m01funciones/mAfunciones.html"><dfn>Función</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01funciones/mBInvocaciones.html">Invocación más de una vez</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01funciones/mCfuncionesFunciones.html">Funciones que invocan funciones</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01funciones/mDfuncionesParametros.html"><dfn>Paso de parámetros</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01funciones/mEfuncionesParametrosExpresiones.html"><dfn>Funciones con expresiones en los parámetros</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01funciones/mFfuncionesReturn.html"><dfn>Funciones con valor de regreso</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01funciones/mGfuncionesFlecha.html"><dfn>Funciones flecha</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01funciones/mHrecursividad.html"><dfn>Recursividad</dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m01funciones/mIresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. <dfn>Función</dfn></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Secuencia de instrucciones que tiene asociado un nombre.
+   </p>
+  </li>
+  <li>
+   <p>El <dfn>nombre</dfn> de una función es un identificador.</p>
+  </li>
+  <li>
+   <p>Una función se declara de una forma parecida a la siguiente:</p>
+   <muestra-codigo>
+    <div>
+     <div><span style="color: #0000ff;">function</span> <em><span
+         style="color: #795e26;">nombre</span></em>() {</div>
+     <div>&nbsp;<em><span
+         style="color: #001080;">instrucciones</span></em></div>
+     <div>}</div>
+    </div>
+   </muestra-codigo>
+  </li>
+ </ul>
+ <section>
+  <h1>Ejecución de las instrucciones de una función.</h1>
+  <ul>
+   <li>
+    <p>Una función no se ejecuta ella misma.</p>
+   </li>
+   <li>
+    <p>
+     Se usa una instrucción llamada <dfn>invocación de función</dfn>, que
+     consiste en el nombre de la función, seguida de paréntesis; por ejemplo, si
+     una función se llama
+     <code class="language-javascript">saluda</code>,
+     para hacer que se ejecute, hay que colocar la instrucción<br>
+     <code class="language-javascript">saluda()</code>
+    </p>
+   </li>
+   <li>
+    <p>
+     Antes de que una función se ejecute, se suspende lo que se estaba haciendo
+     y se marca el punto donde se invocó, posteriormente, se ejecuta la función
+     y al terminar, se regresa al punto de invocación y se continúa con la
+     siguiente instrucción.
+    </p>
+   </li>
+   <li>
+    <p>
+     En JavaScript, las variables declarades en el mismo espacio que la
+     declaración de una función, se pueden usar dentro de la función.
+    </p>
+   </li>
+  </ul>
+ </section>
+</div>
+<section>
+ <h1>Ejemplo</h1>
+ <div class="horizontal">
+  <muestra-codigo>
+   <div>
+    <div><span style="color: #0000ff;">let</span> <span
+       style="color: #001080;">nombre</span> = <span
+       style="color: #a31515;">"pp"</span>;</div>
+    <div><span style="color: #795e26;">saluda</span>() <span
+       style="color: #008000;">// invoca a saluda.</span></div>
+    <div><span style="color: #008000;">/* Al terminar invocación</span></div>
+    <div><span style="color: #008000;">&nbsp;* continúa aquí. */</span></div>
+    <div><span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #a31515;">"adios"</span>)</div><br>
+    <div><span style="color: #008000;">/**</span></div>
+    <div><span style="color: #008000;">&nbsp;* Definición de la función</span>
+    </div>
+    <div><span style="color: #008000;">&nbsp;* saluda.</span></div>
+    <div><span style="color: #008000;">&nbsp;*/</span></div>
+    <div><span style="color: #0000ff;">function</span> <span
+       style="color: #795e26;">saluda</span>() {</div>
+    <div>&nbsp;<span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #001080;">nombre</span>)</div>
+    <div>}</div>
+   </div>
+  </muestra-codigo>
+  <section>
+   <h1>Salida</h1>
+   <pre><samp>pp
+adios</samp></pre>
+  </section>
+ </div>
+ <div class="noPrint lectura">
+  <p>
+   <a href="https://pythontutor.com/javascript.html#code=let%20nombre%20%3D%20%22pp%22%3B%0Asaluda%28%29%20//%20invoca%20a%20saluda.%0A/*%20Al%20terminar%20invocaci%C3%B3n%0A%20*%20contin%C3%BAa%20aqu%C3%AD.%20*/%0Aconsole.log%28%22adios%22%29%0A%0A/**%0A%20*%20Definici%C3%B3n%20de%20la%20funci%C3%B3n%0A%20*%20saluda.%0A%20*/%0Afunction%20saluda%28%29%20%7B%0A%20console.log%28nombre%29%0A%7D&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+     target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+  </p>
+ </div>
+</section>
+      </section>
+     <section >
+         <h1 >B. Invocación más de una vez</h1><div class="horizontal">
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #0000ff;">let</span> <span
+      style="color: #001080;">nombre</span> = <span
+      style="color: #a31515;">"pp"</span>;</div>
+   <div><span style="color: #795e26;">saluda</span>() <span
+      style="color: #008000;">// invoca a saluda.</span></div>
+   <div><span style="color: #008000;">/* Al terminar la primera</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;* invocación continúa aquí. */</span></div>
+   <div><span style="color: #795e26;">nombre</span> = <span
+      style="color: #a31515;">"qk"</span></div>
+   <div><span style="color: #795e26;">saluda</span>() <span
+      style="color: #008000;">// invoca a saluda.</span></div>
+   <div><span style="color: #008000;">/* Al terminar la segunda</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;* invocación continúa aquí. */</span></div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"adios"</span>)</div><br>
+   <div><span style="color: #008000;">/**</span></div>
+   <div><span
+      style="color: #008000;">&nbsp;* Definición de la función saluda.</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp;*/</span></div>
+   <div><span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">saluda</span>() {</div>
+   <div>&nbsp;<span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #795e26;">nombre</span>)</div>
+   <div>}</div>
+  </div>
+ </muestra-codigo>
+ <section>
+  <h1>Salida</h1>
+  <pre><samp>pp
+qk
+adios</samp></pre>
+ </section>
+</div>
+<div class="noPrint lectura">
+ <p>
+  <a href="https://pythontutor.com/javascript.html#code=let%20nombre%20%3D%20%22pp%22%3B%0Asaluda%28%29%20//%20invoca%20a%20saluda.%0A/*%20Al%20terminar%20la%20primera%0A%20*%20invocaci%C3%B3n%20contin%C3%BAa%20aqu%C3%AD.%20*/%0Anombre%20%3D%20%22qk%22%0Asaluda%28%29%20//%20invoca%20a%20saluda.%0A/*%20Al%20terminar%20la%20segunda%0A%20*%20invocaci%C3%B3n%20contin%C3%BAa%20aqu%C3%AD.%20*/%0Aconsole.log%28%22adios%22%29%0A%0A/**%0A%20*%20Definici%C3%B3n%20de%20la%20funci%C3%B3n%20saluda.%0A%20*/%0Afunction%20saluda%28%29%20%7B%0A%20console.log%28nombre%29%0A%7D&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+    target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+ </p>
+</div>
+      </section>
+     <section >
+         <h1 >C. Funciones que invocan funciones</h1><div class="horizontal">
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">c1</span>() {</div>
+   <div>&nbsp;<span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"c1-1"</span>)</div>
+   <div>&nbsp;<span style="color: #795e26;">c2</span>()</div>
+   <div>&nbsp;<span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"c1-2"</span>)</div>
+   <div>}</div>
+   <div><span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">c2</span>() {</div>
+   <div>&nbsp;<span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"c2"</span>)</div>
+   <div>}</div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"global-1"</span>)</div>
+   <div><span style="color: #795e26;">c2</span>()</div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"global-2"</span>)</div>
+   <div><span style="color: #795e26;">c1</span>()</div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"global-3"</span>)</div>
+  </div>
+ </muestra-codigo>
+ <section>
+  <h1>Salida</h1>
+  <pre><samp>global-1
+c2
+global-2
+c1-1
+c2
+c1-2
+global-3</samp></pre>
+ </section>
+</div>
+<div class="noPrint lectura">
+ <p>
+  <a href="https://pythontutor.com/javascript.html#code=function%20c1%28%29%20%7B%0A%20console.log%28%22c1-1%22%29%0A%20c2%28%29%0A%20console.log%28%22c1-2%22%29%0A%7D%0Afunction%20c2%28%29%20%7B%0A%20console.log%28%22c2%22%29%0A%7D%0Aconsole.log%28%22global-1%22%29%0Ac2%28%29%0Aconsole.log%28%22global-2%22%29%0Ac1%28%29%0Aconsole.log%28%22global-3%22%29&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+    target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+ </p>
+</div>
+      </section>
+     <section >
+         <h1 >D. <dfn>Paso de parámetros</dfn></h1><div class="horizontal">
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"m1"</span>)</div>
+   <div><span style="color: #795e26;">fn</span>(<span
+      style="color: #098658;">3</span>, -<span
+      style="color: #098658;">2</span>)
+   </div>
+   <div><span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp;* </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{number}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">a</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp;* </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{number}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">b</span></div>
+   <div><span style="color: #008000;">&nbsp;*/</span></div>
+   <div><span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">fn</span>(<span
+      style="color: #001080;">a</span>, <span
+      style="color: #001080;">b</span>) {
+   </div>
+   <div>&nbsp;<span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #001080;">a</span> + <span
+      style="color: #001080;">b</span>)</div>
+   <div>}</div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"3"</span>)</div>
+  </div>
+ </muestra-codigo>
+ <section>
+  <h1>Salida</h1>
+  <pre><samp>m1
+1
+3</samp></pre>
+ </section>
+</div>
+<div class="noPrint lectura">
+ <p>
+  <a href="https://pythontutor.com/javascript.html#code=console.log%28%22m1%22%29%0Afn%283,%20-2%29%0A/**%0A%20*%20%40param%20%7Bnumber%7D%20a%0A%20*%20%40param%20%7Bnumber%7D%20b%0A%20*/%0Afunction%20fn%28a,%20b%29%20%7B%0A%20console.log%28a%20%2B%20b%29%0A%7D%0Aconsole.log%28%223%22%29&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+    target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+ </p>
+</div>
+      </section>
+     <section >
+         <h1 >E. <dfn>Funciones con expresiones en los parámetros</dfn></h1><div class="horizontal">
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp;* </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{number}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">a</span></div>
+   <div><span style="color: #008000;">&nbsp;* </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{number}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">b</span></div>
+   <div><span style="color: #008000;">&nbsp;* </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{number}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">c</span></div>
+   <div><span style="color: #008000;">&nbsp;*/</span></div>
+   <div><span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">fn</span>(<span
+      style="color: #001080;">a</span>, <span
+      style="color: #001080;">b</span>, <span
+      style="color: #001080;">c</span>) {</div>
+   <div>&nbsp;<span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #001080;">a</span> + <span
+      style="color: #001080;">b</span> * <span
+      style="color: #001080;">c</span>)</div>
+   <div>}</div>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">a</span> = <span
+      style="color: #098658;">3</span></div>
+   <div><span style="color: #795e26;">fn</span>(<span
+      style="color: #098658;">3</span> - <span
+      style="color: #098658;">8</span>, <span
+      style="color: #0070c1;">a</span>, <span
+      style="color: #0070c1;">a</span> * <span
+      style="color: #098658;">2</span>)</div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"ggg"</span>)</div>
+  </div>
+ </muestra-codigo>
+ <section>
+  <h1>Salida</h1>
+  <pre><samp>13
+ggg</samp></pre>
+ </section>
+</div>
+<div class="noPrint lectura">
+ <p>
+  <a href="https://pythontutor.com/javascript.html#code=/**%0A%20*%20%40param%20%7Bnumber%7D%20a%0A%20*%20%40param%20%7Bnumber%7D%20b%0A%20*%20%40param%20%7Bnumber%7D%20c%0A%20*/%0Afunction%20fn%28a,%20b,%20c%29%20%7B%0A%20console.log%28a%20%2B%20b%20*%20c%29%0A%7D%0Aconst%20a%20%3D%203%0Afn%283%20-%208,%20a,%20a%20*%202%29%0Aconsole.log%28%22ggg%22%29&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+    target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+ </p>
+</div>
+      </section>
+     <section >
+         <h1 >F. <dfn>Funciones con valor de regreso</dfn></h1><div class="horizontal">
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">x</span> = <span
+      style="color: #795e26;">fna</span>(<span
+      style="color: #098658;">8</span>, <span
+      style="color: #098658;">5</span>)</div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #795e26;">fna</span>(<span
+      style="color: #098658;">4</span>, <span
+      style="color: #098658;">1</span>))</div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #0070c1;">x</span>)</div>
+   <div><span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp;* </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{number}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">t</span></div>
+   <div><span style="color: #008000;">&nbsp;* </span><span
+      style="color: #0000ff;">@param</span><span style="color: #008000;">
+    </span><span style="color: #267f99;">{number}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">bc</span></div>
+   <div><span style="color: #008000;">&nbsp;*/</span></div>
+   <div><span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">fna</span>(<span
+      style="color: #001080;">t</span>, <span
+      style="color: #001080;">bc</span>) {</div>
+   <div>&nbsp;<span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #001080;">t</span> + <span
+      style="color: #001080;">bc</span> * <span
+      style="color: #098658;">2</span>)</div>
+   <div>&nbsp;<span style="color: #af00db;">return</span> (<span
+      style="color: #098658;">1</span> + <span
+      style="color: #001080;">t</span> * <span
+      style="color: #098658;">8</span>)</div>
+   <div>}</div>
+  </div>
+ </muestra-codigo>
+ <section>
+  <h1>Salida</h1>
+  <pre><samp>18
+6
+33
+65</samp></pre>
+ </section>
+</div>
+<div class="noPrint lectura">
+ <p>
+  <a href="https://pythontutor.com/javascript.html#code=const%20x%20%3D%20fna%288,%205%29%0Aconsole.log%28fna%284,%201%29%29%0Aconsole.log%28x%29%0A/**%0A%20*%20%40param%20%7Bnumber%7D%20t%0A%20*%20%40param%0A%20%20%20%20%7Bnumber%7D%20bc%0A%20*/%0Afunction%20fna%28t,%20bc%29%20%7B%0A%20console.log%28t%20%2B%20bc%20*%202%29%0A%20return%20%281%20%2B%20t%20*%208%29%0A%7D&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+    target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+ </p>
+</div>
+      </section>
+     <section >
+         <h1 >G. <dfn>Funciones flecha</dfn></h1><div class="horizontal">
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #795e26;">fx</span> =</div>
+   <div>&nbsp;() <span style="color: #0000ff;">=&gt;</span> <span
+      style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"hola"</span>)</div>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #795e26;">fy</span> =</div>
+   <div>&nbsp;(<span style="color: #001080;">f</span>) <span
+      style="color: #0000ff;">=&gt;</span> <span
+      style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #001080;">f</span>)</div>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #795e26;">fz</span> = (<span
+      style="color: #001080;">a</span>, <span
+      style="color: #001080;">b</span>) <span
+      style="color: #0000ff;">=&gt;</span> {</div>
+   <div>&nbsp;<span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #001080;">a</span> + <span
+      style="color: #001080;">b</span>)</div>
+   <div>&nbsp;<span style="color: #af00db;">return</span> (<span
+      style="color: #001080;">a</span> * <span
+      style="color: #001080;">b</span>)</div>
+   <div>}</div>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #795e26;">fw</span> = <span
+      style="color: #001080;">g</span> <span
+      style="color: #0000ff;">=&gt;</span> <span
+      style="color: #001080;">g</span> + <span
+      style="color: #098658;">1</span></div>
+   <div><span style="color: #795e26;">fx</span>()</div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #795e26;">fz</span>(<span
+      style="color: #098658;">4</span>, -<span
+      style="color: #098658;">15</span>))</div>
+   <div><span style="color: #795e26;">fy</span>(<span
+      style="color: #a31515;">"mx"</span>)</div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #795e26;">fw</span>(<span
+      style="color: #098658;">3</span>))</div>
+  </div>
+ </muestra-codigo>
+ <section>
+  <h1>Salida</h1>
+  <pre><samp>hola
+-11
+-60
+mx
+4</samp></pre>
+ </section>
+</div>
+<div class="noPrint lectura">
+ <p>
+  <a href="https://pythontutor.com/javascript.html#code=const%20fx%20%3D%0A%20%28%29%20%3D%3E%20console.log%28%22hola%22%29%0Aconst%20fy%20%3D%0A%20%28f%29%20%3D%3E%20console.log%28f%29%0Aconst%20fz%20%3D%20%28a,%20b%29%20%3D%3E%20%7B%0A%20console.log%28a%20%2B%20b%29%0A%20return%20%28a%20*%20b%29%0A%7D%0Aconst%20fw%20%3D%20g%20%3D%3E%20g%20%2B%201%0Afx%28%29%0Aconsole.log%28fz%284,%20-15%29%29%0Afy%28%22mx%22%29%0Aconsole.log%28fw%283%29%29&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+    target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+ </p>
+</div>
+      </section>
+     <section >
+         <h1 >H. <dfn>Recursividad</dfn></h1><div class="horizontal">
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp;* </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{number}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">a</span></div>
+   <div><span style="color: #008000;">&nbsp;* </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{number}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">b</span></div>
+   <div><span style="color: #008000;">&nbsp;*/</span></div>
+   <div><span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">fns</span>(<span
+      style="color: #001080;">a</span>, <span
+      style="color: #001080;">b</span>) {</div>
+   <div>&nbsp;<span style="color: #af00db;">if</span> (<span
+      style="color: #001080;">a</span> &lt;= <span
+      style="color: #098658;">0</span>) {</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"Devuelve"</span>, <span
+      style="color: #001080;">b</span>)</div>
+   <div>&nbsp; <span style="color: #af00db;">return</span> (<span
+      style="color: #001080;">b</span>)</div>
+   <div>&nbsp;} <span style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.</div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"Invoca:"</span>, <span
+      style="color: #001080;">a</span> - <span
+      style="color: #098658;">1</span>, <span
+      style="color: #a31515;">", "</span>, <span
+      style="color: #001080;">b</span>)</div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">ant</span> = <span
+      style="color: #795e26;">fns</span>(<span
+      style="color: #001080;">a</span> - <span
+      style="color: #098658;">1</span>, <span
+      style="color: #001080;">b</span>)</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"Devuelve:"</span>, <span
+      style="color: #0070c1;">ant</span> + <span
+      style="color: #098658;">1</span>)</div>
+   <div>&nbsp; <span style="color: #af00db;">return</span> (<span
+      style="color: #0070c1;">ant</span> + <span
+      style="color: #098658;">1</span>)</div>
+   <div>&nbsp;}</div>
+   <div>}</div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"Invoca: 2, 3"</span>)</div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #795e26;">fns</span>(<span
+      style="color: #098658;">2</span>, <span
+      style="color: #098658;">3</span>))</div>
+  </div>
+ </muestra-codigo>
+ <section>
+  <h1>Salida</h1>
+  <pre><samp>Invoca: 2, 3
+Invoca: 1 ,  3
+Invoca: 0 ,  3
+Devuelve 3
+Devuelve: 4
+Devuelve: 5
+5</samp></pre>
+ </section>
+</div>
+<div class="noPrint lectura">
+ <p>
+  <a href="https://pythontutor.com/javascript.html#code=/**%0A%20*%20%40param%20%7Bnumber%7D%20a%0A%20*%20%40param%20%7Bnumber%7D%20b%0A%20*/%0Afunction%20fns%28a,%20b%29%20%7B%0A%20if%20%28a%20%3C%3D%200%29%20%7B%0A%20%20console.log%28%22Devuelve%22,%20b%29%0A%20%20return%20%28b%29%0A%20%7D%20else%20%7B%0A%20%20console.%0A%20%20%20log%28%22Invoca%3A%22,%20a%20-%201,%20%22,%20%22,%20b%29%0A%20%20const%20ant%20%3D%20fns%28a%20-%201,%20b%29%0A%20%20console.log%28%22Devuelve%3A%22,%20ant%20%2B%201%29%0A%20%20return%20%28ant%20%2B%201%29%0A%20%7D%0A%7D%0Aconsole.log%28%22Invoca%3A%202,%203%22%29%0Aconsole.log%28fns%282,%203%29%29&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+    target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+ </p>
+</div>
+      </section>
+     <section >
+         <h1 >I. Resumen</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>En esta lección se definieron los siguientes conceptos:</p>
+   <ul>
+    <li>
+     <p>Función.</p>
+    </li>
+    <li>
+     <p>Invocación de funciones más de una vez.</p>
+    </li>
+    <li>
+     <p>Funciones que invocan funciones.</p>
+    </li>
+    <li>
+     <p>Paso de parámetros.</p>
+    </li>
+    <li>
+     <p>Funciones con expresiones en los parámetros.</p>
+    </li>
+    <li>
+     <p>Funciones flecha.</p>
+    </li>
+    <li>
+     <p>Recursividad.</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+</body>
+</html>

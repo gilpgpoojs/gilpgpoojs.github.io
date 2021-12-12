@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon.ico">
+<meta name="theme-color" content="#039623">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/js/muestra-codigo.js"></script>
+ <title>Polimorfismo - GilPG POOJS</title>
+ <meta name="description" content="Página para imprimir de la lección «6. Polimorfismo».">
+ <style>
+ :root {
+  --introDuracion: 2s;
+  --introFuncion: ease-out;
+  --padCont: 0.5rem;
+  --padNav: 0.75rem 0.5rem;
+  --anchoNav: 300px;
+  --anchoLectura: 900px;
+  --colLetra: black;
+  --colFondo: white;
+  --colTituloLetra: #00811c;
+  --colTituloShadow: 3px 1px 2px #bdbdbd;
+  --colTituloStrong: #684601;
+  --colTituloStrongSel: #ffdc97;
+  --colTarget: #cef4ff;
+  --colSombra: #49494980;
+  --navSombra: 0.5rem 0 0.5rem var(--colSombra);
+  --padCtrl: 0.2rem 0.3rem;
+  --borderCtrl: solid thin;
+  --colFondoNav: #f2f2f2;
+  --colNavResaltada: #7a2c99;
+  --colSecundario: #ffff82;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
+  --gap: 0.5rem;
+  --fontMono: monospace;
+  --fontSans: sans-serif;
+  --fontSerif: serif;
+  font-family: var(--fontSerif);
+  color: var(--colLetra);
+  background-color: var(--colFondo);
+ }
+
+ .anterior,
+ .siguiente {
+  display: inline-block;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ .anterior.bye,
+ .siguiente.bye {
+  display: none;
+ }
+
+ a[data-logo] {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 54px;
+  margin-top: 1rem;
+  background-image: url("/img/icono/maskable_icon_x48.png");
+  background-position: 3px center;
+  background-repeat: no-repeat;
+ }
+
+ a strong,
+ a code,
+ h1 strong,
+ h1 code {
+  color: var(--colTituloStrong);
+ }
+
+ nav a {
+  font-family: var(--fontSans);
+ }
+
+ pre {
+  font-family: var(--fontMono);
+  font-size: 1em;
+ }
+
+ samp {
+  font-size: 1em;
+ }
+
+ code {
+  color: var(--colTituloStrong);
+  font-family: var(--fontMono);
+  font-size: 1em;
+ }
+
+ a code {
+  font-size: 1rem;
+ }
+
+ h1:not(.default) {
+  font-family: var(--fontSans);
+  color: var(--colTituloLetra);
+ }
+
+ h1.sitio {
+  font-size: 3rem;
+ }
+
+ h1.leccion {
+  font-size: 2.5rem;
+ }
+
+ .autor {
+  font-family: var(--fontSans);
+  font-size: 1.5rem;
+  color: var(--colTituloLetra);
+ }
+
+ figure {
+  text-align: center;
+ }
+
+ figure img {
+  max-width: 100%;
+  max-height: 65vh;
+ }
+
+ figure img.med {
+  max-height: 55vh;
+ }
+
+ figcaption {
+  font-family: var(--fontMono);
+ }
+
+ .print .noPrint {
+  display: none;
+ }
+
+ @media print {
+  .noPrint {
+   display: none;
+  }
+  .pruebaDeEscritorio {page-break-before: always;}
+ }
+
+ iframe {
+  box-sizing: border-box;
+  width: 100%;
+ }
+
+ .lectura {
+  max-width: var(--anchoLectura);
+  margin: 1rem auto;
+ }
+
+ .lectura p,
+ .lectura blockquote {
+  text-align: justify;
+ }
+
+ /* No funciona bien con display:flex en pantallas pequeñas. */
+ .horizontal {
+  text-align: center;
+ }
+
+ .horizontal>* {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+ }
+
+ .horizontal>*:not(:first-child) {
+  margin-left: 1rem;
+ }
+
+ .columnas4 {
+  columns: 4 180px;
+  column-gap: 1rem;
+ }
+
+ .columnas2 {
+  columns: 2 360px;
+  column-gap: 1rem;
+ }
+
+ .resaltado {
+  background-color: rgb(255, 255, 89);
+ }
+
+ .resaltado2 {
+  background-color: rgb(255, 214, 139);
+ }
+
+ table.borde {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ table.borde,
+ table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+ }
+
+ table.borde th,
+ table.borde td {
+  padding: 0.4rem;
+ }
+
+ muestra-codigo>div>div {
+  white-space: nowrap;
+ }
+
+ footer {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--fontSans);
+  font-size: small;
+ }
+</style>
+ <style>
+ /*TODO Pintar stacks y números de distinto color, de acuerdo a la activación.*/
+ .pruebaDeEscritorio section {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1em;
+ }
+
+ .pruebaDeEscritorio section pre {
+  margin: 0;
+ }
+
+ .pruebaDeEscritorio samp {
+  font-weight: bold;
+ }
+
+ .pruebaDeEscritorio .activo {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  vertical-align: top;
+  background-color: var(--colSecundario);
+  border: 1px solid var(--colSecundario);
+ }
+
+ .pruebaDeEscritorio :target,
+ .pruebaDeEscritorio :target caption {
+  background-color: var(--colTarget);
+ }
+
+ .pruebaDeEscritorio .numero1 {
+  display: inline-block;
+  margin: 0 0.2rem 0 0;
+  color: var(--colStack1);
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio .numero2 {
+  display: inline-block;
+  color: var(--colStack2);
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio .numero3 {
+  display: inline-block;
+  color: var(--colStack3);
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio a.parametro1,
+ .pruebaDeEscritorio .parametro1 {
+  color: var(--colPar1);
+ }
+
+ .pruebaDeEscritorio a.parametro2,
+ .pruebaDeEscritorio .parametro2 {
+  color: var(--colPar2);
+ }
+
+ .pruebaDeEscritorio .descongela {
+  color: var(--colDescongela);
+ }
+
+ .pruebaDeEscritorio table.tabla1,
+ .pruebaDeEscritorio table.tabla1 th,
+ .pruebaDeEscritorio table.tabla1 td {
+  border: 1px solid var(--colStack1);
+ }
+
+ .pruebaDeEscritorio table.tabla2,
+ .pruebaDeEscritorio table.tabla2 th,
+ .pruebaDeEscritorio table.tabla2 td {
+  border: 1px solid var(--colStack2);
+ }
+
+ .pruebaDeEscritorio table.tabla2,
+ .pruebaDeEscritorio table.tabla2 th,
+ .pruebaDeEscritorio table.tabla2 td {
+  border: 1px solid var(--colStack3);
+ }
+
+ .pruebaDeEscritorio .frame {
+  font-family: var(--fontMono);
+  border-collapse: collapse;
+ }
+
+ .pruebaDeEscritorio .frame,
+ .pruebaDeEscritorio .frame th,
+ .pruebaDeEscritorio .frame td {
+  border: thin solid;
+ }
+
+ .pruebaDeEscritorio .frame caption {
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .objeto caption {
+  text-decoration: underline;
+  font-style: italic;
+ }
+
+ .pruebaDeEscritorio .creación {
+  display: flex;
+ }
+</style>
+</head>
+<body class="print">
+   <h1 class="leccion">6. Polimorfismo</h1>
+   <div class="lectura"> 
+    <p class="noPrint">
+     <a href="print.html" target="_blank" rel="noopener">Versión para
+      imprimir.</a>
+    </p>
+   </div>
+<div class="lectura">
+ <p>
+  En esta lección se presenta el concepto de polimorfismo.
+ </p>
+ <nav>
+  <h1>Contenido</h1>
+  
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m06polimorfismo/mAsobrescritura.html">Sobrescritura de métodos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06polimorfismo/mBInterfaces.html">Interfaces</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06polimorfismo/mCInterfacesJs.html">Interfaces de JavaScript</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06polimorfismo/mDabstractas.html">Clases abstractas</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m06polimorfismo/mEresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol>
+ </nav>
+</div>
+     <section >
+         <h1 >A. Sobrescritura de métodos</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    En este ejemplo no se invoca el método en super; aunque es recomendable
+    invocarlo, hay que estudiar bien la lógica del programa.
+   </p>
+  </li>
+ </ul>
+</div>
+<div class="horizontal">
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">Despedida</span> {</div>
+   <div>&nbsp;<span style="color: #795e26;">despídete</span>() {</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"Adios"</span>)</div>
+   <div>&nbsp;}</div>
+   <div>}</div><br>
+   <div><span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">DespedidaIngles</span></div>
+   <div>&nbsp;<span style="color: #0000ff;">extends</span> <span
+      style="color: #267f99;">Despedida</span> {</div>
+   <div>&nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@override</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp;<span style="color: #795e26;">despídete</span>() {</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"Bye"</span>)</div>
+   <div>&nbsp;}</div>
+   <div>}</div><br>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">despedidas</span> = [</div>
+   <div>&nbsp;<span style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">Despedida</span>(),</div>
+   <div>&nbsp;<span style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">DespedidaIngles</span>()]</div>
+   <div><span style="color: #af00db;">for</span> (<span
+      style="color: #0000ff;">var</span> <span
+      style="color: #001080;">d</span> <span
+      style="color: #0000ff;">of</span> <span
+      style="color: #0070c1;">despedidas</span>) {</div>
+   <div>&nbsp;<span style="color: #001080;">d</span>.<span
+      style="color: #795e26;">despídete</span>()</div>
+   <div>}</div>
+  </div>
+ </muestra-codigo>
+ <section>
+  <h1>Salida</h1>
+  <pre><samp>Adios
+Bye</samp></pre>
+ </section>
+</div>
+<div class="noPrint lectura">
+ <p>
+  <a href="https://pythontutor.com/javascript.html#code=class%20Despedida%20%7B%0A%20desp%C3%ADdete%28%29%20%7B%0A%20%20console.log%28%22Adios%22%29%0A%20%7D%0A%7D%0A%0Aclass%20DespedidaIngles%0A%20extends%20Despedida%20%7B%0A%20/**%20%40override%20*/%0A%20desp%C3%ADdete%28%29%20%7B%0A%20%20console.log%28%22Bye%22%29%0A%20%7D%0A%7D%0A%0Aconst%20despedidas%20%3D%20%5B%0A%20new%20Despedida%28%29,%0A%20new%20DespedidaIngles%28%29%5D%0Afor%20%28var%20d%20of%20despedidas%29%20%7B%0A%20d.desp%C3%ADdete%28%29%0A%7D&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+    target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+ </p>
+</div>
+      </section>
+     <section >
+         <h1 >B. Interfaces</h1><div class="horizontal">
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@interface</span><span
+      style="color: #008000;"> */</span></div>
+   <div><span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">IntfMensaje</span> {</div>
+   <div>&nbsp;<span style="color: #795e26;">saludo</span>() {</div>
+   <div>&nbsp; <span style="color: #af00db;">throw</span> <span
+      style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">Error</span>(<span
+      style="color: #a31515;">"interface"</span>)</div>
+   <div>&nbsp;}</div>
+   <div>}</div><br>
+   <div><span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@implements</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{IntfMensaje}</span><span
+      style="color: #008000;"> */</span></div>
+   <div><span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">MensajeIng</span> {</div>
+   <div>&nbsp;<span style="color: #795e26;">saludo</span>() {</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"Hi"</span>)</div>
+   <div>&nbsp;}</div>
+   <div>}</div><br>
+   <div><span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@implements</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{IntfMensaje}</span><span
+      style="color: #008000;"> */</span></div>
+   <div><span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">MensajeEsp</span> {</div>
+   <div>&nbsp;<span style="color: #795e26;">saludo</span>() {</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"Hola"</span>)</div>
+   <div>&nbsp;}</div>
+   <div>}</div><br>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">imensajes</span> = [</div>
+   <div>&nbsp;<span style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">MensajeEsp</span>(),</div>
+   <div>&nbsp;<span style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">MensajeIng</span>()]</div>
+   <div><span style="color: #af00db;">for</span> (<span
+      style="color: #0000ff;">var</span> <span
+      style="color: #001080;">mens</span> <span
+      style="color: #0000ff;">of</span> <span
+      style="color: #0070c1;">imensajes</span>) {</div>
+   <div>&nbsp;<span style="color: #001080;">mens</span>.<span
+      style="color: #795e26;">saludo</span>()</div>
+   <div>}</div>
+  </div>
+ </muestra-codigo>
+ <section>
+  <h1>Salida</h1>
+  <pre><samp>Hola
+Hi</samp></pre>
+ </section>
+</div>
+<div class="noPrint lectura">
+ <p>
+  <a href="https://pythontutor.com/javascript.html#code=/**%20%40interface%20*/%0Aclass%20IntfMensaje%20%7B%0A%20saludo%28%29%20%7B%0A%20%20throw%20new%20Error%28%22interface%22%29%0A%20%7D%0A%7D%0A%0A/**%20%40implements%20%7BIntfMensaje%7D%20*/%0Aclass%20MensajeIng%20%7B%0A%20saludo%28%29%20%7B%0A%20%20console.log%28%22Hi%22%29%0A%20%7D%0A%7D%0A%0A/**%20%40implements%20%7BIntfMensaje%7D%20*/%0Aclass%20MensajeEsp%20%7B%0A%20saludo%28%29%20%7B%0A%20%20console.log%28%22Hola%22%29%0A%20%7D%0A%7D%0A%0Aconst%20imensajes%20%3D%20%5B%0A%20new%20MensajeEsp%28%29,%0A%20new%20MensajeIng%28%29%5D%0Afor%20%28var%20mens%20of%20imensajes%29%20%7B%0A%20mens.saludo%28%29%0A%7D&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+    target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+ </p>
+</div>
+      </section>
+     <section >
+         <h1 >C. Interfaces de JavaScript</h1><div class="horizontal">
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">MensajeIng2</span> {</div>
+   <div>&nbsp;<span style="color: #795e26;">saludo</span>() {</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"Hi"</span>)</div>
+   <div>&nbsp;}</div>
+   <div>}</div><br>
+   <div><span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">MensajeEsp2</span> {</div>
+   <div>&nbsp;<span style="color: #795e26;">saludo</span>() {</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"Hola"</span>)</div>
+   <div>&nbsp;}</div>
+   <div>}</div><br>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">mensajes</span> = [</div>
+   <div>&nbsp;<span style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">MensajeEsp2</span>(),</div>
+   <div>&nbsp;<span style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">MensajeIng2</span>()]</div>
+   <div><span style="color: #af00db;">for</span> (<span
+      style="color: #0000ff;">var</span> <span
+      style="color: #001080;">mens</span> <span
+      style="color: #0000ff;">of</span> <span
+      style="color: #0070c1;">mensajes</span>) {</div>
+   <div>&nbsp;<span style="color: #001080;">mens</span>.<span
+      style="color: #795e26;">saludo</span>()</div>
+   <div>}</div>
+  </div>
+ </muestra-codigo>
+ <section>
+  <h1>Salida</h1>
+  <pre><samp>Hola
+Hi</samp></pre>
+ </section>
+</div>
+<div class="noPrint lectura">
+ <p>
+  <a href="https://pythontutor.com/javascript.html#code=class%20MensajeIng2%20%7B%0A%20saludo%28%29%20%7B%0A%20%20console.log%28%22Hi%22%29%0A%20%7D%0A%7D%0A%0Aclass%20MensajeEsp2%20%7B%0A%20saludo%28%29%20%7B%0A%20%20console.log%28%22Hola%22%29%0A%20%7D%0A%7D%0A%0Aconst%20mensajes%20%3D%20%5B%0A%20new%20MensajeEsp2%28%29,%0A%20new%20MensajeIng2%28%29%5D%0Afor%20%28var%20mens%20of%20mensajes%29%20%7B%0A%20mens.saludo%28%29%0A%7D&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+    target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+ </p>
+</div>
+      </section>
+     <section >
+         <h1 >D. Clases abstractas</h1><div class="horizontal">
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">Deportista</span> {</div>
+   <div>&nbsp;<span style="color: #0000ff;">constructor</span>(<span
+      style="color: #001080;">nombre</span>) {</div>
+   <div>&nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">nombre</span> = <span
+      style="color: #001080;">nombre</span></div>
+   <div>&nbsp;}</div>
+   <div>&nbsp;<span style="color: #795e26;">presenta</span>() {</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">`Soy </span><span
+      style="color: #0000ff;">${this</span>.<span
+      style="color: #001080;">nombre</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">`</span>)</div>
+   <div>&nbsp;}</div>
+   <div>&nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@abstract</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp;<span style="color: #795e26;">anota</span>() {</div>
+   <div>&nbsp; <span style="color: #af00db;">throw</span> <span
+      style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">Error</span>(<span
+      style="color: #a31515;">"abstract"</span>)</div>
+   <div>&nbsp;}</div>
+   <div>}</div><br>
+   <div><span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">Basketbolista</span></div>
+   <div>&nbsp;<span style="color: #0000ff;">extends</span> <span
+      style="color: #267f99;">Deportista</span> {</div>
+   <div>&nbsp;<span style="color: #0000ff;">constructor</span>(<span
+      style="color: #001080;">nombre</span>) {</div>
+   <div>&nbsp; <span style="color: #0000ff;">super</span>(<span
+      style="color: #001080;">nombre</span>)</div>
+   <div>&nbsp;}</div>
+   <div>&nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@override</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp;<span style="color: #795e26;">anota</span>() {</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"Encesto"</span>)</div>
+   <div>&nbsp;}</div>
+   <div>}</div><br>
+   <div><span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">Futbolista</span></div>
+   <div>&nbsp;<span style="color: #0000ff;">extends</span> <span
+      style="color: #267f99;">Deportista</span> {</div>
+   <div>&nbsp;<span style="color: #0000ff;">constructor</span>(<span
+      style="color: #001080;">nombre</span>) {</div>
+   <div>&nbsp; <span style="color: #0000ff;">super</span>(<span
+      style="color: #001080;">nombre</span>)</div>
+   <div>&nbsp;}</div>
+   <div>&nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@override</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp;<span style="color: #795e26;">anota</span>() {</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"Anoto gol"</span>)</div>
+   <div>&nbsp;}</div>
+   <div>}</div><br>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">deportistas</span> = [</div>
+   <div>&nbsp;<span style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">Basketbolista</span>(<span
+      style="color: #a31515;">"LeBron"</span>),</div>
+   <div>&nbsp;<span style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">Futbolista</span>(<span
+      style="color: #a31515;">"Lionel"</span>)]</div>
+   <div><span style="color: #af00db;">for</span> (<span
+      style="color: #0000ff;">var</span> <span
+      style="color: #001080;">dep</span> <span
+      style="color: #0000ff;">of</span> <span
+      style="color: #0070c1;">deportistas</span>) {</div>
+   <div>&nbsp;<span style="color: #001080;">dep</span>.<span
+      style="color: #795e26;">presenta</span>()</div>
+   <div>&nbsp;<span style="color: #001080;">dep</span>.<span
+      style="color: #795e26;">anota</span>()</div>
+   <div>}</div>
+  </div>
+ </muestra-codigo>
+ <section>
+  <h1>Salida</h1>
+  <pre><samp>Soy LeBron
+Encesto
+Soy Lionel
+Anoto gol</samp></pre>
+ </section>
+</div>
+<div class="noPrint lectura">
+ <p>
+  <a href="https://pythontutor.com/javascript.html#code=class%20Deportista%20%7B%0A%20constructor%28nombre%29%20%7B%0A%20%20this.nombre%20%3D%20nombre%0A%20%7D%0A%20presenta%28%29%20%7B%0A%20%20console.log%28%60Soy%20%24%7Bthis.nombre%7D%60%29%0A%20%7D%0A%20/**%20%40abstract%20*/%0A%20anota%28%29%20%7B%0A%20%20throw%20new%20Error%28%22abstract%22%29%0A%20%7D%0A%7D%0A%0Aclass%20Basketbolista%0A%20extends%20Deportista%20%7B%0A%20constructor%28nombre%29%20%7B%0A%20%20super%28nombre%29%0A%20%7D%0A%20/**%20%40override%20*/%0A%20anota%28%29%20%7B%0A%20%20console.log%28%22Encesto%22%29%0A%20%7D%0A%7D%0A%0Aclass%20Futbolista%0A%20extends%20Deportista%20%7B%0A%20constructor%28nombre%29%20%7B%0A%20%20super%28nombre%29%0A%20%7D%0A%20/**%20%40override%20*/%0A%20anota%28%29%20%7B%0A%20%20console.log%28%22Anoto%20gol%22%29%0A%20%7D%0A%7D%0A%0Aconst%20deportistas%20%3D%20%5B%0A%20new%20Basketbolista%28%22LeBron%22%29,%0A%20new%20Futbolista%28%22Lionel%22%29%5D%0Afor%20%28var%20dep%20of%20deportistas%29%20%7B%0A%20dep.presenta%28%29%0A%20dep.anota%28%29%0A%7D&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+    target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+ </p>
+</div>
+      </section>
+     <section >
+         <h1 >E. Resumen</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>En esta lección se introdujeron los siguientes conceptos:</p>
+   <ul>
+    <li>
+     <p>Polimorfismo con sobrescritura de métodos.</p>
+    </li>
+    <li>
+     <p>Polimorfismo con interfaces.</p>
+    </li>
+    <li>
+     <p>Polimorfismo con clases abstractas.</p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+      </section>
+</body>
+</html>

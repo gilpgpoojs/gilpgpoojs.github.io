@@ -1,0 +1,64 @@
+<div class="horizontal">
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">Cl2</span> {</div>
+   <div>&nbsp;<span style="color: #0000ff;">static</span> <span
+      style="color: #795e26;">saludaClase</span>() {</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(</div>
+   <div>&nbsp; &nbsp;<span style="color: #a31515;">`Hola. Clase </span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #267f99;">Cl2</span>.<span
+      style="color: #001080;">nombre</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">.`</span>)</div>
+   <div>&nbsp;}</div>
+   <div>&nbsp;<span style="color: #795e26;">saludaInstancia</span>() {</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(</div>
+   <div>&nbsp; &nbsp;<span style="color: #a31515;">`Hola. Instancia </span><span
+      style="color: #0000ff;">${this</span>.<span
+      style="color: #001080;">nom</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">`</span>)</div>
+   <div>&nbsp;}</div>
+   <div>}</div>
+   <div><span style="color: #267f99;">Cl2</span>.<span
+      style="color: #001080;">nombre</span> = <span
+      style="color: #a31515;">"QK"</span></div>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">t1</span> = <span
+      style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">Cl2</span>()</div>
+   <div><span style="color: #0070c1;">t1</span>.<span
+      style="color: #001080;">nom</span> = <span
+      style="color: #a31515;">"qkita1"</span></div>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">t2</span> = <span
+      style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">Cl2</span>()</div>
+   <div><span style="color: #0070c1;">t2</span>.<span
+      style="color: #001080;">nom</span> = <span
+      style="color: #a31515;">"qkita2"</span></div>
+   <div><span style="color: #267f99;">Cl2</span>.<span
+      style="color: #795e26;">saludaClase</span>()</div>
+   <div><span style="color: #0070c1;">t1</span>.<span
+      style="color: #795e26;">saludaInstancia</span>()</div>
+   <div><span style="color: #0070c1;">t2</span>.<span
+      style="color: #795e26;">saludaInstancia</span>()</div>
+  </div>
+ </muestra-codigo>
+ <section>
+  <h1>Salida</h1>
+  <pre><samp>Hola. Clase QK.
+Hola. Instancia qkita1
+Hola. Instancia qkita2</samp></pre>
+ </section>
+</div>
+<div class="noPrint lectura">
+ <p>
+  <a href="https://pythontutor.com/javascript.html#code=class%20Cl2%20%7B%0A%20static%20saludaClase%28%29%20%7B%0A%20%20console.log%28%0A%20%20%20%60Hola.%20Clase%20%24%7BCl2.nombre%7D.%60%29%0A%20%7D%0A%20saludaInstancia%28%29%20%7B%0A%20%20console.log%28%0A%20%20%20%60Hola.%20Instancia%20%24%7Bthis.nom%7D%60%29%0A%20%7D%0A%7D%0ACl2.nombre%20%3D%20%22QK%22%0Aconst%20t1%20%3D%20new%20Cl2%28%29%0At1.nom%20%3D%20%22qkita1%22%0Aconst%20t2%20%3D%20new%20Cl2%28%29%0At2.nom%20%3D%20%22qkita2%22%0ACl2.saludaClase%28%29%0At1.saludaInstancia%28%29%0At2.saludaInstancia%28%29&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+    target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+ </p>
+</div>

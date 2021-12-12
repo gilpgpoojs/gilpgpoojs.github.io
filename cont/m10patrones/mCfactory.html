@@ -1,0 +1,27 @@
+<div class="lectura">
+ <ul>
+  <li>
+   <p>Es un mecanismo para crear objetos de una forma dinámica.</p>
+  </li>
+  <li>
+   <p>
+    <a href="https://es.wikipedia.org/wiki/Abstract_Factory"
+      target="_blank" rel="noopener">Explicación en Wikipedia.</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="https://www.oodesign.com/abstract-factory-pattern.html"
+      target="_blank" rel="noopener">Explicación en oodesign.</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=/**%20%40interface%20*/%0Aclass%20Mensajes%20%7B%0A%20%20saluda%28%29%20%7B%0A%20%20%20%20throw%20new%20Error%28%22Interfaz%22%29%3B%0A%20%20%7D%0A%7D%0A/**%20%40interface%20*/%0Aclass%20FabricaMensajes%20%7B%0A%20%20/**%20%40returns%20%7BMensajes%7D%20*/%0A%20%20creaMensajes%28%29%20%7B%0A%20%20%20%20throw%20new%20Error%28%22Interfaz%22%29%3B%0A%20%20%7D%0A%7D%0A/**%20%40implements%20%7BMensajes%7D%20*/%0Aclass%20MensajesEsp%20%7B%0A%20%20/**%20%40override%20*/%0A%20%20saluda%28%29%20%7B%0A%20%20%20%20console.log%28%22Hola%22%29%3B%0A%20%20%7D%0A%7D%0A/**%20%40implements%20%7BMensajes%7D%20*/%0Aclass%20MensajesIng%20%7B%0A%20%20/**%20%40override%20*/%0A%20%20saluda%28%29%20%7B%0A%20%20%20%20console.log%28%22Hi%22%29%3B%0A%20%20%7D%0A%7D%0A/**%40implements%20%7BFabricaMensajes%7D*/%0Aclass%20FabricaMensajesEsp%20%7B%0A%20%20/**%20%40returns%20%7BMensajes%7D%0A%20%20%20*%20%40override%20*/%0A%20%20creaMensajes%28%29%20%7B%0A%20%20%20%20return%20new%20MensajesEsp%28%29%3B%0A%20%20%7D%0A%7D%0A/**%40implements%20%7BFabricaMensajes%7D*/%0Aclass%20FabricaMensajesIng%20%7B%0A%20%20/**%20%40returns%20%7BMensajes%7D%0A%20%20%20*%20%40override%20*/%0A%20%20creaMensajes%28%29%20%7B%0A%20%20%20%20return%20new%20MensajesIng%28%29%3B%0A%20%20%7D%0A%7D%0Asaluda%28new%20FabricaMensajesEsp%28%29%29%3B%0Asaluda%28new%20FabricaMensajesIng%28%29%29%3B%0A/**%40param%20%7BFabricaMensajes%7D%20fab*/%0Afunction%20saluda%28fab%29%20%7B%0A%20%20const%20mens%20%3D%20fab.creaMensajes%28%29%3B%0A%20%20mens.saluda%28%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">
+     Programa animado de patrón abstract factory.
+    </a>
+   </p>
+  </li>
+ </ul>
+</div>

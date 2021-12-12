@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon.ico">
+<meta name="theme-color" content="#039623">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/js/muestra-codigo.js"></script>
+ <title>D. Promise.all - GilPG POOJS</title>
+ <meta name="description" content="Promise.all.">
+ <style>
+ :root {
+  --introDuracion: 2s;
+  --introFuncion: ease-out;
+  --padCont: 0.5rem;
+  --padNav: 0.75rem 0.5rem;
+  --anchoNav: 300px;
+  --anchoLectura: 900px;
+  --colLetra: black;
+  --colFondo: white;
+  --colTituloLetra: #00811c;
+  --colTituloShadow: 3px 1px 2px #bdbdbd;
+  --colTituloStrong: #684601;
+  --colTituloStrongSel: #ffdc97;
+  --colTarget: #cef4ff;
+  --colSombra: #49494980;
+  --navSombra: 0.5rem 0 0.5rem var(--colSombra);
+  --padCtrl: 0.2rem 0.3rem;
+  --borderCtrl: solid thin;
+  --colFondoNav: #f2f2f2;
+  --colNavResaltada: #7a2c99;
+  --colSecundario: #ffff82;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
+  --gap: 0.5rem;
+  --fontMono: monospace;
+  --fontSans: sans-serif;
+  --fontSerif: serif;
+  font-family: var(--fontSerif);
+  color: var(--colLetra);
+  background-color: var(--colFondo);
+ }
+
+ .anterior,
+ .siguiente {
+  display: inline-block;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ .anterior.bye,
+ .siguiente.bye {
+  display: none;
+ }
+
+ a[data-logo] {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 54px;
+  margin-top: 1rem;
+  background-image: url("/img/icono/maskable_icon_x48.png");
+  background-position: 3px center;
+  background-repeat: no-repeat;
+ }
+
+ a strong,
+ a code,
+ h1 strong,
+ h1 code {
+  color: var(--colTituloStrong);
+ }
+
+ nav a {
+  font-family: var(--fontSans);
+ }
+
+ pre {
+  font-family: var(--fontMono);
+  font-size: 1em;
+ }
+
+ samp {
+  font-size: 1em;
+ }
+
+ code {
+  color: var(--colTituloStrong);
+  font-family: var(--fontMono);
+  font-size: 1em;
+ }
+
+ a code {
+  font-size: 1rem;
+ }
+
+ h1:not(.default) {
+  font-family: var(--fontSans);
+  color: var(--colTituloLetra);
+ }
+
+ h1.sitio {
+  font-size: 3rem;
+ }
+
+ h1.leccion {
+  font-size: 2.5rem;
+ }
+
+ .autor {
+  font-family: var(--fontSans);
+  font-size: 1.5rem;
+  color: var(--colTituloLetra);
+ }
+
+ figure {
+  text-align: center;
+ }
+
+ figure img {
+  max-width: 100%;
+  max-height: 65vh;
+ }
+
+ figure img.med {
+  max-height: 55vh;
+ }
+
+ figcaption {
+  font-family: var(--fontMono);
+ }
+
+ .print .noPrint {
+  display: none;
+ }
+
+ @media print {
+  .noPrint {
+   display: none;
+  }
+  .pruebaDeEscritorio {page-break-before: always;}
+ }
+
+ iframe {
+  box-sizing: border-box;
+  width: 100%;
+ }
+
+ .lectura {
+  max-width: var(--anchoLectura);
+  margin: 1rem auto;
+ }
+
+ .lectura p,
+ .lectura blockquote {
+  text-align: justify;
+ }
+
+ /* No funciona bien con display:flex en pantallas pequeñas. */
+ .horizontal {
+  text-align: center;
+ }
+
+ .horizontal>* {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+ }
+
+ .horizontal>*:not(:first-child) {
+  margin-left: 1rem;
+ }
+
+ .columnas4 {
+  columns: 4 180px;
+  column-gap: 1rem;
+ }
+
+ .columnas2 {
+  columns: 2 360px;
+  column-gap: 1rem;
+ }
+
+ .resaltado {
+  background-color: rgb(255, 255, 89);
+ }
+
+ .resaltado2 {
+  background-color: rgb(255, 214, 139);
+ }
+
+ table.borde {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ table.borde,
+ table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+ }
+
+ table.borde th,
+ table.borde td {
+  padding: 0.4rem;
+ }
+
+ muestra-codigo>div>div {
+  white-space: nowrap;
+ }
+
+ footer {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--fontSans);
+  font-size: small;
+ }
+</style>
+ <style>
+ #principal {
+  transition: margin-left 0.7s ease-in-out;
+ }
+
+ body:not(.sinTransicion) #principal {
+  animation-timing-function: var(--introFuncion);
+  animation-duration: var(--introDuracion);
+  animation-fill-mode: forwards;
+  animation-name: aparece;
+ }
+
+ @keyframes aparece {
+  from {
+   opacity: 0;
+  }
+
+  to {
+   opacity: 1;
+  }
+ }
+
+ #principal>.controles {
+  display: flex;
+  gap: var(--gap);
+ }
+
+ #principal>.controles>.siguiente {
+  margin-left: auto
+ }
+
+ #principal h1:not(.default) {
+  text-shadow: var(--colTituloShadow);
+ }
+
+ #nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  overflow: auto;
+  color: var(--colLetra);
+  background-color: var(--colFondoNav);
+  padding: var(--padCont);
+  transition: transform 0.7s ease-in-out;
+ }
+
+ #nav p {
+  margin: 0;
+ }
+
+ #nav a:not([data-logo]) {
+  display: block;
+  padding: var(--padNav);
+ }
+
+ #nav a.actual code,
+ #nav a.actual strong {
+  color: var(--colTituloStrongSel);
+ }
+
+ #nav h1 a {
+  color: var(--colTituloLetra);
+ }
+
+ #nav a.actual {
+  color: var(--colFondo);
+  background-color: var(--colNavResaltada);
+ }
+
+ #nav a.paginaAnterior,
+ #nav a.paginaSiguiente {
+  text-align: center;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ @media screen and (max-width: 999px) {
+  #cierra {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-color: var(--colSombra);
+   transform: translateX(-120%);
+   transition: transform 0.7s ease-out;
+  }
+
+  #nav {
+   width: min(var(--anchoNav), 70%);
+   box-shadow: var(--navSombra);
+  }
+
+  .xmenu>#nav {
+   transform: translateX(-120%);
+  }
+
+  .menu>#cierra,
+  .menu>#nav {
+   transform: translateX(0);
+  }
+ }
+
+ @media screen and (min-width: 1000px) {
+  #cierra {
+   display: none;
+  }
+
+  #nav {
+   width: var(--anchoNav);
+  }
+
+  .menu>#nav {
+   transform: translateX(-120%);
+  }
+
+  .xmenu>#principal {
+   margin-left: var(--anchoNav)
+  }
+
+  .xmenu #abre {
+   display: none
+  }
+ }
+
+ @media print {
+
+  #nav,
+  #principal>.controles {
+   display: none;
+  }
+ }
+</style>
+ 
+</head>
+<body class="xmenu">
+ <div id="principal">
+ <div class="controles">
+  <button id="abre" type="button" title="Menú" class="cambiaMenu">
+   &#x2630;
+  </button>
+  <a class="anterior" href="/m08promesas/mCcreaPromesa.html" title="C. Creación de una promesa">◀</a>
+  <a class="siguiente" href="/m08promesas/mEresumen.html" title="E. Resumen">▶</a>
+ </div>
+   <h1 >D. <code class='language-javascript'>Promise.all</code></dfn></h1><div class="horizontal">
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #795e26;">ejecuta</span>()</div>
+   <div><span style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">prom</span>(<span
+      style="color: #001080;">res</span>, <span
+      style="color: #001080;">timeout</span>) {</div>
+   <div>&nbsp;<span style="color: #af00db;">return</span> <span
+      style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">Promise</span>(</div>
+   <div>&nbsp; (<span style="color: #795e26;">resolve</span>, <span
+      style="color: #795e26;">reject</span>) <span
+      style="color: #0000ff;">=&gt;</span></div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">setTimeout</span>(</div>
+   <div>&nbsp; &nbsp; () <span style="color: #0000ff;">=&gt;</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
+      style="color: #001080;">res</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #795e26;">resolve</span>(<span
+      style="color: #a31515;">`Éxito[</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #001080;">res</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">]`</span>)</div>
+   <div>&nbsp; &nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span style="color: #795e26;">reject</span>(<span
+      style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">Error</span>(</div>
+   <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
+      style="color: #a31515;">`Falla[</span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #001080;">res</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">]`</span>))</div>
+   <div>&nbsp; &nbsp; &nbsp;}</div>
+   <div>&nbsp; &nbsp; },</div>
+   <div>&nbsp; &nbsp; <span style="color: #001080;">timeout</span>))</div>
+   <div>}</div>
+   <div><span style="color: #0000ff;">async</span> <span
+      style="color: #0000ff;">function</span> <span
+      style="color: #795e26;">ejecuta</span>() {</div>
+   <div>&nbsp;<span style="color: #af00db;">try</span> {</div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">r1</span> = <span
+      style="color: #af00db;">await</span> <span
+      style="color: #267f99;">Promise</span>.<span
+      style="color: #795e26;">all</span>([</div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">prom</span>(<span
+      style="color: #a31515;">"a"</span>, <span
+      style="color: #098658;">300</span>),</div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">prom</span>(<span
+      style="color: #a31515;">"z"</span>, <span
+      style="color: #098658;">2000</span>),</div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">prom</span>(<span
+      style="color: #a31515;">"b"</span>, <span
+      style="color: #098658;">5000</span>)])</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.</div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"Éxito 1:"</span>, <span
+      style="color: #0070c1;">r1</span>.<span
+      style="color: #795e26;">join</span>())</div>
+   <div>&nbsp;} <span style="color: #af00db;">catch</span> (<span
+      style="color: #001080;">e</span>) {</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.</div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"Falló 1:"</span>, <span
+      style="color: #001080;">e</span>.<span
+      style="color: #001080;">message</span>)</div>
+   <div>&nbsp;}</div>
+   <div>&nbsp;<span style="color: #af00db;">try</span> {</div>
+   <div>&nbsp; <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">r2</span> = <span
+      style="color: #af00db;">await</span> <span
+      style="color: #267f99;">Promise</span>.<span
+      style="color: #795e26;">all</span>([</div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">prom</span>(<span
+      style="color: #a31515;">"a"</span>, <span
+      style="color: #098658;">100</span>),</div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">prom</span>(<span
+      style="color: #a31515;">""</span>, <span
+      style="color: #098658;">1000</span>),</div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">prom</span>(<span
+      style="color: #a31515;">"b"</span>, <span
+      style="color: #098658;">5000</span>)])</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"Éxito 2:"</span>, <span
+      style="color: #0070c1;">r2</span>)</div>
+   <div>&nbsp;} <span style="color: #af00db;">catch</span> (<span
+      style="color: #001080;">e</span>) {</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.</div>
+   <div>&nbsp; &nbsp;<span style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"Falló 2:"</span>, <span
+      style="color: #001080;">e</span>.<span
+      style="color: #001080;">message</span>)</div>
+   <div>&nbsp;}</div>
+   <div>}</div>
+  </div>
+ </muestra-codigo>
+ <section>
+  <h1>Salida</h1>
+  <pre><samp>Éxito 1: Éxito[a],Éxito[z],Éxito[b]
+Falló 2: Falla[]</samp></pre>
+ </section>
+</div>
+<div class="noPrint lectura">
+ <p>
+  <a href="https://gilpgnod.github.io/#ejecuta()%0Afunction%20prom(res%2C%20timeout)%20%7B%0A%20return%20new%20Promise(%0A%20%20(resolve%2C%20reject)%20%3D%3E%0A%20%20%20setTimeout(%0A%20%20%20%20()%20%3D%3E%20%7B%0A%20%20%20%20%20if%20(res)%20%7B%0A%20%20%20%20%20%20resolve(%60%C3%89xito%5B%24%7Bres%7D%5D%60)%0A%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20reject(new%20Error(%0A%20%20%20%20%20%20%20%60Falla%5B%24%7Bres%7D%5D%60))%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20timeout))%0A%7D%0Aasync%20function%20ejecuta()%20%7B%0A%20try%20%7B%0A%20%20const%20r1%20%3D%20await%20Promise.all(%5B%0A%20%20%20prom(%22a%22%2C%20300)%2C%0A%20%20%20prom(%22z%22%2C%202000)%2C%0A%20%20%20prom(%22b%22%2C%205000)%5D)%0A%20%20console.%0A%20%20%20log(%22%C3%89xito%201%3A%22%2C%20r1.join())%0A%20%7D%20catch%20(e)%20%7B%0A%20%20console.%0A%20%20%20log(%22Fall%C3%B3%201%3A%22%2C%20e.message)%0A%20%7D%0A%20try%20%7B%0A%20%20const%20r2%20%3D%20await%20Promise.all(%5B%0A%20%20%20prom(%22a%22%2C%20100)%2C%0A%20%20%20prom(%22%22%2C%201000)%2C%0A%20%20%20prom(%22b%22%2C%205000)%5D)%0A%20%20console.log(%22%C3%89xito%202%3A%22%2C%20r2)%0A%20%7D%20catch%20(e)%20%7B%0A%20%20console.%0A%20%20%20log(%22Fall%C3%B3%202%3A%22%2C%20e.message)%0A%20%7D%0A%7D"
+    target="_blank" rel="noopener">Depúralo en GilPG Nod.</a>
+ </p>
+</div>
+ <footer>
+ <p>
+  <a rel="license"
+    href="http://creativecommons.org/licenses/by/4.0/"><img
+     alt="Licencia Creative Commons" style="border-width:0"
+     src="/img/icono/160x30.webp" width="80" height="15" /></a>
+  <br />Esta
+  <span xmlns:dct="http://purl.org/dc/terms/"
+    href="http://purl.org/dc/dcmitype/InteractiveResource"
+    rel="dct:type">obra</span>
+  de
+  <a xmlns:cc="http://creativecommons.org/ns#"
+    href="https://gilpgijs.github.io" property="cc:attributionName"
+    rel="cc:attributionURL">Gilberto Pacheco Gallegos</a>
+  está bajo una
+  <a rel="license"
+    href="http://creativecommons.org/licenses/by/4.0/">Licencia
+   Creative Commons Atribución 4.0 Internacional</a>.
+ </p>
+</footer>
+</div>
+<div id="cierra" class="cambiaMenu"></div>
+<nav id="nav">
+ <button type="button" title="Cierra" class="cambiaMenu">
+  &#x2715;
+ </button>
+ <p>
+    <a href="/index.html"
+      data-logo="true">GilPG POOJS</a>
+   </p><p>
+    <a class="paginaAnterior" href="/m07excepciones/mGresumen.html"
+      title="G. Resumen">▲</a>
+   </p>
+     <h1><a href="/m08promesas/index.html">8. Promesas</a></h1>
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m08promesas/mApromesasOriginales.html">Promesas originales</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m08promesas/mBasyncAwait.html"><code class='language-javascript'>async-await</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m08promesas/mCcreaPromesa.html">Creación de una promesa</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m08promesas/mDpromiseAll.html" class="actual"><code class='language-javascript'>Promise.all</code></dfn></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m08promesas/mEresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol><p>
+    <a class="paginaSiguiente" href="/m09asociaciones/index.html"
+      title="9. Asociaciones">▼</a>
+   </p>
+</nav>
+ <script>
+ registraServiceWorker("/sw.js")
+ const LOCAL_STORAGE_MENU = "menu"
+ const MENU = "menu"
+ const XMENU = "xmenu"
+ const nav = document.querySelector("#nav")
+ const abre = document.querySelector("#abre")
+
+ /**@type {string} */
+ let urlAnterior = "/m08promesas/mCcreaPromesa.html"
+ /**@type {string} */
+ let urlSiguiente = "/m08promesas/mEresumen.html"
+ /**@type {number|null} */
+ let iniciaX = null
+ /**@type {number|null} */
+ let iniciaY = null
+
+ document.addEventListener("keydown", teclas)
+ document.addEventListener("touchstart", iniciaTouch)
+ document.addEventListener("touchmove", desplazaTouch)
+ if (abre) {
+  abre.addEventListener("click", cambiaMenu)
+ }
+ const cambian = Array.from(document.querySelectorAll(".cambiaMenu"))
+ for (const c of cambian) {
+  c.addEventListener("click", cambiaMenu)
+ }
+ const menu = localStorage.getItem(LOCAL_STORAGE_MENU)
+ if (menu) {
+  if (menu === MENU) {
+   document.body.classList.remove(XMENU)
+   document.body.classList.add(MENU)
+  } else {
+   document.body.classList.remove(MENU)
+   document.body.classList.add(XMENU)
+  }
+ }
+
+ function registraServiceWorker(url) {
+  if (navigator.serviceWorker) {
+   navigator.serviceWorker.register(url).
+    then(registro => {
+     console.log("Service Worker registrado.")
+     console.log(registro)
+    }).
+    catch(muestraError)
+  }
+ }
+ function muestraError(e) {
+  console.error(e)
+  alert(e.message)
+ }
+ function cambiaMenu() {
+  document.body.classList.toggle(XMENU)
+  document.body.classList.toggle(MENU)
+  if (document.body.classList.contains(MENU)) {
+   localStorage.setItem(LOCAL_STORAGE_MENU, MENU)
+  } else {
+   localStorage.setItem(LOCAL_STORAGE_MENU, XMENU)
+  }
+ }
+ /** @param {KeyboardEvent} ev*/
+ function teclas(ev) {
+  switch (ev.key) {
+   case "ArrowLeft":
+    retrocede()
+    break
+   case "ArrowRight":
+    avanza()
+    break
+  }
+ }
+ function retrocede() {
+  if (urlAnterior) {
+   location.href = urlAnterior
+  }
+ }
+ function avanza() {
+  if (urlSiguiente) {
+   location.href = urlSiguiente
+  }
+ }
+ /** @param {TouchEvent} ev*/
+ function iniciaTouch(ev) {
+  const toqueInicial = ev.touches[0]
+  iniciaX = toqueInicial.clientX
+  iniciaY = toqueInicial.clientY
+ }
+ /** @param {TouchEvent} ev*/
+ function desplazaTouch(ev) {
+  if (iniciaX && iniciaY) {
+   const desplazamiento = ev.touches[0]
+   var desplazamientoX = desplazamiento.clientX
+   var desplazamientoY = desplazamiento.clientY
+   var difX = desplazamientoX - iniciaX
+   var difY = desplazamientoY - iniciaY
+   // Checa que el movimiento no sea muy corto.
+   if (Math.abs(difX) + Math.abs(difY) > 90) {
+    if (Math.abs(difX) > Math.abs(difY)) {
+     if (difX > 70) {
+      retrocede()
+     } else {
+      avanza()
+     }
+     // Reinicia valores.
+     iniciaX = null
+     iniciaY = null
+    }
+   }
+  }
+ }
+</script>
+</body>
+</html>

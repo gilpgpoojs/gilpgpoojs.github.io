@@ -1,0 +1,55 @@
+<div class="lectura">
+ <p>
+  Cuando una instrucción no puede completarse por algún error, debe
+  abortar usando la instrucción<br>
+  <code class="language-javascript">throw new Error(mensaje)</code>
+ </p>
+ <p>A este proceso se le llama <dfn>Lanzar una excepción.</dfn></p>
+ <figure>
+  <img class="med" src="/img/m07excepciones/throw.svg" alt="Diagrama de throw.">
+ </figure>
+</div>
+<section>
+ <h1>Ejemplo</h1>
+ <div class="horizontal">
+  <muestra-codigo>
+   <div>
+    <div><span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #a31515;">"La instrución"</span>)</div>
+    <div><span style="color: #af00db;">throw</span> <span
+       style="color: #0000ff;">new</span> <span
+       style="color: #267f99;">Error</span>(</div>
+    <div>&nbsp;<span
+       style="color: #a31515;">"throw aborta el programa"</span>)</div>
+    <div><span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #a31515;">"Estas líneas"</span>)</div>
+    <div><span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #a31515;">"no se ejecutan"</span>)</div>
+   </div>
+  </muestra-codigo>
+  <section>
+   <h1>Salida</h1>
+   <pre><samp>La instrución</samp></pre>
+   <p>
+    <samp><span
+       style="color: #bb0000">Error: throw aborta el programa</span></samp>
+   </p>
+  </section>
+ </div>
+ <div class="noPrint lectura">
+  <p>
+   <a href="https://pythontutor.com/javascript.html#code=console.log%28%22La%20instruci%C3%B3n%22%29%0Athrow%20new%20Error%28%0A%20%22throw%20aborta%20el%20programa%22%29%0Aconsole.log%28%22Estas%20l%C3%ADneas%22%29%0Aconsole.log%28%22no%20se%20ejecutan%22%29&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+     target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+  </p>
+ </div>
+</section>
+<div class="lectura">
+ <p>
+  Los errores generados por la instrucción
+  <code class="language-javascript">throw</code>
+  pueden procesarse de varias formas que se verán a continuación.
+ </p>
+</div>

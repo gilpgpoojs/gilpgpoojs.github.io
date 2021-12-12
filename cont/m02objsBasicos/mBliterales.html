@@ -1,0 +1,73 @@
+<div class="horizontal">
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #0000ff;">let</span> <span
+      style="color: #001080;">tel1</span> = {</div>
+   <div>&nbsp;<span style="color: #795e26;">saludo</span><span
+      style="color: #001080;">:</span></div>
+   <div>&nbsp; <span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@param</span><span style="color: #008000;">
+    </span><span style="color: #267f99;">{any}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">nombre</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp; <span style="color: #001080;">nombre</span> <span
+      style="color: #0000ff;">=&gt;</span> <span
+      style="color: #a31515;">`Hola </span><span
+      style="color: #0000ff;">${</span><span
+      style="color: #001080;">nombre</span><span
+      style="color: #0000ff;">}</span><span
+      style="color: #a31515;">.`</span>, </div>
+   <div>&nbsp;<span style="color: #001080;">nombre</span><span
+      style="color: #001080;">:</span> <span
+      style="color: #a31515;">"pp"</span>
+   </div>
+   <div>}</div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #001080;">tel1</span>)</div>
+   <div><span style="color: #0000ff;">let</span> <span
+      style="color: #001080;">tel2</span> = <span
+      style="color: #001080;">tel1</span></div>
+   <div><span style="color: #0000ff;">let</span> <span
+      style="color: #001080;">goles</span> = <span
+      style="color: #098658;">3</span>, <span
+      style="color: #001080;">seg</span> = <span
+      style="color: #098658;">8</span></div>
+   <div><span style="color: #001080;">tel1</span> = {</div>
+   <div>&nbsp;<span style="color: #001080;">goles</span>,</div>
+   <div>&nbsp;<span style="color: #795e26;">despídete</span><span
+      style="color: #001080;">:</span></div>
+   <div>&nbsp; () <span style="color: #0000ff;">=&gt;</span> <span
+      style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"Bye"</span>),</div>
+   <div>&nbsp;<span style="color: #001080;">seguidores</span><span
+      style="color: #001080;">:</span> <span
+      style="color: #001080;">seg</span>
+   </div>
+   <div>}</div>
+   <div><span style="color: #001080;">goles</span>++</div>
+   <div><span style="color: #001080;">seg</span>++</div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #001080;">tel2</span>.<span
+      style="color: #001080;">nombre</span>)</div>
+   <div><span
+      style="color: #001080;">tel1</span>.<span
+      style="color: #795e26;">despídete</span>()</div>
+  </div>
+ </muestra-codigo>
+ <section>
+  <h1>Salida</h1>
+  <pre><samp>{ saludo: [Function], nombre: 'pp' }
+pp
+Bye</samp></pre>
+ </section>
+</div>
+<div class="noPrint lectura">
+ <p>
+  <a href="https://pythontutor.com/javascript.html#code=let%20tel1%20%3D%20%7B%0A%20saludo%3A%0A%20%20/**%20%40param%0A%20%20%20%20%7Bany%7D%20nombre%20*/%0A%20%20nombre%20%3D%3E%20%60Hola%20%24%7Bnombre%7D.%60,%0A%20nombre%3A%20%22pp%22%0A%7D%0Aconsole.log%28tel1%29%0Alet%20tel2%20%3D%20tel1%0Alet%20goles%20%3D%203,%20seg%20%3D%208%0Atel1%20%3D%20%7B%0A%20goles,%0A%20desp%C3%ADdete%3A%0A%20%20%28%29%20%3D%3E%20console.log%28%22Bye%22%29,%0A%20seguidores%3A%20seg%0A%7D%0Agoles%2B%2B%0Aseg%2B%2B%0Aconsole.log%28tel2.nombre%29%0Atel1.desp%C3%ADdete%28%29&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+    target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+ </p>
+</div>

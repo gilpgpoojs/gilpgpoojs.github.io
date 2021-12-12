@@ -1,0 +1,27 @@
+<div class="lectura">
+ <ul>
+  <li>
+   <p>Es un mecanismo para tener una sola instancia de una clase.</p>
+  </li>
+  <li>
+   <p>
+    <a href="https://es.wikipedia.org/wiki/Singleton"
+      target="_blank" rel="noopener">Explicación en Wikipedia.</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="https://www.oodesign.com/singleton-pattern.html"
+      target="_blank" rel="noopener">Explicación en oodesign.</a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=class%20Singleton%20%7B%0A%20%20static%20get%20instancia%28%29%20%7B%0A%20%20%20%20if%20%28!this._instancia%29%20%7B%0A%20%20%20%20%20%20/**%20%40private%20*/%0A%20%20%20%20%20%20this._instancia%20%3D%0A%20%20%20%20%20%20%20%20new%20Singleton%28%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%20this._instancia%3B%0A%20%20%7D%0A%20%20/**%20%40private%20*/%0A%20%20constructor%28%29%20%7B%0A%20%20%20%20this.nombre%20%3D%20%22%22%3B%0A%20%20%7D%0A%20%20saluda%28%29%20%7B%0A%20%20%20%20console.log%28%0A%20%20%20%20%20%20%60Hola%20%24%7Bthis.nombre%7D%60%29%3B%0A%20%20%7D%0A%7D%0Aconst%20s1%20%3D%20Singleton.instancia%3B%0As1.nombre%20%3D%20%22Sam%22%3B%0As1.saluda%28%29%3B%0Aconst%20s2%20%3D%20Singleton.instancia%3B%0As2.saluda%28%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">
+     Programa animado de patrón singleton.
+    </a>
+   </p>
+  </li>
+ </ul>
+</div>

@@ -1,0 +1,105 @@
+<muestra-codigo>
+ <div>
+  <div><span style="color: #0000ff;">let</span> <span
+     style="color: #001080;">dividendo</span> = <span
+     style="color: #098658;">NaN</span></div>
+  <div><span style="color: #0000ff;">let</span> <span
+     style="color: #001080;">divisor</span> = <span
+     style="color: #098658;">NaN</span></div>
+  <div><span style="color: #af00db;">try</span> {</div>
+  <div>&nbsp;<span style="color: #795e26;">leeDividendo</span>()</div>
+  <div>&nbsp;<span style="color: #795e26;">leeDivisor</span>()</div>
+  <div>&nbsp;<span style="color: #795e26;">valida</span>()</div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">resultado</span> = <span
+     style="color: #795e26;">procesa</span>()</div>
+  <div>&nbsp;<span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(</div>
+  <div>&nbsp; <span style="color: #a31515;">"El resultado es:"</span>, <span
+     style="color: #0070c1;">resultado</span>)</div>
+  <div>} <span style="color: #af00db;">catch</span> (<span
+     style="color: #001080;">e</span>) {</div>
+  <div>&nbsp;<span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">error</span>(<span
+     style="color: #001080;">e</span>)</div>
+  <div>}</div><br>
+  <div><span style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">leeDividendo</span>() {</div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">strDividendo</span> = <span
+     style="color: #795e26;">question</span>(</div>
+  <div>&nbsp; <span
+     style="color: #a31515;">"Introduce el dividendo: "</span>)</div>
+  <div>&nbsp;<span style="color: #001080;">dividendo</span> =</div>
+  <div>&nbsp; <span style="color: #0070c1;">strDividendo</span> === <span
+     style="color: #0000ff;">null</span> ?</div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">NaN</span> : <span
+     style="color: #795e26;">parseFloat</span>(<span
+     style="color: #0070c1;">strDividendo</span>)</div>
+  <div>}</div><br>
+  <div><span style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">leeDivisor</span>() {</div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">strDivisor</span> = <span
+     style="color: #795e26;">question</span>(</div>
+  <div>&nbsp; <span
+     style="color: #a31515;">"Introduce el divisor: "</span>)</div>
+  <div>&nbsp;<span style="color: #001080;">divisor</span> = <span
+     style="color: #0070c1;">strDivisor</span> === <span
+     style="color: #0000ff;">null</span> ?</div>
+  <div>&nbsp; <span style="color: #0000ff;">NaN</span> : <span
+     style="color: #795e26;">parseFloat</span>(<span
+     style="color: #0070c1;">strDivisor</span>)</div>
+  <div>}</div><br>
+  <div><span style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">valida</span>() {</div>
+  <div>&nbsp;<span
+     style="color: #008000;">/* Debe cumplirse que el dividendo</span></div>
+  <div><span style="color: #008000;">&nbsp; * sea un número. */</span></div>
+  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
+     style="color: #795e26;">isNaN</span>(<span
+     style="color: #001080;">dividendo</span>))</div>
+  <div>&nbsp; <span style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Error</span>(</div>
+  <div>&nbsp; &nbsp;<span
+     style="color: #a31515;">"El dividendo debe ser número."</span>)</div>
+  <div>&nbsp;<span
+     style="color: #008000;">/* Debe cumplirse que el divisor</span></div>
+  <div><span style="color: #008000;">&nbsp; * sea un número. */</span></div>
+  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
+     style="color: #795e26;">isNaN</span>(<span
+     style="color: #001080;">divisor</span>))</div>
+  <div>&nbsp; <span style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Error</span>(</div>
+  <div>&nbsp; &nbsp;<span
+     style="color: #a31515;">"El divisor debe ser número."</span>)</div>
+  <div>&nbsp;<span
+     style="color: #008000;">/* Debe cumplirse que el divisor</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; * sea diferente de 0. */</span></div>
+  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
+     style="color: #001080;">divisor</span> === <span
+     style="color: #098658;">0</span>)</div>
+  <div>&nbsp; <span style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Error</span>(</div>
+  <div>&nbsp; &nbsp;<span
+     style="color: #a31515;">"El divisor no puede ser 0."</span>)</div>
+  <div>}</div><br>
+  <div><span style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">procesa</span>() {</div>
+  <div>&nbsp;<span style="color: #af00db;">return</span> <span
+     style="color: #001080;">dividendo</span> / <span
+     style="color: #001080;">divisor</span></div>
+  <div>}</div>
+ </div>
+</muestra-codigo>
+<div class="noPrint lectura">
+ <p>
+  <a target="_blank" rel="noopener"
+    href="https://gilpgnod.github.io/#let%20dividendo%20%3D%20NaN%0Alet%20divisor%20%3D%20NaN%0Atry%20%7B%0A%20leeDividendo()%0A%20leeDivisor()%0A%20valida()%0A%20const%20resultado%20%3D%20procesa()%0A%20console.log(%0A%20%20%22El%20resultado%20es%3A%22%2C%20resultado)%0A%7D%20catch%20(e)%20%7B%0A%20console.error(e)%0A%7D%0A%0Afunction%20leeDividendo()%20%7B%0A%20const%20strDividendo%20%3D%20question(%0A%20%20%22Introduce%20el%20dividendo%3A%20%22)%0A%20dividendo%20%3D%0A%20%20strDividendo%20%3D%3D%3D%20null%20%3F%0A%20%20%20NaN%20%3A%20parseFloat(strDividendo)%0A%7D%0A%0Afunction%20leeDivisor()%20%7B%0A%20const%20strDivisor%20%3D%20question(%0A%20%20%22Introduce%20el%20divisor%3A%20%22)%0A%20divisor%20%3D%20strDivisor%20%3D%3D%3D%20null%20%3F%0A%20%20NaN%20%3A%20parseFloat(strDivisor)%0A%7D%0A%0Afunction%20valida()%20%7B%0A%20%2F*%20Debe%20cumplirse%20que%20el%20dividendo%0A%20%20*%20sea%20un%20n%C3%BAmero.%20*%2F%0A%20if%20(isNaN(dividendo))%0A%20%20throw%20new%20Error(%0A%20%20%20%22El%20dividendo%20debe%20ser%20n%C3%BAmero.%22)%0A%20%2F*%20Debe%20cumplirse%20que%20el%20divisor%0A%20%20*%20sea%20un%20n%C3%BAmero.%20*%2F%0A%20if%20(isNaN(divisor))%0A%20%20throw%20new%20Error(%0A%20%20%20%22El%20divisor%20debe%20ser%20n%C3%BAmero.%22)%0A%20%2F*%20Debe%20cumplirse%20que%20el%20divisor%0A%20%20*%20sea%20diferente%20de%200.%20*%2F%0A%20if%20(divisor%20%3D%3D%3D%200)%0A%20%20throw%20new%20Error(%0A%20%20%20%22El%20divisor%20no%20puede%20ser%200.%22)%0A%7D%0A%0Afunction%20procesa()%20%7B%0A%20return%20dividendo%20%2F%20divisor%0A%7D">Depúralo
+   en JavaScript Tutor.</a>
+ </p>
+</div>

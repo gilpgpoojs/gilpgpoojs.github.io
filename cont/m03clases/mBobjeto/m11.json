@@ -1,0 +1,7 @@
+{
+ "orden": "11",
+ "title": "c + this.a",
+ "h1": "<code class='language-javascript'>c + this.a</code>",
+ "description": "Paso 11 de una prueba de escritorio con un objeto: «c + this.a».",
+ "esPruebaDeEscritorio":true
+}

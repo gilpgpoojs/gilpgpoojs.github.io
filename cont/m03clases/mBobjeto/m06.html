@@ -1,0 +1,132 @@
+<section id="código">
+ <h1>Código</h1>
+ <pre><span class="numero1">1</span> <span
+   style="color: #0000ff;">class</span> <span
+  style="color: #267f99;">Cl01</span> {
+<span class="numero2">4</span>  <span
+style="color: #0000ff;">constructor</span>(<span
+style="color: #001080;">b</span>) {
+<span class="numero2">5</span>   <span style="color: #0000ff;">this</span>.<span
+style="color: #001080;">a</span> = <span
+style="color: #001080;">b</span>
+<span class="activo">6</span>  }
+    <span style="color: #795e26;">mensaje</span>(<span
+style="color: #001080;">c</span>) {
+     <span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #001080;">c</span> + <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">a</span>)
+    }
+   }
+   <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">a</span> =<span
+       class="numero1">2</span><span
+       style="color: #0000ff;">new</span><span
+  class="numero1">3</span>Cl01(4)
+   <span style="color: #0070c1;">a</span>.<span
+      style="color: #795e26;">mensaje</span>(<span
+      style="color: #098658;">2</span>)</pre>
+</section>
+<section id="stack">
+ <h1>Stack</h1>
+ <div class="creación">
+  <span><span class="numero1">1</span></span>
+  <table class="frame tabla1">
+   <caption><i>Script</i></caption>
+   <tr>
+    <th><span class="numero1">1</span>Cl01</th>
+    <td><span class="numero1">1</span><a href="#id1">1</a></td>
+   </tr>
+   <tr>
+    <th colspan="2"><span class="numero1">3</span>congela</th>
+   </tr>
+   <tr>
+    <td colspan="2">
+     <div id="crea" class="creación">
+      <span><span class="numero2">4</span></span>
+      <table class="frame tabla2">
+       <caption>Cl01&nbsp;(constructor)</caption>
+       <tr id="this">
+        <th>
+         <span class="numero2">4</span>
+         <span class="parametro1">this</span>
+        </th>
+        <td>
+         <span class="numero2">4</span>
+         <a class="parametro1" href="#id2">2</a>
+        </td>
+       </tr>
+       <tr id="b">
+        <th>
+         <span class="numero2">4</span>
+         <span class="parametro2">b</span>
+        </th>
+        <td>
+         <span class="numero2">4</span>
+         <span class="parametro2">4</span>
+        </td>
+       </tr>
+       <tr id="termina">
+        <th colspan="2">
+         <span class="activo">6</span>
+         X devuelve <a href="#this">2</a>.
+        </th>
+       </tr>
+      </table>
+     </div>
+    </td>
+   </tr>
+  </table>
+ </div>
+</section>
+<section id="heap">
+ <h1>Heap</h1>
+ <div class="creación">
+  <span><span class="numero1">1</span></span>
+  <table class="frame objeto" id="id1">
+   <caption>1: class</caption>
+   <tr>
+    <th>name</th>
+    <td>Cl01</td>
+   </tr>
+  </table>
+ </div>
+ <div class="creación">
+  <span><span class="numero1">2</span></span>
+  <table class="frame objeto" id="id2">
+   <caption>2:&nbsp;Cl01</caption>
+   <tr id="a">
+    <th><span class="numero2">5</span>a</th>
+    <td><span class="numero2">5</span>4</td>
+   </tr>
+  </table>
+ </div>
+</section>
+<section id="expresiones">
+ <h1>Expresiones</h1>
+ <pre><code class="language-javascript"><span
+  class="numero1">3</span><span id="new">new</span> Cl01(4)
+  <a id="p2" class="parametro1" href="#id2">2</a>   Cl01(<span
+  id="p4" class="parametro2">4</span>)</code></pre>
+ <pre><code class="language-javascript"><span
+ class="numero2">4</span><a class="parametro1"
+  href="#this">this</a> Cl01(<a class="parametro2" href="#b">b</a>)</code></pre>
+ <pre><code class="language-javascript"><span
+ class="numero2">5</span><a href="#this">this</a>.<a href="#a">a</a> = <a href="#b">b</a>
+   <a href="#id2">2</a>  .<a href="#a">a</a> = 4</code></pre>
+</section>
+<section id="explicación">
+ <h1>Explicación</h1>
+ <ul>
+  <li>
+   <p>
+    <a href="#termina">Termina</a> el
+    <a class="texto-2" href="#crea">registro de activación</a> y devuelve el
+    valor de
+    <a class="parametro1" href="#this">this</a>, que es
+    <a class="parametro1" href="#id2">2</a>.
+   </p>
+  </li>
+ </ul>
+</section>

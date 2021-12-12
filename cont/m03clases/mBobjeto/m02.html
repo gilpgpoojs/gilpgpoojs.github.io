@@ -1,0 +1,73 @@
+<section id="código">
+ <h1>Código</h1>
+ <pre><span class="numero1">1</span> <span
+   style="color: #0000ff;">class</span> <span
+  style="color: #267f99;">Cl01</span> {
+    <span style="color: #0000ff;">constructor</span>(<span
+   style="color: #001080;">b</span>) {
+     <span style="color: #0000ff;">this</span>.<span
+    style="color: #001080;">a</span> = <span
+    style="color: #001080;">b</span>
+    }
+    <span style="color: #795e26;">mensaje</span>(<span
+style="color: #001080;">c</span>) {
+     <span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #001080;">c</span> + <span
+      style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">a</span>)
+    }
+   }
+   <span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">a</span> =<span
+       class="activo">2</span><span
+       style="color: #0000ff;">new</span> Cl01(4)
+   <span style="color: #0070c1;">a</span>.<span
+      style="color: #795e26;">mensaje</span>(<span
+      style="color: #098658;">2</span>)</pre>
+</section>
+<section id="stack">
+ <h1>Stack</h1>
+ <div class="creación">
+  <span><span class="numero1">1</span></span>
+  <table class="frame">
+   <caption><i>Script</i></caption>
+   <tr>
+    <th><span class="numero1">1</span>Cl01</th>
+    <td><span class="numero1">1</span><a href="#id1">1</a></td>
+   </tr>
+  </table>
+ </div>
+</section>
+<section id="heap">
+ <h1>Heap</h1>
+ <div class="creación">
+  <span><span class="numero1">1</span></span>
+  <table class="frame objeto" id="id1">
+   <caption>1: class</caption>
+   <tr>
+    <th>name</th>
+    <td>Cl01</td>
+   </tr>
+  </table>
+ </div>
+ <div class="creación">
+  <span class="activo">2</span>
+  <table class="frame objeto" id="id2">
+   <caption>2:&nbsp;Cl01</caption>
+  </table>
+ </div>
+</section>
+<section id="explicación">
+ <h1>Explicación</h1>
+ <ul>
+  <li>
+   <p>
+    Se crea un
+    <a href="#id2">objeto de la clase Cl01, sin ninguna property</a>
+    y se le asigna un identificador, que en este caso es
+    <a href="#id2">2</a>.
+   </p>
+  </li>
+ </ul>
+</section>

@@ -1,0 +1,73 @@
+<div class="horizontal">
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">ClM1</span> {</div>
+   <div>&nbsp;<span style="color: #0000ff;">constructor</span>(<span
+      style="color: #001080;">p</span>) {</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #001080;">p</span>)</div>
+   <div>&nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">m</span> = <span
+      style="color: #001080;">p</span></div>
+   <div>&nbsp;}</div>
+   <div>}</div>
+   <div><span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">ClH1</span> <span
+      style="color: #0000ff;">extends</span> <span
+      style="color: #267f99;">ClM1</span> {</div>
+   <div>&nbsp;<span style="color: #0000ff;">constructor</span>(<span
+      style="color: #001080;">b</span>, <span
+      style="color: #001080;">c</span>) {</div>
+   <div>&nbsp; <span style="color: #0000ff;">super</span>(<span
+      style="color: #001080;">b</span>)</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #001080;">c</span>)</div>
+   <div>&nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">h</span> = <span
+      style="color: #001080;">c</span></div>
+   <div>&nbsp;}</div>
+   <div>}</div>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">th1</span> = <span
+      style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">ClH1</span>(<span
+      style="color: #098658;">4</span>, -<span
+      style="color: #098658;">2</span>)</div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #0070c1;">th1</span>.<span
+      style="color: #001080;">m</span>)</div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #0070c1;">th1</span>.<span
+      style="color: #001080;">h</span>)</div>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">tm1</span> = <span
+      style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">ClM1</span>(<span
+      style="color: #098658;">8</span>)</div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #0070c1;">tm1</span>.<span
+      style="color: #001080;">m</span>)</div>
+  </div>
+ </muestra-codigo>
+ <section>
+  <h1>Salida</h1>
+  <pre><samp>4
+-2
+4
+-2
+8
+8</samp></pre>
+ </section>
+</div>
+<div class="noPrint lectura">
+ <p>
+  <a href="https://pythontutor.com/javascript.html#code=class%20ClM1%20%7B%0A%20constructor%28p%29%20%7B%0A%20%20console.log%28p%29%0A%20%20this.m%20%3D%20p%0A%20%7D%0A%7D%0Aclass%20ClH1%20extends%20ClM1%20%7B%0A%20constructor%28b,%20c%29%20%7B%0A%20%20super%28b%29%0A%20%20console.log%28c%29%0A%20%20this.h%20%3D%20c%0A%20%7D%0A%7D%0Aconst%20th1%20%3D%20new%20ClH1%284,%20-2%29%0Aconsole.log%28th1.m%29%0Aconsole.log%28th1.h%29%0Aconst%20tm1%20%3D%20new%20ClM1%288%29%0Aconsole.log%28tm1.m%29&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+    target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+ </p>
+</div>

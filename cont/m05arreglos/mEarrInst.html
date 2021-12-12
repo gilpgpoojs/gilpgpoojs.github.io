@@ -1,0 +1,57 @@
+<div class="lectura">
+ <figure>
+  <img src="/img/m05arreglos/arrobjs.svg" alt="Imagina un arreglo de objetos">
+ </figure>
+</div>
+<div class="horizontal">
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">Clao</span> {</div>
+   <div>&nbsp;<span style="color: #0000ff;">constructor</span>(<span
+      style="color: #001080;">a</span>) {</div>
+   <div>&nbsp; <span style="color: #0000ff;">this</span>.<span
+      style="color: #001080;">a</span> = <span
+      style="color: #001080;">a</span></div>
+   <div>&nbsp;}</div>
+   <div>}</div>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">arrI</span> = [</div>
+   <div>&nbsp;<span style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">Clao</span>(-<span
+      style="color: #098658;">3</span>),</div>
+   <div>&nbsp;<span style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">Clao</span>(<span
+      style="color: #098658;">4</span>),</div>
+   <div>&nbsp;<span style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">Clao</span>(<span
+      style="color: #098658;">8</span>)]</div>
+   <div><span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #0070c1;">arrI</span>)</div>
+   <div><span style="color: #af00db;">for</span> (<span
+      style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">ref</span> <span
+      style="color: #0000ff;">of</span> <span
+      style="color: #0070c1;">arrI</span>) {</div>
+   <div>&nbsp;<span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #0070c1;">ref</span>.<span
+      style="color: #001080;">a</span>)</div>
+   <div>}</div>
+  </div>
+ </muestra-codigo>
+ <section>
+  <h1>Salida</h1>
+  <pre><samp>[ Clao { a: -3 }, Clao { a: 4 }, Clao { a: 8 } ]
+-3
+4
+8</samp></pre>
+ </section>
+</div>
+<div class="noPrint lectura">
+ <p>
+  <a href="https://pythontutor.com/javascript.html#code=class%20Clao%20%7B%0A%20constructor%28a%29%20%7B%0A%20%20this.a%20%3D%20a%0A%20%7D%0A%7D%0Aconst%20arrI%20%3D%20%5B%0A%20new%20Clao%28-3%29,%0A%20new%20Clao%284%29,%0A%20new%20Clao%288%29%5D%0Aconsole.log%28arrI%29%0Afor%20%28const%20ref%20of%20arrI%29%20%7B%0A%20console.log%28ref.a%29%0A%7D&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+    target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+ </p>
+</div>

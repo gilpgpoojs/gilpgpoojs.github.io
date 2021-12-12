@@ -1,0 +1,103 @@
+<div class="lectura">
+ <p>
+  En JavaScript por el momento todos los miembros de una clase son
+  públicos, pero se pueden usar convenciones para indicar niveles de
+  acceso.
+ </p>
+ <p>
+  Como hay varias convenciones, usaremos las del compilador de
+  TypeScript, que Visual Studio Code puede usar para validar el acceso.
+ </p>
+ <dl>
+  <dt><code class="language-javascript">@public</code></dt>
+  <dd>
+   <p>
+    Es el valor predefinido e indica que el miembro puede usarse desde
+    cualquier parte del código.
+   </p>
+  </dd>
+  <dt><code class="language-javascript">@private</code></dt>
+  <dt><code class="language-javascript">_miembro</code></dt>
+  <dd>
+   <p>El miembro solo debe usarse dentro de la clase que lo define.</p>
+  </dd>
+  <dt><code class="language-javascript">@protected</code></dt>
+  <dd>
+   <p>
+    El miembro solo debe usarse dentro de la clase que lo define y
+    subclases.
+   </p>
+  </dd>
+ </dl>
+</div>
+<section>
+ <h1>Ejemplo</h1>
+ <div class="horizontal">
+  <muestra-codigo>
+   <div>
+    <div><span style="color: #0000ff;">class</span> <span
+       style="color: #267f99;">ClX</span> {</div>
+    <div>&nbsp;<span style="color: #0000ff;">constructor</span>() {</div>
+    <div>&nbsp; <span style="color: #008000;">/** </span><span
+       style="color: #0000ff;">@private</span><span
+       style="color: #008000;"> */</span></div>
+    <div>&nbsp; <span style="color: #0000ff;">this</span>.<span
+       style="color: #001080;">_nombre</span> = <span
+       style="color: #a31515;">""</span></div>
+    <div>&nbsp;}</div>
+    <div>&nbsp;<span style="color: #0000ff;">get</span> <span
+       style="color: #001080;">nombre</span>() {</div>
+    <div>&nbsp; <span style="color: #af00db;">return</span> (<span
+       style="color: #0000ff;">this</span>.<span
+       style="color: #001080;">_nombre</span>)</div>
+    <div>&nbsp;}</div>
+    <div>&nbsp;<span style="color: #0000ff;">set</span> <span
+       style="color: #001080;">nombre</span>(<span
+       style="color: #001080;">nombre</span>) {</div>
+    <div>&nbsp; <span style="color: #0000ff;">this</span>.<span
+       style="color: #001080;">_nombre</span> = <span
+       style="color: #001080;">nombre</span></div>
+    <div>&nbsp;}</div>
+    <div>&nbsp;<span style="color: #008000;">/** </span><span
+       style="color: #0000ff;">@public</span><span
+       style="color: #008000;"> */</span></div>
+    <div>&nbsp;<span style="color: #0000ff;">get</span> <span
+       style="color: #001080;">juega</span>() {</div>
+    <div>&nbsp; <span style="color: #af00db;">return</span> (<span
+       style="color: #a31515;">`</span><span
+       style="color: #0000ff;">${this</span>.<span
+       style="color: #001080;">nombre</span><span
+       style="color: #0000ff;">}</span><span
+       style="color: #a31515;"> juega`</span>)</div>
+    <div>&nbsp;}</div>
+    <div>}</div>
+    <div><span style="color: #0000ff;">const</span> <span
+       style="color: #0070c1;">tt1</span> = <span
+       style="color: #0000ff;">new</span> <span
+       style="color: #267f99;">ClX</span>()</div>
+    <div><span style="color: #0070c1;">tt1</span>.<span
+       style="color: #001080;">nombre</span> = <span
+       style="color: #a31515;">"pp"</span></div>
+    <div><span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #0070c1;">tt1</span>.<span
+       style="color: #001080;">nombre</span>)</div>
+    <div><span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #0070c1;">tt1</span>.<span
+       style="color: #001080;">juega</span>)</div>
+   </div>
+  </muestra-codigo>
+  <section>
+   <h1>Salida</h1>
+   <pre><samp>pp
+pp juega</samp></pre>
+  </section>
+ </div>
+ <div class="noPrint lectura">
+  <p>
+   <a href="https://pythontutor.com/javascript.html#code=class%20ClX%20%7B%0A%20constructor%28%29%20%7B%0A%20%20/**%20%40private%20*/%0A%20%20this._nombre%20%3D%20%22%22%0A%20%7D%0A%20get%20nombre%28%29%20%7B%0A%20%20return%20%28this._nombre%29%0A%20%7D%0A%20set%20nombre%28nombre%29%20%7B%0A%20%20this._nombre%20%3D%20nombre%0A%20%7D%0A%20/**%20%40public%20*/%0A%20get%20juega%28%29%20%7B%0A%20%20return%20%28%60%24%7Bthis.nombre%7D%20juega%60%29%0A%20%7D%0A%7D%0Aconst%20tt1%20%3D%20new%20ClX%28%29%0Att1.nombre%20%3D%20%22pp%22%0Aconsole.log%28tt1.nombre%29%0Aconsole.log%28tt1.juega%29&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+     target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+  </p>
+ </div>
+</section>

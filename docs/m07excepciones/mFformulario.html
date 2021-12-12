@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" sizes="32x32" href="/favicon.ico">
+<meta name="theme-color" content="#039623">
+<link rel="manifest" href="/site.webmanifest">
+<script src="/js/muestra-codigo.js"></script>
+ <title>F. Formulario con excepciones - GilPG POOJS</title>
+ <meta name="description" content="Formulario con excepciones.">
+ <style>
+ :root {
+  --introDuracion: 2s;
+  --introFuncion: ease-out;
+  --padCont: 0.5rem;
+  --padNav: 0.75rem 0.5rem;
+  --anchoNav: 300px;
+  --anchoLectura: 900px;
+  --colLetra: black;
+  --colFondo: white;
+  --colTituloLetra: #00811c;
+  --colTituloShadow: 3px 1px 2px #bdbdbd;
+  --colTituloStrong: #684601;
+  --colTituloStrongSel: #ffdc97;
+  --colTarget: #cef4ff;
+  --colSombra: #49494980;
+  --navSombra: 0.5rem 0 0.5rem var(--colSombra);
+  --padCtrl: 0.2rem 0.3rem;
+  --borderCtrl: solid thin;
+  --colFondoNav: #f2f2f2;
+  --colNavResaltada: #7a2c99;
+  --colSecundario: #ffff82;
+  --colStack1: black;
+  --colStack2: #224ba5;
+  --colStack3: #92731f;
+  --gap: 0.5rem;
+  --fontMono: monospace;
+  --fontSans: sans-serif;
+  --fontSerif: serif;
+  font-family: var(--fontSerif);
+  color: var(--colLetra);
+  background-color: var(--colFondo);
+ }
+
+ .anterior,
+ .siguiente {
+  display: inline-block;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ .anterior.bye,
+ .siguiente.bye {
+  display: none;
+ }
+
+ a[data-logo] {
+  display: block;
+  height: 54px;
+  line-height: 54px;
+  padding-left: 54px;
+  margin-top: 1rem;
+  background-image: url("/img/icono/maskable_icon_x48.png");
+  background-position: 3px center;
+  background-repeat: no-repeat;
+ }
+
+ a strong,
+ a code,
+ h1 strong,
+ h1 code {
+  color: var(--colTituloStrong);
+ }
+
+ nav a {
+  font-family: var(--fontSans);
+ }
+
+ pre {
+  font-family: var(--fontMono);
+  font-size: 1em;
+ }
+
+ samp {
+  font-size: 1em;
+ }
+
+ code {
+  color: var(--colTituloStrong);
+  font-family: var(--fontMono);
+  font-size: 1em;
+ }
+
+ a code {
+  font-size: 1rem;
+ }
+
+ h1:not(.default) {
+  font-family: var(--fontSans);
+  color: var(--colTituloLetra);
+ }
+
+ h1.sitio {
+  font-size: 3rem;
+ }
+
+ h1.leccion {
+  font-size: 2.5rem;
+ }
+
+ .autor {
+  font-family: var(--fontSans);
+  font-size: 1.5rem;
+  color: var(--colTituloLetra);
+ }
+
+ figure {
+  text-align: center;
+ }
+
+ figure img {
+  max-width: 100%;
+  max-height: 65vh;
+ }
+
+ figure img.med {
+  max-height: 55vh;
+ }
+
+ figcaption {
+  font-family: var(--fontMono);
+ }
+
+ .print .noPrint {
+  display: none;
+ }
+
+ @media print {
+  .noPrint {
+   display: none;
+  }
+  .pruebaDeEscritorio {page-break-before: always;}
+ }
+
+ iframe {
+  box-sizing: border-box;
+  width: 100%;
+ }
+
+ .lectura {
+  max-width: var(--anchoLectura);
+  margin: 1rem auto;
+ }
+
+ .lectura p,
+ .lectura blockquote {
+  text-align: justify;
+ }
+
+ /* No funciona bien con display:flex en pantallas pequeñas. */
+ .horizontal {
+  text-align: center;
+ }
+
+ .horizontal>* {
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+ }
+
+ .horizontal>*:not(:first-child) {
+  margin-left: 1rem;
+ }
+
+ .columnas4 {
+  columns: 4 180px;
+  column-gap: 1rem;
+ }
+
+ .columnas2 {
+  columns: 2 360px;
+  column-gap: 1rem;
+ }
+
+ .resaltado {
+  background-color: rgb(255, 255, 89);
+ }
+
+ .resaltado2 {
+  background-color: rgb(255, 214, 139);
+ }
+
+ table.borde {
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+ table.borde,
+ table.borde td {
+  border: thin solid;
+  border-collapse: collapse;
+ }
+
+ table.borde th,
+ table.borde td {
+  padding: 0.4rem;
+ }
+
+ muestra-codigo>div>div {
+  white-space: nowrap;
+ }
+
+ footer {
+  margin-top: 1rem;
+  display: block;
+  text-align: center;
+  font-family: var(--fontSans);
+  font-size: small;
+ }
+</style>
+ <style>
+ #principal {
+  transition: margin-left 0.7s ease-in-out;
+ }
+
+ body:not(.sinTransicion) #principal {
+  animation-timing-function: var(--introFuncion);
+  animation-duration: var(--introDuracion);
+  animation-fill-mode: forwards;
+  animation-name: aparece;
+ }
+
+ @keyframes aparece {
+  from {
+   opacity: 0;
+  }
+
+  to {
+   opacity: 1;
+  }
+ }
+
+ #principal>.controles {
+  display: flex;
+  gap: var(--gap);
+ }
+
+ #principal>.controles>.siguiente {
+  margin-left: auto
+ }
+
+ #principal h1:not(.default) {
+  text-shadow: var(--colTituloShadow);
+ }
+
+ #nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  box-sizing: border-box;
+  overflow: auto;
+  color: var(--colLetra);
+  background-color: var(--colFondoNav);
+  padding: var(--padCont);
+  transition: transform 0.7s ease-in-out;
+ }
+
+ #nav p {
+  margin: 0;
+ }
+
+ #nav a:not([data-logo]) {
+  display: block;
+  padding: var(--padNav);
+ }
+
+ #nav a.actual code,
+ #nav a.actual strong {
+  color: var(--colTituloStrongSel);
+ }
+
+ #nav h1 a {
+  color: var(--colTituloLetra);
+ }
+
+ #nav a.actual {
+  color: var(--colFondo);
+  background-color: var(--colNavResaltada);
+ }
+
+ #nav a.paginaAnterior,
+ #nav a.paginaSiguiente {
+  text-align: center;
+  text-decoration: none;
+  padding: var(--padCtrl);
+  border: var(--borderCtrl);
+  cursor: pointer;
+ }
+
+ @media screen and (max-width: 999px) {
+  #cierra {
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-color: var(--colSombra);
+   transform: translateX(-120%);
+   transition: transform 0.7s ease-out;
+  }
+
+  #nav {
+   width: min(var(--anchoNav), 70%);
+   box-shadow: var(--navSombra);
+  }
+
+  .xmenu>#nav {
+   transform: translateX(-120%);
+  }
+
+  .menu>#cierra,
+  .menu>#nav {
+   transform: translateX(0);
+  }
+ }
+
+ @media screen and (min-width: 1000px) {
+  #cierra {
+   display: none;
+  }
+
+  #nav {
+   width: var(--anchoNav);
+  }
+
+  .menu>#nav {
+   transform: translateX(-120%);
+  }
+
+  .xmenu>#principal {
+   margin-left: var(--anchoNav)
+  }
+
+  .xmenu #abre {
+   display: none
+  }
+ }
+
+ @media print {
+
+  #nav,
+  #principal>.controles {
+   display: none;
+  }
+ }
+</style>
+ 
+</head>
+<body class="xmenu">
+ <div id="principal">
+ <div class="controles">
+  <button id="abre" type="button" title="Menú" class="cambiaMenu">
+   &#x2630;
+  </button>
+  <a class="anterior" href="/m07excepciones/mEtryAnidado.html" title="E. try anidado">◀</a>
+  <a class="siguiente" href="/m07excepciones/mGresumen.html" title="G. Resumen">▶</a>
+ </div>
+   <h1 >F. Formulario con excepciones</h1><muestra-codigo>
+ <div>
+  <div><span style="color: #0000ff;">let</span> <span
+     style="color: #001080;">dividendo</span> = <span
+     style="color: #098658;">NaN</span></div>
+  <div><span style="color: #0000ff;">let</span> <span
+     style="color: #001080;">divisor</span> = <span
+     style="color: #098658;">NaN</span></div>
+  <div><span style="color: #af00db;">try</span> {</div>
+  <div>&nbsp;<span style="color: #795e26;">leeDividendo</span>()</div>
+  <div>&nbsp;<span style="color: #795e26;">leeDivisor</span>()</div>
+  <div>&nbsp;<span style="color: #795e26;">valida</span>()</div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">resultado</span> = <span
+     style="color: #795e26;">procesa</span>()</div>
+  <div>&nbsp;<span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">log</span>(</div>
+  <div>&nbsp; <span style="color: #a31515;">"El resultado es:"</span>, <span
+     style="color: #0070c1;">resultado</span>)</div>
+  <div>} <span style="color: #af00db;">catch</span> (<span
+     style="color: #001080;">e</span>) {</div>
+  <div>&nbsp;<span style="color: #001080;">console</span>.<span
+     style="color: #795e26;">error</span>(<span
+     style="color: #001080;">e</span>)</div>
+  <div>}</div><br>
+  <div><span style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">leeDividendo</span>() {</div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">strDividendo</span> = <span
+     style="color: #795e26;">question</span>(</div>
+  <div>&nbsp; <span
+     style="color: #a31515;">"Introduce el dividendo: "</span>)</div>
+  <div>&nbsp;<span style="color: #001080;">dividendo</span> =</div>
+  <div>&nbsp; <span style="color: #0070c1;">strDividendo</span> === <span
+     style="color: #0000ff;">null</span> ?</div>
+  <div>&nbsp; &nbsp;<span style="color: #0000ff;">NaN</span> : <span
+     style="color: #795e26;">parseFloat</span>(<span
+     style="color: #0070c1;">strDividendo</span>)</div>
+  <div>}</div><br>
+  <div><span style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">leeDivisor</span>() {</div>
+  <div>&nbsp;<span style="color: #0000ff;">const</span> <span
+     style="color: #0070c1;">strDivisor</span> = <span
+     style="color: #795e26;">question</span>(</div>
+  <div>&nbsp; <span
+     style="color: #a31515;">"Introduce el divisor: "</span>)</div>
+  <div>&nbsp;<span style="color: #001080;">divisor</span> = <span
+     style="color: #0070c1;">strDivisor</span> === <span
+     style="color: #0000ff;">null</span> ?</div>
+  <div>&nbsp; <span style="color: #0000ff;">NaN</span> : <span
+     style="color: #795e26;">parseFloat</span>(<span
+     style="color: #0070c1;">strDivisor</span>)</div>
+  <div>}</div><br>
+  <div><span style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">valida</span>() {</div>
+  <div>&nbsp;<span
+     style="color: #008000;">/* Debe cumplirse que el dividendo</span></div>
+  <div><span style="color: #008000;">&nbsp; * sea un número. */</span></div>
+  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
+     style="color: #795e26;">isNaN</span>(<span
+     style="color: #001080;">dividendo</span>))</div>
+  <div>&nbsp; <span style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Error</span>(</div>
+  <div>&nbsp; &nbsp;<span
+     style="color: #a31515;">"El dividendo debe ser número."</span>)</div>
+  <div>&nbsp;<span
+     style="color: #008000;">/* Debe cumplirse que el divisor</span></div>
+  <div><span style="color: #008000;">&nbsp; * sea un número. */</span></div>
+  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
+     style="color: #795e26;">isNaN</span>(<span
+     style="color: #001080;">divisor</span>))</div>
+  <div>&nbsp; <span style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Error</span>(</div>
+  <div>&nbsp; &nbsp;<span
+     style="color: #a31515;">"El divisor debe ser número."</span>)</div>
+  <div>&nbsp;<span
+     style="color: #008000;">/* Debe cumplirse que el divisor</span></div>
+  <div><span
+     style="color: #008000;">&nbsp; * sea diferente de 0. */</span></div>
+  <div>&nbsp;<span style="color: #af00db;">if</span> (<span
+     style="color: #001080;">divisor</span> === <span
+     style="color: #098658;">0</span>)</div>
+  <div>&nbsp; <span style="color: #af00db;">throw</span> <span
+     style="color: #0000ff;">new</span> <span
+     style="color: #267f99;">Error</span>(</div>
+  <div>&nbsp; &nbsp;<span
+     style="color: #a31515;">"El divisor no puede ser 0."</span>)</div>
+  <div>}</div><br>
+  <div><span style="color: #0000ff;">function</span> <span
+     style="color: #795e26;">procesa</span>() {</div>
+  <div>&nbsp;<span style="color: #af00db;">return</span> <span
+     style="color: #001080;">dividendo</span> / <span
+     style="color: #001080;">divisor</span></div>
+  <div>}</div>
+ </div>
+</muestra-codigo>
+<div class="noPrint lectura">
+ <p>
+  <a target="_blank" rel="noopener"
+    href="https://gilpgnod.github.io/#let%20dividendo%20%3D%20NaN%0Alet%20divisor%20%3D%20NaN%0Atry%20%7B%0A%20leeDividendo()%0A%20leeDivisor()%0A%20valida()%0A%20const%20resultado%20%3D%20procesa()%0A%20console.log(%0A%20%20%22El%20resultado%20es%3A%22%2C%20resultado)%0A%7D%20catch%20(e)%20%7B%0A%20console.error(e)%0A%7D%0A%0Afunction%20leeDividendo()%20%7B%0A%20const%20strDividendo%20%3D%20question(%0A%20%20%22Introduce%20el%20dividendo%3A%20%22)%0A%20dividendo%20%3D%0A%20%20strDividendo%20%3D%3D%3D%20null%20%3F%0A%20%20%20NaN%20%3A%20parseFloat(strDividendo)%0A%7D%0A%0Afunction%20leeDivisor()%20%7B%0A%20const%20strDivisor%20%3D%20question(%0A%20%20%22Introduce%20el%20divisor%3A%20%22)%0A%20divisor%20%3D%20strDivisor%20%3D%3D%3D%20null%20%3F%0A%20%20NaN%20%3A%20parseFloat(strDivisor)%0A%7D%0A%0Afunction%20valida()%20%7B%0A%20%2F*%20Debe%20cumplirse%20que%20el%20dividendo%0A%20%20*%20sea%20un%20n%C3%BAmero.%20*%2F%0A%20if%20(isNaN(dividendo))%0A%20%20throw%20new%20Error(%0A%20%20%20%22El%20dividendo%20debe%20ser%20n%C3%BAmero.%22)%0A%20%2F*%20Debe%20cumplirse%20que%20el%20divisor%0A%20%20*%20sea%20un%20n%C3%BAmero.%20*%2F%0A%20if%20(isNaN(divisor))%0A%20%20throw%20new%20Error(%0A%20%20%20%22El%20divisor%20debe%20ser%20n%C3%BAmero.%22)%0A%20%2F*%20Debe%20cumplirse%20que%20el%20divisor%0A%20%20*%20sea%20diferente%20de%200.%20*%2F%0A%20if%20(divisor%20%3D%3D%3D%200)%0A%20%20throw%20new%20Error(%0A%20%20%20%22El%20divisor%20no%20puede%20ser%200.%22)%0A%7D%0A%0Afunction%20procesa()%20%7B%0A%20return%20dividendo%20%2F%20divisor%0A%7D">Depúralo
+   en JavaScript Tutor.</a>
+ </p>
+</div>
+ <footer>
+ <p>
+  <a rel="license"
+    href="http://creativecommons.org/licenses/by/4.0/"><img
+     alt="Licencia Creative Commons" style="border-width:0"
+     src="/img/icono/160x30.webp" width="80" height="15" /></a>
+  <br />Esta
+  <span xmlns:dct="http://purl.org/dc/terms/"
+    href="http://purl.org/dc/dcmitype/InteractiveResource"
+    rel="dct:type">obra</span>
+  de
+  <a xmlns:cc="http://creativecommons.org/ns#"
+    href="https://gilpgijs.github.io" property="cc:attributionName"
+    rel="cc:attributionURL">Gilberto Pacheco Gallegos</a>
+  está bajo una
+  <a rel="license"
+    href="http://creativecommons.org/licenses/by/4.0/">Licencia
+   Creative Commons Atribución 4.0 Internacional</a>.
+ </p>
+</footer>
+</div>
+<div id="cierra" class="cambiaMenu"></div>
+<nav id="nav">
+ <button type="button" title="Cierra" class="cambiaMenu">
+  &#x2715;
+ </button>
+ <p>
+    <a href="/index.html"
+      data-logo="true">GilPG POOJS</a>
+   </p><p>
+    <a class="paginaAnterior" href="/m06polimorfismo/mEresumen.html"
+      title="E. Resumen">▲</a>
+   </p>
+     <h1><a href="/m07excepciones/index.html">7. Excepciones</a></h1>
+   <ol type="A">
+    <li>
+     <p>
+      <a href="/m07excepciones/mAthrow.html"><code class='language-javascript'>throw</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m07excepciones/mBtryCatch.html"><code class='language-javascript'>try-catch</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m07excepciones/mCtryFinally.html"><code class='language-javascript'>try-finally</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m07excepciones/mDtryCatchFinally.html"><code class='language-javascript'>try-catch-finally</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m07excepciones/mEtryAnidado.html">try anidado</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m07excepciones/mFformulario.html" class="actual">Formulario con excepciones</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m07excepciones/mGresumen.html">Resumen</a>
+     </p>
+    </li>
+   </ol><p>
+    <a class="paginaSiguiente" href="/m08promesas/index.html"
+      title="8. Promesas">▼</a>
+   </p>
+</nav>
+ <script>
+ registraServiceWorker("/sw.js")
+ const LOCAL_STORAGE_MENU = "menu"
+ const MENU = "menu"
+ const XMENU = "xmenu"
+ const nav = document.querySelector("#nav")
+ const abre = document.querySelector("#abre")
+
+ /**@type {string} */
+ let urlAnterior = "/m07excepciones/mEtryAnidado.html"
+ /**@type {string} */
+ let urlSiguiente = "/m07excepciones/mGresumen.html"
+ /**@type {number|null} */
+ let iniciaX = null
+ /**@type {number|null} */
+ let iniciaY = null
+
+ document.addEventListener("keydown", teclas)
+ document.addEventListener("touchstart", iniciaTouch)
+ document.addEventListener("touchmove", desplazaTouch)
+ if (abre) {
+  abre.addEventListener("click", cambiaMenu)
+ }
+ const cambian = Array.from(document.querySelectorAll(".cambiaMenu"))
+ for (const c of cambian) {
+  c.addEventListener("click", cambiaMenu)
+ }
+ const menu = localStorage.getItem(LOCAL_STORAGE_MENU)
+ if (menu) {
+  if (menu === MENU) {
+   document.body.classList.remove(XMENU)
+   document.body.classList.add(MENU)
+  } else {
+   document.body.classList.remove(MENU)
+   document.body.classList.add(XMENU)
+  }
+ }
+
+ function registraServiceWorker(url) {
+  if (navigator.serviceWorker) {
+   navigator.serviceWorker.register(url).
+    then(registro => {
+     console.log("Service Worker registrado.")
+     console.log(registro)
+    }).
+    catch(muestraError)
+  }
+ }
+ function muestraError(e) {
+  console.error(e)
+  alert(e.message)
+ }
+ function cambiaMenu() {
+  document.body.classList.toggle(XMENU)
+  document.body.classList.toggle(MENU)
+  if (document.body.classList.contains(MENU)) {
+   localStorage.setItem(LOCAL_STORAGE_MENU, MENU)
+  } else {
+   localStorage.setItem(LOCAL_STORAGE_MENU, XMENU)
+  }
+ }
+ /** @param {KeyboardEvent} ev*/
+ function teclas(ev) {
+  switch (ev.key) {
+   case "ArrowLeft":
+    retrocede()
+    break
+   case "ArrowRight":
+    avanza()
+    break
+  }
+ }
+ function retrocede() {
+  if (urlAnterior) {
+   location.href = urlAnterior
+  }
+ }
+ function avanza() {
+  if (urlSiguiente) {
+   location.href = urlSiguiente
+  }
+ }
+ /** @param {TouchEvent} ev*/
+ function iniciaTouch(ev) {
+  const toqueInicial = ev.touches[0]
+  iniciaX = toqueInicial.clientX
+  iniciaY = toqueInicial.clientY
+ }
+ /** @param {TouchEvent} ev*/
+ function desplazaTouch(ev) {
+  if (iniciaX && iniciaY) {
+   const desplazamiento = ev.touches[0]
+   var desplazamientoX = desplazamiento.clientX
+   var desplazamientoY = desplazamiento.clientY
+   var difX = desplazamientoX - iniciaX
+   var difY = desplazamientoY - iniciaY
+   // Checa que el movimiento no sea muy corto.
+   if (Math.abs(difX) + Math.abs(difY) > 90) {
+    if (Math.abs(difX) > Math.abs(difY)) {
+     if (difX > 70) {
+      retrocede()
+     } else {
+      avanza()
+     }
+     // Reinicia valores.
+     iniciaX = null
+     iniciaY = null
+    }
+   }
+  }
+ }
+</script>
+</body>
+</html>

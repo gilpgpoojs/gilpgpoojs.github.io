@@ -1,0 +1,108 @@
+<figure>
+ <img src="/img/m02objsBasicos/hormiga1.svg"
+   alt="Referencia y objeto inicialmente">
+</figure>
+<figure>
+ <img src="/img/m02objsBasicos/hormiga2.svg" alt="Agregamos manita a">
+</figure>
+<figure>
+ <img src="/img/m02objsBasicos/hormiga3.svg" alt="Agregamos manita b">
+</figure>
+<figure>
+ <img src="/img/m02objsBasicos/hormiga1.svg" alt="Aprende a saludar">
+</figure>
+<section>
+ <div class="lectura">
+  <h1>Property</h1>
+  <ul>
+   <li>
+    <p>
+     Los datos y funciones asociados con un objeto en JavaScript reciben
+     el nombre de <dfn>property</dfn> o <dfn>propiedad</dfn>.
+    </p>
+   </li>
+   <li>
+    <p>
+     Las funciones asociadas con un objeto se llaman <dfn>método</dfn>.
+    </p>
+   </li>
+   <li>
+    <p>
+     Los datos asociados con un objeto en general se llaman
+     <dfn>atributo</dfn> o <dfn>campo</dfn>.
+    </p>
+   </li>
+   <li>
+    <p>
+     Las propiedades de un objeto al momento de diseño deben ser
+     características directas del objeto, por ejemplo <q>nombre</q>. No
+     es válido que describan características de otros objetos; por
+     ejemplo, si un objeto es una película, no es válido ponerle el
+     atributo <del><q>nombreDelDirector</q></del>.
+    </p>
+   </li>
+  </ul>
+ </div>
+</section>
+<section>
+ <h1>Código</h1>
+ <div class="horizontal">
+  <muestra-codigo>
+   <div>
+    <div><span
+       style="color: #008000;">// Crea un objeto usando {}.</span></div>
+    <div><span
+       style="color: #008000;">// Controla con la referencia tel.</span></div>
+    <div><span style="color: #0000ff;">let</span> <span
+       style="color: #001080;">tel</span> = {}</div>
+    <div><span style="color: #008000;">// Le pone propiedades.</span></div>
+    <div><span style="color: #001080;">tel</span>.<span
+       style="color: #001080;">nombre</span> = <span
+       style="color: #a31515;">"pp"</span></div>
+    <div><span style="color: #001080;">tel</span>.<span
+       style="color: #001080;">color</span> = <span
+       style="color: #a31515;">"marrón"</span></div>
+    <div><span style="color: #008000;">// Le pone un método.</span></div>
+    <div><span style="color: #001080;">tel</span>.<span
+       style="color: #001080;">saluda</span> =</div>
+    <div>&nbsp;() <span style="color: #0000ff;">=&gt;</span> <span
+       style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #a31515;">"Hola."</span>)</div>
+    <div><span style="color: #001080;">tel</span>.<span
+       style="color: #795e26;">saluda</span>()</div>
+    <div><span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #001080;">tel</span>)</div>
+    <div><span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #001080;">tel</span>.<span
+       style="color: #001080;">nombre</span>)</div>
+    <div><span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #001080;">tel</span>.<span
+       style="color: #001080;">color</span>)</div>
+    <div><span style="color: #001080;">tel</span> = <span
+       style="color: #0000ff;">null</span> <span
+       style="color: #008000;">// Cuelga.</span></div>
+    <div><span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #001080;">tel</span>)</div>
+   </div>
+  </muestra-codigo>
+  <section>
+   <h1>Salida</h1>
+   <pre><samp>Hola.
+{ nombre: 'pp', color: 'marrón', saluda: [Function] }
+pp
+marrón
+null</samp></pre>
+  </section>
+ </div>
+ <div class="noPrint lectura">
+  <p>
+   <a href="https://pythontutor.com/javascript.html#code=//%20Crea%20un%20objeto%20usando%20%7B%7D.%0A//%20Controla%20con%20la%20referencia%20tel.%0Alet%20tel%20%3D%20%7B%7D%0A//%20Le%20pone%20propiedades.%0Atel.nombre%20%3D%20%22pp%22%0Atel.color%20%3D%20%22marr%C3%B3n%22%0A//%20Le%20pone%20un%20m%C3%A9todo.%0Atel.saluda%20%3D%0A%20%28%29%20%3D%3E%20console.log%28%22Hola.%22%29%0Atel.saluda%28%29%0Aconsole.log%28tel%29%0Aconsole.log%28tel.nombre%29%0Aconsole.log%28tel.color%29%0Atel%20%3D%20null%20//%20Cuelga.%0Aconsole.log%28tel%29&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+     target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+  </p>
+ </div>
+</section>

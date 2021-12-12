@@ -1,0 +1,62 @@
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    En este ejemplo no se invoca el método en super; aunque es recomendable
+    invocarlo, hay que estudiar bien la lógica del programa.
+   </p>
+  </li>
+ </ul>
+</div>
+<div class="horizontal">
+ <muestra-codigo>
+  <div>
+   <div><span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">Despedida</span> {</div>
+   <div>&nbsp;<span style="color: #795e26;">despídete</span>() {</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"Adios"</span>)</div>
+   <div>&nbsp;}</div>
+   <div>}</div><br>
+   <div><span style="color: #0000ff;">class</span> <span
+      style="color: #267f99;">DespedidaIngles</span></div>
+   <div>&nbsp;<span style="color: #0000ff;">extends</span> <span
+      style="color: #267f99;">Despedida</span> {</div>
+   <div>&nbsp;<span style="color: #008000;">/** </span><span
+      style="color: #0000ff;">@override</span><span
+      style="color: #008000;"> */</span></div>
+   <div>&nbsp;<span style="color: #795e26;">despídete</span>() {</div>
+   <div>&nbsp; <span style="color: #001080;">console</span>.<span
+      style="color: #795e26;">log</span>(<span
+      style="color: #a31515;">"Bye"</span>)</div>
+   <div>&nbsp;}</div>
+   <div>}</div><br>
+   <div><span style="color: #0000ff;">const</span> <span
+      style="color: #0070c1;">despedidas</span> = [</div>
+   <div>&nbsp;<span style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">Despedida</span>(),</div>
+   <div>&nbsp;<span style="color: #0000ff;">new</span> <span
+      style="color: #267f99;">DespedidaIngles</span>()]</div>
+   <div><span style="color: #af00db;">for</span> (<span
+      style="color: #0000ff;">var</span> <span
+      style="color: #001080;">d</span> <span
+      style="color: #0000ff;">of</span> <span
+      style="color: #0070c1;">despedidas</span>) {</div>
+   <div>&nbsp;<span style="color: #001080;">d</span>.<span
+      style="color: #795e26;">despídete</span>()</div>
+   <div>}</div>
+  </div>
+ </muestra-codigo>
+ <section>
+  <h1>Salida</h1>
+  <pre><samp>Adios
+Bye</samp></pre>
+ </section>
+</div>
+<div class="noPrint lectura">
+ <p>
+  <a href="https://pythontutor.com/javascript.html#code=class%20Despedida%20%7B%0A%20desp%C3%ADdete%28%29%20%7B%0A%20%20console.log%28%22Adios%22%29%0A%20%7D%0A%7D%0A%0Aclass%20DespedidaIngles%0A%20extends%20Despedida%20%7B%0A%20/**%20%40override%20*/%0A%20desp%C3%ADdete%28%29%20%7B%0A%20%20console.log%28%22Bye%22%29%0A%20%7D%0A%7D%0A%0Aconst%20despedidas%20%3D%20%5B%0A%20new%20Despedida%28%29,%0A%20new%20DespedidaIngles%28%29%5D%0Afor%20%28var%20d%20of%20despedidas%29%20%7B%0A%20d.desp%C3%ADdete%28%29%0A%7D&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+    target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+ </p>
+</div>

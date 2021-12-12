@@ -1,0 +1,140 @@
+<div class="columnas2">
+ <figure>
+  <img class="med" src="/img/m07excepciones/try-catch.svg"
+    alt="Diagrama de try-catch.">
+ </figure>
+ <figure>
+  <img class="med" src="/img/m07excepciones/try-error-catch.svg"
+    alt="Diagrama de try-catch con error.">
+ </figure>
+</div>
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Para procesar los errores, la instrucción
+    <code class="language-javascript">throw</code>
+    debe ejecutarse dentro de las llaves de
+    <code class="language-javascript">try</code>.
+   </p>
+  </li>
+  <li>
+   <p>
+    Si llega al final de las llaves de
+    <code class="language-javascript">try</code>
+    sin lanzar ninguna excepción, se hace lo siguiente:
+   </p>
+   <ul>
+    <li>
+     <p>
+      La cláusula
+      <code class="language-javascript">catch</code>
+      y las
+      <i>instrucciones para procesar la excepción</i>
+      no se ejecutan.
+     </p>
+    </li>
+    <li>
+     <p>
+      Continua con las instrucciones que vengan después de la estructura
+      completa
+      <code class="language-javascript">try-catch</code>.
+     </p>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <p>
+    Si se lanza una excepción dentro de las llaves de
+    <code class="language-javascript">try</code>,
+    se hace lo siguiente:
+   </p>
+   <ul>
+    <li>
+     <p>
+      Las restantes instrucciones hasta cerrar llaves no se ejecutan.
+     </p>
+    </li>
+    <li>
+     <p>
+      Se toma la excepción lanzada; a este proceso se le llama
+      <dfn>atrapar la excepción</dfn>.
+     </p>
+    </li>
+    <li>
+     <p>
+      La excepción atrapada se pasa como parámetro a la cláusula
+      <code class="language-javascript">catch</code>
+      el flujo normal se restablece y se ejecutan las
+      <i>instrucciones para procesar la excepción</i>.
+     </p>
+    </li>
+    <li>
+     <p>
+      Continua con las instrucciones que vengan después de la estructura
+      completa
+      <code class="language-javascript">try-catch</code>.
+     </p>
+    </li>
+   </ul>
+  </li>
+ </ul>
+</div>
+<section>
+ <h1>Ejemplo</h1>
+ <div class="horizontal">
+  <muestra-codigo>
+   <div>
+    <div><span style="color: #af00db;">try</span> {</div>
+    <div>&nbsp;<span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #a31515;">"Ejecuta bien"</span>)</div>
+    <div>} <span style="color: #af00db;">catch</span> (<span
+       style="color: #001080;">e</span>) {</div>
+    <div>&nbsp;<span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #a31515;">"Esto no se hace"</span>)</div>
+    <div>}</div>
+    <div><span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #a31515;">"Continúa normal"</span>)</div>
+    <div><span style="color: #af00db;">try</span> {</div>
+    <div>&nbsp;<span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #a31515;">"Intenta seguir"</span>)</div>
+    <div>&nbsp;<span style="color: #af00db;">throw</span> <span
+       style="color: #0000ff;">new</span> <span
+       style="color: #267f99;">Error</span>(<span
+       style="color: #a31515;">"Fallo"</span>)</div>
+    <div>&nbsp;<span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #a31515;">"Esto no se hace"</span>)</div>
+    <div>} <span style="color: #af00db;">catch</span> (<span
+       style="color: #001080;">e</span>) {</div>
+    <div>&nbsp;<span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(</div>
+    <div>&nbsp; <span style="color: #a31515;">"Procesa el error:"</span>, <span
+       style="color: #001080;">e</span>.<span
+       style="color: #001080;">message</span>)</div>
+    <div>}</div>
+    <div><span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #a31515;">"Adios"</span>)</div>
+   </div>
+  </muestra-codigo>
+  <section>
+   <h1>Salida</h1>
+   <pre><samp>Ejecuta bien
+Continúa normal
+Intenta seguir
+Procesa el error: Fallo
+Adios</samp></pre>
+  </section>
+ </div>
+ <div class="noPrint lectura">
+  <p>
+   <a href="https://pythontutor.com/javascript.html#code=try%20%7B%0A%20console.log%28%22Ejecuta%20bien%22%29%0A%7D%20catch%20%28e%29%20%7B%0A%20console.log%28%22Esto%20no%20se%20hace%22%29%0A%7D%0Aconsole.log%28%22Contin%C3%BAa%20normal%22%29%0Atry%20%7B%0A%20console.log%28%22Intenta%20seguir%22%29%0A%20throw%20new%20Error%28%22Fallo%22%29%0A%20console.log%28%22Esto%20no%20se%20hace%22%29%0A%7D%20catch%20%28e%29%20%7B%0A%20console.log%28%0A%20%20%22Procesa%20el%20error%3A%22,%20e.message%29%0A%7D%0Aconsole.log%28%22Adios%22%29&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+     target="_blank" rel="noopener">Depúralo en JavaScript Tutor.</a>
+  </p>
+ </div>
+</section>

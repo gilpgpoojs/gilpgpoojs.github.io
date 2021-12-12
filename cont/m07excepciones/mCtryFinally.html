@@ -1,0 +1,127 @@
+<div class="columnas2">
+ <figure>
+  <img class="med" src="/img/m07excepciones/try-finally.svg"
+    alt="Diagrama de try-finally.">
+ </figure>
+ <figure>
+  <img class="med" src="/img/m07excepciones/try-error-finally.svg"
+    alt="Diagrama de try-finally con error.">
+ </figure>
+</div>
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    Las instrucciones que están dentro de
+    <code class="language-javascript">finally</code>
+    siempre se ejecutan.
+   </p>
+  </li>
+  <li>
+   <p>
+    Si llega al final de las llaves de
+    <code class="language-javascript">try</code>
+    sin lanzar ninguna excepción, se hace lo siguiente:
+   </p>
+   <ul>
+    <li>
+     <p>
+      Las
+      <i>instrucciones que siempre se ejecutan</i>
+      de la cláusula
+      <code class="language-javascript">finally</code>
+      se ejecutan.
+     </p>
+    </li>
+    <li>
+     <p>
+      Continua con las instrucciones que vengan después de la estructura
+      completa
+      <code class="language-javascript">try-finally</code>.
+     </p>
+    </li>
+   </ul>
+  </li>
+  <li>
+   <p>
+    Si se lanza una excepción dentro de las llaves de
+    <code class="language-javascript">try</code>,
+    se hace lo siguiente:
+   </p>
+   <ul>
+    <li>
+     <p>
+      Las restantes instrucciones hasta cerrar llaves no se ejecutan.
+     </p>
+    </li>
+    <li>
+     <p>
+      Las
+      <i>instrucciones que siempre se ejecutan</i>
+      de la cláusula
+      <code class="language-javascript">finally</code>
+      se ejecutan.
+     </p>
+    </li>
+    <li>
+     <p>
+      Continúa lanzando la excepción.
+     </p>
+    </li>
+   </ul>
+ </ul>
+</div>
+<section>
+ <h1>Ejemplo</h1>
+ <div class="horizontal">
+  <muestra-codigo>
+   <div>
+    <div><span style="color: #af00db;">try</span> {</div>
+    <div>&nbsp;<span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #a31515;">"Sin error"</span>)</div>
+    <div>} <span style="color: #af00db;">finally</span> {</div>
+    <div>&nbsp;<span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #a31515;">"Si se ejecuta"</span>)</div>
+    <div>}</div>
+    <div><span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #a31515;">"Continua sin falla"</span>)</div>
+    <div><span style="color: #af00db;">try</span> {</div>
+    <div>&nbsp;<span style="color: #af00db;">throw</span> <span
+       style="color: #0000ff;">new</span> <span
+       style="color: #267f99;">Error</span>(<span
+       style="color: #a31515;">"A volar"</span>)</div>
+    <div>&nbsp;<span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #a31515;">"No se ejecuta."</span>)</div>
+    <div>} <span style="color: #af00db;">finally</span> {</div>
+    <div>&nbsp;<span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #a31515;">"Ejecuta con error"</span>)</div>
+    <div>}</div>
+    <div><span style="color: #001080;">console</span>.<span
+       style="color: #795e26;">log</span>(<span
+       style="color: #a31515;">"Esto no se realiza"</span>)</div>
+   </div>
+  </muestra-codigo>
+  <section>
+   <h1>Salida</h1>
+   <pre><samp>Sin error
+Si se ejecuta
+Continua sin falla
+Ejecuta con error</samp></pre>
+   <p>
+    <samp><span style="color: #bb0000">Error: A volar</span></samp>
+   </p>
+  </section>
+ </div>
+ <div class="noPrint lectura">
+  <p>
+   <a href="https://gilpgnod.github.io/#try%20%7B%0A%20console.log(%22Sin%20error%22)%0A%7D%20finally%20%7B%0A%20console.log(%22Si%20se%20ejecuta%22)%0A%7D%0Aconsole.log(%22Continua%20sin%20falla%22)%0Atry%20%7B%0A%20throw%20new%20Error(%22A%20volar%22)%0A%20console.log(%22No%20se%20ejecuta.%22)%0A%7D%20finally%20%7B%0A%20console.log(%22Ejecuta%20con%20error%22)%0A%7D%0Aconsole.log(%22Esto%20no%20se%20realiza%22)"
+     target="_blank" rel="noopener">Depúralo en GilPG Nod.</a>
+  </p>
+ </div>
+</section>
+</section>
