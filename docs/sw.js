@@ -38,6 +38,7 @@ const ARCHIVOS = [
    "/img/m02objsBasicos/hormiga2.svg",
    "/img/m02objsBasicos/hormiga3.svg",
    "/img/m02objsBasicos/hormiga4.svg",
+   "/img/m03clases/reina.svg",
    "/img/m05arreglos/arreglos.svg",
    "/img/m05arreglos/arrobjs.svg",
    "/img/m07excepciones/throw.svg",

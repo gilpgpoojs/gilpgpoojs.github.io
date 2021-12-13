@@ -1,7 +1,41 @@
 {
- "orden": "2",
  "type": "A",
  "title": "Objetos básicos",
  "description": "Contenido de la lección «2. Objetos básicos»",
- "printDescription": "Página para imprimir de la lección «2. Objetos básicos»."
+ "printDescription": "Página para imprimir de la lección «2. Objetos básicos».",
+ "listado": [
+  {
+   "name": "mApaso.html",
+   "title": "Objetos paso a paso",
+   "description": "Creación de objetos paso a paso."
+  },
+  {
+   "name": "mBliterales.html",
+   "title": "Literales de objeto",
+   "description": "Creación de literales de objeto."
+  },
+  {
+   "name": "mCstring.html",
+   "title": "Propiedades y métodos de string",
+   "h1": "Propiedades y métodos de <code class=\"language-javasccript\">string</code>",
+   "description": "Ejemplos de propiedades y métodos de string."
+  },
+  {
+   "name": "mDstringConversion.html",
+   "title": "Conversión a string",
+   "h1": "Conversión a <code class=\"language-javasccript\">string</code>",
+   "description": "Ejemplos de conversión a string."
+  },
+  {
+   "name": "mEstringNumber.html",
+   "title": "Conversión de string a number",
+   "h1": "Conversión de <code class=\"language-javasccript\">string</code> a <code class=\"language-javasccript\">number</code>",
+   "description": "Ejemplos de conversión de string a number."
+  },
+  {
+   "name": "mFresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «2. Objetos básicos»."
+  }
+ ]
 }

@@ -1,7 +1,0 @@
-{
- "orden": "8",
- "title": "a = 2",
- "h1": "<code class='language-javascript'>a = <u>2</u></code>",
- "description": "Paso 8 de una prueba de escritorio con un objeto: «a = 2».",
- "esPruebaDeEscritorio":true
-}

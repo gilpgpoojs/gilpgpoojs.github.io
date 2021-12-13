@@ -1,7 +1,0 @@
-{
- "orden": "12",
- "title": "console.log(c + this.a)",
- "h1": "<code class='language-javascript'>console.log(c + this.a)</code>",
- "description": "Paso 12 de una prueba de escritorio con un objeto: «console.log(c + this.a)».",
- "esPruebaDeEscritorio":true
-}

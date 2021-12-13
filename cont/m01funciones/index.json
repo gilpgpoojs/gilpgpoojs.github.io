@@ -1,7 +1,59 @@
 {
- "orden": "1",
  "type": "A",
  "title": "Funciones",
  "description": "Contenido de la lección «1. Funciones».",
- "printDescription": "Página para imprimir de la lección «1. Funciones»."
+ "printDescription": "Página para imprimir de la lección «1. Funciones».",
+ "listado": [
+  {
+   "name": "mAfunciones.html",
+   "title": "Función",
+   "h1": "<dfn>Función</dfn>",
+   "description": "Definición de función."
+  },
+  {
+   "name": "mBInvocaciones.html",
+   "title": "Invocación más de una vez",
+   "description": "Invocación más de una vez de una función."
+  },
+  {
+   "name": "mCfuncionesFunciones.html",
+   "title": "Funciones que invocan funciones",
+   "description": "Ejemplo de funciones que invocan funciones."
+  },
+  {
+   "name": "mDfuncionesParametros.html",
+   "title": "Paso de parámetros",
+   "h1": "<dfn>Paso de parámetros</dfn>",
+   "description": "Definición del paso de parámetros en funciones."
+  },
+  {
+   "name": "mEfuncionesParametrosExpresiones.html",
+   "title": "Funciones con expresiones en los parámetros",
+   "h1": "<dfn>Funciones con expresiones en los parámetros</dfn>",
+   "description": "Ejemplo de funciones con expresiones en los parámetros."
+  },
+  {
+   "name": "mFfuncionesReturn.html",
+   "title": "Funciones con valor de regreso",
+   "h1": "<dfn>Funciones con valor de regreso</dfn>",
+   "description": "Ejemplo de funciones con valor de regreso."
+  },
+  {
+   "name": "mGfuncionesFlecha.html",
+   "title": "Funciones flecha",
+   "h1": "<dfn>Funciones flecha</dfn>",
+   "description": "ejemplos de funciones flecha."
+  },
+  {
+   "name": "mHrecursividad.html",
+   "title": "Recursividad",
+   "h1": "<dfn>Recursividad</dfn>",
+   "description": "Ejemplo de Recursividad."
+  },
+  {
+   "name": "mIresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «1. Funciones»."
+  }
+ ]
 }

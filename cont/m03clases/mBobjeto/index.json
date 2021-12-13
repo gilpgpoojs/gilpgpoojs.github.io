@@ -1,7 +1,110 @@
 {
- "orden": "B",
  "type": "1",
  "title": "Prueba de escritorio con un objeto",
  "description": "Código fuente para prueba de escritorio con un objeto.",
- "printDescription": "Página para imprimir una prueba de escritorio con un objeto."
+ "printDescription": "Página para imprimir una prueba de escritorio con un objeto.",
+ "listado": [
+  {
+   "name": "m01.html",
+   "title": "class Cl01",
+   "h1": "<code class='language-javascript'>class Cl01</code>",
+   "description": "Paso 1 de una prueba de escritorio con un objeto: «class Cl01».",
+   "esPruebaDeEscritorio": true
+  },
+  {
+   "name": "m02.html",
+   "title": "new",
+   "h1": "<code class='language-javascript'>new</code>",
+   "description": "Paso 2 de una prueba de escritorio con un objeto: «new».",
+   "esPruebaDeEscritorio": true
+  },
+  {
+   "name": "m03.html",
+   "title": "Cl01(4)",
+   "h1": "<code class='language-javascript'>Cl01(4)</code>",
+   "description": "Paso 3 de una prueba de escritorio con un objeto: «Cl01(4)».",
+   "esPruebaDeEscritorio": true
+  },
+  {
+   "name": "m04.html",
+   "title": "constructor(b)",
+   "h1": "<code class='language-javascript'>constructor(b)</code>",
+   "description": "Paso 4 de una prueba de escritorio con un objeto: «constructor(b)».",
+   "esPruebaDeEscritorio": true
+  },
+  {
+   "name": "m05.html",
+   "title": "this.a = b",
+   "h1": "<code class='language-javascript'>this.a = b</code>",
+   "description": "Paso 5 de una prueba de escritorio con un objeto: «this.a = b».",
+   "esPruebaDeEscritorio": true
+  },
+  {
+   "name": "m06.html",
+   "title": "}",
+   "h1": "<code class='language-javascript'>}</code>",
+   "description": "Paso 6 de una prueba de escritorio con un objeto: «}».",
+   "esPruebaDeEscritorio": true
+  },
+  {
+   "name": "m07.html",
+   "title": "new Cl01(4) → 2",
+   "h1": "<code class='language-javascript'>new Cl01(4) → <u>2</u></code>",
+   "description": "Paso 7 de una prueba de escritorio con un objeto: «new Cl01(4) → 2».",
+   "esPruebaDeEscritorio": true
+  },
+  {
+   "name": "m08.html",
+   "title": "a = 2",
+   "h1": "<code class='language-javascript'>a = <u>2</u></code>",
+   "description": "Paso 8 de una prueba de escritorio con un objeto: «a = 2».",
+   "esPruebaDeEscritorio": true
+  },
+  {
+   "name": "m09.html",
+   "title": "a.mensaje(2)",
+   "h1": "<code class='language-javascript'>a.mensaje(2)</code>",
+   "description": "Paso 9 de una prueba de escritorio con un objeto: «a.mensaje(2)».",
+   "esPruebaDeEscritorio": true
+  },
+  {
+   "name": "m10.html",
+   "title": "mensaje(c) {",
+   "h1": "<code class='language-javascript'>mensaje(c) {</code>",
+   "description": "Paso 10 de una prueba de escritorio con un objeto: «mensaje(c) {».",
+   "esPruebaDeEscritorio": true
+  },
+  {
+   "name": "m11.html",
+   "title": "c + this.a",
+   "h1": "<code class='language-javascript'>c + this.a</code>",
+   "description": "Paso 11 de una prueba de escritorio con un objeto: «c + this.a».",
+   "esPruebaDeEscritorio": true
+  },
+  {
+   "name": "m12.html",
+   "title": "console.log(c + this.a)",
+   "h1": "<code class='language-javascript'>console.log(c + this.a)</code>",
+   "description": "Paso 12 de una prueba de escritorio con un objeto: «console.log(c + this.a)».",
+   "esPruebaDeEscritorio": true
+  },
+  {
+   "name": "m13.html",
+   "title": "}",
+   "h1": "<code class='language-javascript'>}</code>",
+   "description": "Paso 13 de una prueba de escritorio con un objeto: «}».",
+   "esPruebaDeEscritorio": true
+  },
+  {
+   "name": "m14.html",
+   "title": "Descongela y termina",
+   "description": "Paso 14 de una prueba de escritorio con un objeto: «Descongela y termina».",
+   "esPruebaDeEscritorio": true
+  },
+  {
+   "name": "m15depura.html",
+   "title": "Depura con JavaScript Tutor",
+   "description": "Depuración con JavaScript Tutor de una prueba de escritorio con un objeto."
+  }
+ ]
 }

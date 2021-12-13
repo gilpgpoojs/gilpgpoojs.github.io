@@ -3,5 +3,50 @@
  "type": "A",
  "title": "Arreglos",
  "description": "Contenido de la lección «5. Arreglos».",
- "printDescription": "Página para imprimir de la lección «5. Arreglos»."
+ "printDescription": "Página para imprimir de la lección «5. Arreglos».",
+ "listado": [
+  {
+   "name": "mAarrBasico.html",
+   "title": "Conceptos básicos",
+   "description": "Conceptos básicoses de arreglos."
+  },
+  {
+   "name": "mBarrCont.html",
+   "title": "Uso de contadores",
+   "description": "Uso de contadores para procesar arreglos."
+  },
+  {
+   "name": "mCforOf.html",
+   "title": "for-of",
+   "h1": "<code class=\"language-javascript\">for-of</code>",
+   "description": "for-of."
+  },
+  {
+   "name": "mDforEach.html",
+   "title": "for-each",
+   "h1": "<code class=\"language-javascript\">for-each</code>",
+   "description": "for-each."
+  },
+  {
+   "name": "mEarrInst.html",
+   "title": "Arreglos de instancias de clases",
+   "description": "Arreglos de instancias de clases."
+  },
+  {
+   "name": "mFarrLit.html",
+   "title": "Arreglos de literales de objetos",
+   "description": "Arreglos de literales de objetos."
+    },
+  {
+   "name": "mGforEachObj.html",
+   "title": "El método forEach con objetos",
+   "h1": "El método <code class='language-javascript'>forEach</code> con objetos",
+   "description": "Define forEach con objetos."
+    },
+  {
+   "name": "mHresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «5. Arreglos."
+    }
+ ]
 }

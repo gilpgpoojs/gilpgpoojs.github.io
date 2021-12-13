@@ -1,7 +1,23 @@
 {
- "orden": "4",
  "type": "A",
  "title": "Herencia",
  "description": "Contenido de la lección «4. Herencia»",
- "printDescription": "Página para imprimir de la lección «4. Herencia»."
+ "printDescription": "Página para imprimir de la lección «4. Herencia».",
+ "listado": [
+  {
+   "name": "mAconstructores.html",
+   "title": "Constructores",
+   "description": "Coordinación de constructores en la herencia."
+  },
+  {
+   "name": "mBsobrescritura.html",
+   "title": "Sobrescritura de métodos",
+   "description": "Sobrescritura de métodos en la herencia."
+  },
+  {
+   "name": "mCresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «4. Herencia»."
+  }
+ ]
 }

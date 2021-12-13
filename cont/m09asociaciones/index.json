@@ -3,5 +3,47 @@
  "type": "A",
  "title": "Asociaciones",
  "description": "Contenido de la lección «9. Asociaciones».",
- "printDescription": "Página para imprimir de la lección «9. Asociaciones»."
+ "printDescription": "Página para imprimir de la lección «9. Asociaciones».",
+ "listado": [
+  {
+   "name": "mAaUno.html",
+   "title": "Asociaciones a uno",
+   "description": "Asociaciones a uno."
+  },
+  {
+   "name": "mBaMuchos.html",
+   "title": "Asociaciones a muchos",
+   "description": "Asociaciones a muchos."
+  },
+  {
+   "name": "mCunoAuno.html",
+   "title": "Asociaciones de uno a uno",
+   "description": "Asociaciones de uno a uno."
+  },
+  {
+   "name": "mDunoAmuchos.html",
+   "title": "Asociaciones de uno a muchos",
+   "description": "Asociaciones de uno a muchos."
+  },
+  {
+   "name": "mEmuchosAmuchos.html",
+   "title": "Asociaciones de muchos a muchos",
+   "description": "Asociaciones de muchos a muchos."
+  },
+  {
+   "name": "mFagregacion.html",
+   "title": "Agregación",
+   "description": "Agregación."
+  },
+  {
+   "name": "mGcomposicion.html",
+   "title": "Composición",
+   "description": "Composición."
+  },
+  {
+   "name": "mHresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «9. Asociaciones»."
+  }
+ ]
 }

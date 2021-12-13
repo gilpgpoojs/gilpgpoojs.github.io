@@ -2,5 +2,37 @@
  "type": "1",
  "title": "Programación Orientada a Objetos en JavaScript",
  "description": "Página de inicio de GilPG POOJS que enseña programación orientada a objetos en JavaScript.",
- "printDescription": "Página para imprimir todo el contenido de GilPG POOJS que enseña programación orientada a objetos en JavaScript."
+ "printDescription": "Página para imprimir todo el contenido de GilPG POOJS que enseña programación orientada a objetos en JavaScript.",
+ "listado": [
+  {
+   "name": "m01funciones"
+  },
+  {
+   "name": "m02objsBasicos"
+  },
+  {
+   "name": "m03clases"
+  },
+  {
+   "name": "m04herencia"
+  },
+  {
+   "name": "m05arreglos"
+  },
+  {
+   "name": "m06polimorfismo"
+  },
+  {
+   "name": "m07excepciones"
+  },
+  {
+   "name": "m08promesas"
+  },
+  {
+   "name": "m09asociaciones"
+  },
+  {
+   "name": "m10patrones"
+  }
+ ]
 }

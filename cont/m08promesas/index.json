@@ -1,7 +1,35 @@
 {
- "orden": "8",
  "type": "A",
  "title": "Promesas",
  "description": "Contenido de la lección «8. Promesas».",
- "printDescription": "Página para imprimir de la lección «8. Promesas»."
+ "printDescription": "Página para imprimir de la lección «8. Promesas».",
+ "listado": [
+  {
+   "name": "mApromesasOriginales.html",
+   "title": "Promesas originales",
+   "description": "Promesas originales."
+  },
+  {
+   "name": "mBasyncAwait.html",
+   "title": "async-await",
+   "h1": "<code class='language-javascript'>async-await</code>",
+   "description": "Uso de async-await."
+  },
+  {
+   "name": "mCcreaPromesa.html",
+   "title": "Creación de una promesa",
+   "description": "Creación de una promesa."
+  },
+  {
+   "name": "mDpromiseAll.html",
+   "title": "Promise.all",
+   "h1": "<code class='language-javascript'>Promise.all</code></dfn>",
+   "description": "Promise.all."
+  },
+  {
+   "name": "mEresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «8. Promesas»."
+  }
+ ]
 }

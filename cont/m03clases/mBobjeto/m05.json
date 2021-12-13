@@ -1,7 +1,0 @@
-{
- "orden": "5",
- "title": "this.a = b",
- "h1": "<code class='language-javascript'>this.a = b</code>",
- "description": "Paso 5 de una prueba de escritorio con un objeto: «this.a = b».",
- "esPruebaDeEscritorio":true
-}

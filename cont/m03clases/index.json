@@ -1,7 +1,32 @@
 {
- "orden": "3",
  "type": "A",
  "title": "Clases",
  "description": "Contenido de la lección «3. Clases»",
- "printDescription": "Página para imprimir de la lección «3. Clases»."
+ "printDescription": "Página para imprimir de la lección «3. Clases».",
+ "listado": [
+  {
+   "name": "mAclass.html",
+   "title": "class",
+   "h1": "<code class='language-javascript'>class</code>",
+   "description": "Introduce class como objeto estático."
+  },
+  {
+   "name": "mBobjeto"
+  },
+  {
+   "name": "mCinstObj.html",
+   "title": "Clases e instancias",
+   "description": "Marca diferencias entre clases y objetos."
+  },
+  {
+   "name": "mDgetters.html",
+   "title": "Getters y setters",
+   "description": "Presenta ls conceptos de getter y de setter."
+  },
+  {
+   "name": "mEresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «3. Clases»."
+  }
+ ]
 }

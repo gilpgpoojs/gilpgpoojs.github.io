@@ -3,5 +3,38 @@
  "type": "A",
  "title": "Patrones de diseño",
  "description": "Contenido de la lección «10. Patrones de diseño».",
- "printDescription": "Página para imprimir de la lección «10. Patrones de diseño»."
+ "printDescription": "Página para imprimir de la lección «10. Patrones de diseño».",
+ "listado": [
+  {
+   "name": "mAdefinicion.html",
+   "title": "Patrón de diseño",
+   "h1": "<dfn>Patrón de diseño</dfn>",
+   "description": "Definición de patrón de diseño."
+  },
+  {
+   "name": "mBsingleton.html",
+   "title": "El patrón singleton",
+   "description": "Presenta el patrón singleton."
+  },
+  {
+   "name": "mCfactory.html",
+   "title": "El patrón factory",
+   "description": "Presenta el patrón factory."
+  },
+  {
+   "name": "mDproxy.html",
+   "title": "El patrón proxy",
+   "description": "Presenta el patrón proxy."
+  },
+  {
+   "name": "mEmvc.html",
+   "title": "El patrón MVC",
+   "description": "Presenta el patrón MVC."
+  },
+  {
+   "name": "mFresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «10. Patrones de diseño»."
+  }
+ ]
 }

@@ -1,7 +1,47 @@
 {
- "orden": "7",
  "type": "A",
  "title": "Excepciones",
  "description": "Contenido de la lección «7. Excepciones».",
- "printDescription": "Página para imprimir de la lección «7. Excepciones»."
+ "printDescription": "Página para imprimir de la lección «7. Excepciones».",
+ "listado": [
+  {
+   "name": "mAthrow.html",
+   "title": "throw",
+   "h1": "<code class='language-javascript'>throw</code>",
+   "description": "Definición de throw."
+  },
+  {
+   "name": "mBtryCatch.html",
+   "title": "try-catch",
+   "h1": "<code class='language-javascript'>try-catch</code>",
+   "description": "Definición de try-catch."
+  },
+  {
+   "name": "mCtryFinally.html",
+   "title": "try-finally",
+   "h1": "<code class='language-javascript'>try-finally</code>",
+   "description": "Definición de try-finally."
+  },
+  {
+   "name": "mDtryCatchFinally.html",
+   "title": "try-catch-finally",
+   "h1": "<code class='language-javascript'>try-catch-finally</code>",
+   "description": "Definición de try-catch-finally."
+  },
+  {
+   "name": "mEtryAnidado.html",
+   "title": "try anidado",
+   "description": "Uso de try anidado."
+  },
+  {
+   "name": "mFformulario.html",
+   "title": "Formulario con excepciones",
+   "description": "Formulario con excepciones."
+  },
+  {
+   "name": "mGresumen.html",
+   "title": "Resumen",
+   "description": "Resumen de la lección «7. Excepciones»."
+  }
+ ]
 }
