@@ -1,7 +1,5 @@
-* Ok hasta m08promesas
 * Añadir los enlaces para depurar en GilPG Nod
 * Revisar GilPG Nod para que funcione bien sin conexión
 * Agregar pruebas de escritorio para funciones y paso de parámetros.
-* Volver a poner los estilos para las barras de scroll
 * Agregar metadatos para que los enlaces puedan obtener el ícono de la página.
 * Cambiar los metadatos de los archivos al index.json

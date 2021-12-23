@@ -17,19 +17,19 @@
   {
    "name": "mCstring.html",
    "title": "Propiedades y métodos de string",
-   "h1": "Propiedades y métodos de <code class=\"language-javasccript\">string</code>",
+   "h1": "Propiedades y métodos de <code class=\"language-javascript\">string</code>",
    "description": "Ejemplos de propiedades y métodos de string."
   },
   {
    "name": "mDstringConversion.html",
    "title": "Conversión a string",
-   "h1": "Conversión a <code class=\"language-javasccript\">string</code>",
+   "h1": "Conversión a <code class=\"language-javascript\">string</code>",
    "description": "Ejemplos de conversión a string."
   },
   {
    "name": "mEstringNumber.html",
    "title": "Conversión de string a number",
-   "h1": "Conversión de <code class=\"language-javasccript\">string</code> a <code class=\"language-javasccript\">number</code>",
+   "h1": "Conversión de <code class=\"language-javascript\">string</code> a <code class=\"language-javascript\">number</code>",
    "description": "Ejemplos de conversión de string a number."
   },
   {

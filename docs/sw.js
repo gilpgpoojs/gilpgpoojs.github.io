@@ -17,8 +17,7 @@ const CACHE = "cache"
 const VERSION = "4.1"
 
 const ARCHIVOS = [
-  "/docs/index.html",
-   "/favicon.ico",
+  "/favicon.ico",
    "/img/icono/160x30.png",
    "/img/icono/160x30.webp",
    "/img/icono/80x15.png",
@@ -163,6 +162,13 @@ const ARCHIVOS = [
    "/m10patrones/print.html",
    "/print.html",
    "/site.webmanifest",
+   "/src/m03vistas/Aformulario.html",
+   "/src/m03vistas/Bapp.html",
+   "/src/m03vistas/Ccampos.html",
+   "/src/m03vistas/Dbotones.html",
+   "/src/m03vistas/Einterruptor.html",
+   "/src/m03vistas/Fgps.html",
+   "/src/m03vistas/Garchivos.html",
     "/"]
 
 // @ts-ignore
