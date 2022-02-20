@@ -1,0 +1,28 @@
+<div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=var%20juguetesf%20%3D%20%5B%0A%20%20%7B%20nombre%3A%20%22carro%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20500%20%7D,%0A%20%20%7B%20nombre%3A%20%22mu%C3%B1eca%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20300%20%7D,%0A%20%20%7B%20nombre%3A%20%22unicornio%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20700%20%7D,%0A%20%20%7B%20nombre%3A%20%22heroe%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20400%20%7D%5D%3B%0Avar%20total%20%3D%200%3B%0Afor%20%28var%20juguete%20of%20juguetesf%29%20%7B%0A%20%20if%20%28juguete.tipo%20%3D%3D%3D%20%22femenino%22%29%20%7B%0A%20%20%20%20total%20%2B%3D%200.16%20*%20juguete.precioMX%3B%0A%20%20%7D%0A%7D%0Aconsole.log%28total.toFixed%282%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">
+     Múltiples operaciones en un ciclo.
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=var%20juguetesf%20%3D%20%5B%0A%20%20%7B%20nombre%3A%20%22carro%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20500%20%7D,%0A%20%20%7B%20nombre%3A%20%22mu%C3%B1eca%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20300%20%7D,%0A%20%20%7B%20nombre%3A%20%22unicornio%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20700%20%7D,%0A%20%20%7B%20nombre%3A%20%22heroe%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20400%20%7D%5D%3B%0Avar%20femeninos%20%3D%20%5B%5D%3B%0Afor%20%28var%20juguete%20of%20juguetesf%29%20%7B%0A%20%20if%20%28juguete.tipo%20%3D%3D%3D%20%22femenino%22%29%20%7B%0A%20%20%20%20femeninos.push%28juguete%29%3B%0A%20%20%7D%0A%7D%0Avar%20impuestos%20%3D%20%5B%5D%3B%0Afor%20%28var%20juguete%20of%20femeninos%29%20%7B%0A%20%20impuestos.push%280.16%20*%20juguete.precioMX%29%3B%0A%7D%0Avar%20total%20%3D%200%3B%0Afor%20%28var%20impuesto%20of%20impuestos%29%20%7B%0A%20%20total%20%2B%3D%20impuesto%3B%0A%7D%0Aconsole.log%28total.toFixed%282%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">
+     Con for por etapas.
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=var%20juguetes%20%3D%20%5B%0A%20%20%7B%20nombre%3A%20%22carro%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20500%20%7D,%0A%20%20%7B%20nombre%3A%20%22mu%C3%B1eca%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20300%20%7D,%0A%20%20%7B%20nombre%3A%20%22unicornio%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20700%20%7D,%0A%20%20%7B%20nombre%3A%20%22heroe%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20400%20%7D%5D%3B%0Avar%20total%20%3D%20juguetes%0A%20%20.filter%28juguete%20%3D%3E%20juguete.tipo%20%3D%3D%3D%20%22femenino%22%29%0A%20%20.map%28juguete%20%3D%3E%200.16%20*%20juguete.precioMX%29%0A%20%20.reduce%28%28tot,%20impuesto%29%20%3D%3E%20tot%20%2B%20impuesto,%200%29%3B%0Aconsole.log%28total.toFixed%282%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">
+     Encadenamiento.
+    </a>
+   </p>
+  </li>
+ </ul>
+</div>

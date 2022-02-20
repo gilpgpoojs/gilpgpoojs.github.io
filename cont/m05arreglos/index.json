@@ -36,17 +36,58 @@
    "name": "mFarrLit.html",
    "title": "Arreglos de literales de objetos",
    "description": "Arreglos de literales de objetos."
-    },
+  },
   {
    "name": "mGforEachObj.html",
    "title": "El método forEach con objetos",
    "h1": "El método <code class='language-javascript'>forEach</code> con objetos",
    "description": "Define forEach con objetos."
-    },
+  },
   {
-   "name": "mHresumen.html",
+   "name": "mHmap.html",
+   "title": "El método map",
+   "h1": "El método <code class='language-javascript'>map</code>",
+   "description": "Define el mmétodo map."
+  },
+  {
+   "name": "mIfilter.html",
+   "title": "El método filter",
+   "h1": "El método <code class='language-javascript'>filter</code>",
+   "description": "Define el mmétodo filter."
+  },
+  {
+   "name": "mJjoin.html",
+   "title": "El método join",
+   "h1": "El método <code class='language-javascript'>join</code>",
+   "description": "Define el método join."
+  },
+  {
+   "name": "mKreduce.html",
+   "title": "El método reduce",
+   "h1": "El método <code class='language-javascript'>reduce</code>",
+   "description": "Define el método reduce."
+  },
+  {
+   "name": "mLsort.html",
+   "title": "El método sort",
+   "h1": "El método <code class='language-javascript'>sort</code>",
+   "description": "Define el método sort."
+  },
+  {
+   "name": "mMencadenamiento.html",
+   "title": "Encadenamiento de métodos",
+   "description": "Encadenamiento de métodos."
+  },
+  {
+   "name": "mNSet.html",
+   "title": "El tipo de datos Set",
+   "h1": "El tipo de datos <code class='language-javascript'>Set</code>",
+   "description": "El tipo de datos Set."
+  },
+  {
+   "name": "mOresumen.html",
    "title": "Resumen",
    "description": "Resumen de la lección «5. Arreglos."
-    }
+  }
  ]
 }

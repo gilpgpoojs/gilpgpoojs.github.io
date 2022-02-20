@@ -388,7 +388,42 @@
     </li>
     <li>
      <p>
-      <a href="/m05arreglos/mHresumen.html">Resumen</a>
+      <a href="/m05arreglos/mHmap.html">El método <code class='language-javascript'>map</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05arreglos/mIfilter.html">El método <code class='language-javascript'>filter</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05arreglos/mJjoin.html">El método <code class='language-javascript'>join</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05arreglos/mKreduce.html">El método <code class='language-javascript'>reduce</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05arreglos/mLsort.html">El método <code class='language-javascript'>sort</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05arreglos/mMencadenamiento.html">Encadenamiento de métodos</a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05arreglos/mNSet.html">El tipo de datos <code class='language-javascript'>Set</code></a>
+     </p>
+    </li>
+    <li>
+     <p>
+      <a href="/m05arreglos/mOresumen.html">Resumen</a>
      </p>
     </li>
    </ol>
@@ -729,7 +764,175 @@ adios</samp></pre>
 </div>
       </section>
      <section >
-         <h1 >H. Resumen</h1><div class="lectura">
+         <h1 >H. El método <code class='language-javascript'>map</code></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=var%20mapi1%20%3D%20%5B7,%202,%209%5D%3B%0Avar%20mapi2%20%3D%20%5B%5D%3B%0Afor%20%28var%20x%20of%20mapi1%29%20%7B%0A%20%20mapi2.push%28x%20*%202%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">
+     Map de datos usando for.
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=var%20map1%20%3D%20%5B7,%202,%209%5D%3B%0Avar%20map2%20%3D%20map1.map%28x%20%3D%3E%20x%20*%202%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">
+     Map de datos.
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=var%20mapi3%20%3D%20%5B%7B%20p%3A%207%20%7D,%20%7B%20p%3A%202%20%7D,%20%7B%20p%3A%209%20%7D%5D%3B%0Avar%20mapi4%20%3D%20%5B%5D%3B%0Afor%20%28var%20x%20of%20mapi3%29%20%7B%0A%20%20mapi4.push%28%7B%20n%3A%20x.p%20*%202%20%7D%29%3B%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">
+     Map de objetos usando for.
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=var%20map3%20%3D%20%5B%7B%20p%3A%207%20%7D,%20%7B%20p%3A%202%20%7D,%20%7B%20p%3A%209%20%7D%5D%3B%0Avar%20map4%20%3D%20map3.map%28x%20%3D%3E%20%28%7B%20n%3A%20x.p%20*%202%20%7D%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">
+     Map de objetos.
+    </a>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >I. El método <code class='language-javascript'>filter</code></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=var%20filf1%20%3D%20%5B7,%202,%204,%209%5D%3B%0Avar%20filf2%20%3D%20%5B%5D%3B%0Afor%20%28var%20x%20of%20filf1%29%20%7B%0A%20%20if%20%28x%20%25%202%20%3D%3D%3D%200%29%20%7B%0A%20%20%20%20filf2.push%28x%29%3B%0A%20%20%7D%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">
+     Filter de datos usando for.
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=var%20fil1%20%3D%20%5B7,%202,%204,%209%5D%3B%0Avar%20fil2%20%3D%20fil1.filter%28x%20%3D%3E%20x%20%25%202%20%3D%3D%3D%200%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">
+     Filter de datos.
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=var%20filf3%20%3D%20%5B%7B%20p%3A%207%20%7D,%20%7B%20p%3A%202%20%7D,%20%7B%20p%3A%204%20%7D,%20%7B%20p%3A%209%20%7D%5D%3B%0Avar%20filf4%20%3D%20%5B%5D%3B%0Afor%20%28var%20y%20of%20filf3%29%20%7B%0A%20%20if%20%28y.p%20%25%202%20%3D%3D%3D%200%29%20%7B%0A%20%20%20%20filf4.push%28y%29%3B%0A%20%20%7D%0A%7D&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">
+     Filter de objetos usando for.
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=var%20fil3%20%3D%20%5B%7B%20p%3A%207%20%7D,%20%7B%20p%3A%202%20%7D,%20%7B%20p%3A%204%20%7D,%20%7B%20p%3A%209%20%7D%5D%3B%0Avar%20fil4%20%3D%20fil3.filter%28x%20%3D%3E%20x.p%20%25%202%20%3D%3D%3D%200%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">
+     Filter de objetos.
+    </a>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >J. El método <code class='language-javascript'>join</code></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=const%20txt%20%3D%20%5B%22hola%22,%20%22estoy%22,%20%22muy%22,%20%22contento%22%5D.join%28%22--%22%29%3B%0Aconsole.log%28txt%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">
+     Programa animado de join de arreglos.
+    </a>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >K. El método <code class='language-javascript'>reduce</code></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=var%20reducef%20%3D%20%5B7,%202,%204,%209%5D%3B%0Avar%20total%20%3D%200%3B%0Afor%20%28var%20x%20of%20reducef%29%20%7B%0A%20%20total%20%2B%3D%20x%3B%0A%7D%0Aconsole.log%28total%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">
+     Reduce usando for.
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=var%20reduce%20%3D%20%5B7,%202,%204,%209%5D%3B%0Avar%20total%20%3D%20reduce.reduce%28%28tot,%20num,%20i,%20arr%29%20%3D%3E%20tot%20%2B%20num,%200%29%3B%0Aconsole.log%28total%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">
+     Reduce.
+    </a>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >L. El método <code class='language-javascript'>sort</code></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=console.log%28%5B%22hola%22,%20%22estoy%22,%20%22muy%22,%20%22contento%22%5D.sort%28%29%29%3B%0Avar%20juguetes%20%3D%20%5B%0A%20%20%7B%20nombre%3A%20%22carro%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20500%20%7D,%0A%20%20%7B%20nombre%3A%20%22mu%C3%B1eca%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20300%20%7D,%0A%20%20%7B%20nombre%3A%20%22unicornio%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20700%20%7D,%0A%20%20%7B%20nombre%3A%20%22heroe%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20400%20%7D%5D%3B%0Aconsole.log%28juguetes.sort%28%28j1,j2%29%20%3D%3E%20j1.precioMX%20-%20j2.precioMX%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">
+     Programa animado de sort de arreglos.
+    </a>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >M. Encadenamiento de métodos</h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=var%20juguetesf%20%3D%20%5B%0A%20%20%7B%20nombre%3A%20%22carro%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20500%20%7D,%0A%20%20%7B%20nombre%3A%20%22mu%C3%B1eca%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20300%20%7D,%0A%20%20%7B%20nombre%3A%20%22unicornio%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20700%20%7D,%0A%20%20%7B%20nombre%3A%20%22heroe%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20400%20%7D%5D%3B%0Avar%20total%20%3D%200%3B%0Afor%20%28var%20juguete%20of%20juguetesf%29%20%7B%0A%20%20if%20%28juguete.tipo%20%3D%3D%3D%20%22femenino%22%29%20%7B%0A%20%20%20%20total%20%2B%3D%200.16%20*%20juguete.precioMX%3B%0A%20%20%7D%0A%7D%0Aconsole.log%28total.toFixed%282%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">
+     Múltiples operaciones en un ciclo.
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=var%20juguetesf%20%3D%20%5B%0A%20%20%7B%20nombre%3A%20%22carro%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20500%20%7D,%0A%20%20%7B%20nombre%3A%20%22mu%C3%B1eca%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20300%20%7D,%0A%20%20%7B%20nombre%3A%20%22unicornio%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20700%20%7D,%0A%20%20%7B%20nombre%3A%20%22heroe%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20400%20%7D%5D%3B%0Avar%20femeninos%20%3D%20%5B%5D%3B%0Afor%20%28var%20juguete%20of%20juguetesf%29%20%7B%0A%20%20if%20%28juguete.tipo%20%3D%3D%3D%20%22femenino%22%29%20%7B%0A%20%20%20%20femeninos.push%28juguete%29%3B%0A%20%20%7D%0A%7D%0Avar%20impuestos%20%3D%20%5B%5D%3B%0Afor%20%28var%20juguete%20of%20femeninos%29%20%7B%0A%20%20impuestos.push%280.16%20*%20juguete.precioMX%29%3B%0A%7D%0Avar%20total%20%3D%200%3B%0Afor%20%28var%20impuesto%20of%20impuestos%29%20%7B%0A%20%20total%20%2B%3D%20impuesto%3B%0A%7D%0Aconsole.log%28total.toFixed%282%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">
+     Con for por etapas.
+    </a>
+   </p>
+  </li>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=var%20juguetes%20%3D%20%5B%0A%20%20%7B%20nombre%3A%20%22carro%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20500%20%7D,%0A%20%20%7B%20nombre%3A%20%22mu%C3%B1eca%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20300%20%7D,%0A%20%20%7B%20nombre%3A%20%22unicornio%22,%20tipo%3A%20%22femenino%22,%20precioMX%3A%20700%20%7D,%0A%20%20%7B%20nombre%3A%20%22heroe%22,%20tipo%3A%20%22masculino%22,%20precioMX%3A%20400%20%7D%5D%3B%0Avar%20total%20%3D%20juguetes%0A%20%20.filter%28juguete%20%3D%3E%20juguete.tipo%20%3D%3D%3D%20%22femenino%22%29%0A%20%20.map%28juguete%20%3D%3E%200.16%20*%20juguete.precioMX%29%0A%20%20.reduce%28%28tot,%20impuesto%29%20%3D%3E%20tot%20%2B%20impuesto,%200%29%3B%0Aconsole.log%28total.toFixed%282%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">
+     Encadenamiento.
+    </a>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >N. El tipo de datos <code class='language-javascript'>Set</code></h1><div class="lectura">
+ <ul>
+  <li>
+   <p>
+    <a href="http://pythontutor.com/javascript.html#code=var%20juguetes%20%3D%20new%20Set%28%5B%22carro%22,%20%22mu%C3%B1eca%22,%20%20%22unicornio%22,%20%22heroe%22%5D%29%3B%0Aconsole.log%28juguetes.has%28%22mu%C3%B1eca%22%29%29%3B%0Aconsole.log%28juguetes.has%28%22peluche%22%29%29%3B&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"
+      target="_blank" rel="noopener">Ejemplo con Set.</a>
+   </p>
+  </li>
+ </ul>
+</div>
+      </section>
+     <section >
+         <h1 >O. Resumen</h1><div class="lectura">
  <ul>
   <li>
    <p>En esta lección se definieron los siguientes conceptos:</p>
@@ -765,6 +968,45 @@ adios</samp></pre>
       El método
       <code class='language-javascript'>forEach</code>
       de arreglos de objetos.
+     </p>
+    </li>
+    <li>
+     <p>
+      El método
+      <code class='language-javascript'>map</code>.
+     </p>
+    </li>
+    <li>
+     <p>
+      El método
+      <code class='language-javascript'>filter</code>.
+     </p>
+    </li>
+    <li>
+     <p>
+      El método
+      <code class='language-javascript'>join</code>.
+     </p>
+    </li>
+    <li>
+     <p>
+      El método
+      <code class='language-javascript'>reduce</code>.
+     </p>
+    </li>
+    <li>
+     <p>
+      El método
+      <code class='language-javascript'>sort</code>.
+     </p>
+    </li>
+    <li>
+     <p>Encadenamiento de métodos.</p>
+    </li>
+    <li>
+     <p>
+      El tipo de datos
+      <code class='language-javascript'>Set</code>.
      </p>
     </li>
    </ul>
