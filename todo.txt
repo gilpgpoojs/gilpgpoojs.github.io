@@ -1,3 +1,1 @@
-* Añadir los enlaces para depurar en GilPG Nod
-* Revisar GilPG Nod para que funcione bien sin conexión
 * Agregar pruebas de escritorio para funciones y paso de parámetros.
