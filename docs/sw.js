@@ -5,7 +5,7 @@
 
 const CACHE = "cache"
 
-const VERSION = "4.4"
+const VERSION = "4.6"
 
 const ARCHIVOS = [
   "/favicon.ico",
@@ -171,14 +171,7 @@ const ARCHIVOS = [
    "/m10patrones/mFresumen.html",
    "/m10patrones/print.html",
    "/print.html",
-   "/site.webmanifest",
-   "/src/m03vistas/Aformulario.html",
-   "/src/m03vistas/Bapp.html",
-   "/src/m03vistas/Ccampos.html",
-   "/src/m03vistas/Dbotones.html",
-   "/src/m03vistas/Einterruptor.html",
-   "/src/m03vistas/Fgps.html",
-   "/src/m03vistas/Garchivos.html" ]
+   "/site.webmanifest" ]
 
 if (self instanceof ServiceWorkerGlobalScope) {
  self.addEventListener("install", installListener)
