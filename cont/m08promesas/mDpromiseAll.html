@@ -2,6 +2,21 @@
  <muestra-codigo>
   <div>
    <div><span style="color: #795e26;">ejecuta</span>()</div>
+   <div><span style="color: #008000;">/**</span></div>
+   <div><span style="color: #008000;">&nbsp;* </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{string}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">res</span>
+   </div>
+   <div><span style="color: #008000;">&nbsp;* </span><span
+      style="color: #0000ff;">@param</span><span
+      style="color: #008000;"> </span><span
+      style="color: #267f99;">{number}</span><span
+      style="color: #008000;"> </span><span
+      style="color: #001080;">timeout</span></div>
+   <div><span style="color: #008000;">&nbsp;*/</span></div>
    <div><span style="color: #0000ff;">function</span> <span
       style="color: #795e26;">prom</span>(<span
       style="color: #001080;">res</span>, <span
@@ -15,15 +30,19 @@
    <div>&nbsp; &nbsp;<span style="color: #795e26;">setTimeout</span>(</div>
    <div>&nbsp; &nbsp; () <span style="color: #0000ff;">=&gt;</span> {</div>
    <div>&nbsp; &nbsp; &nbsp;<span style="color: #af00db;">if</span> (<span
-      style="color: #001080;">res</span>) {</div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #795e26;">resolve</span>(<span
+      style="color: #001080;">res</span> !== <span
+      style="color: #a31515;">""</span>) {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">resolve</span>(<span
       style="color: #a31515;">`Éxito[</span><span
       style="color: #0000ff;">${</span><span
       style="color: #001080;">res</span><span
       style="color: #0000ff;">}</span><span
       style="color: #a31515;">]`</span>)</div>
-   <div>&nbsp; &nbsp; &nbsp;} <span style="color: #af00db;">else</span> {</div>
-   <div>&nbsp; &nbsp; &nbsp; <span style="color: #795e26;">reject</span>(<span
+   <div>&nbsp; &nbsp; &nbsp;} <span
+      style="color: #af00db;">else</span> {</div>
+   <div>&nbsp; &nbsp; &nbsp; <span
+      style="color: #795e26;">reject</span>(<span
       style="color: #0000ff;">new</span> <span
       style="color: #267f99;">Error</span>(</div>
    <div>&nbsp; &nbsp; &nbsp; &nbsp;<span
@@ -31,10 +50,12 @@
       style="color: #0000ff;">${</span><span
       style="color: #001080;">res</span><span
       style="color: #0000ff;">}</span><span
-      style="color: #a31515;">]`</span>))</div>
+      style="color: #a31515;">]`</span>))
+   </div>
    <div>&nbsp; &nbsp; &nbsp;}</div>
    <div>&nbsp; &nbsp; },</div>
-   <div>&nbsp; &nbsp; <span style="color: #001080;">timeout</span>))</div>
+   <div>&nbsp; &nbsp; <span
+      style="color: #001080;">timeout</span>))</div>
    <div>}</div>
    <div><span style="color: #0000ff;">async</span> <span
       style="color: #0000ff;">function</span> <span
@@ -105,7 +126,7 @@ Falló 2: Falla[]</samp></pre>
 </div>
 <div class="noPrint lectura">
  <p>
-  <a href="https://gilpgnod.github.io/#ejecuta()%0Afunction%20prom(res%2C%20timeout)%20%7B%0A%20return%20new%20Promise(%0A%20%20(resolve%2C%20reject)%20%3D%3E%0A%20%20%20setTimeout(%0A%20%20%20%20()%20%3D%3E%20%7B%0A%20%20%20%20%20if%20(res)%20%7B%0A%20%20%20%20%20%20resolve(%60%C3%89xito%5B%24%7Bres%7D%5D%60)%0A%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20reject(new%20Error(%0A%20%20%20%20%20%20%20%60Falla%5B%24%7Bres%7D%5D%60))%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20timeout))%0A%7D%0Aasync%20function%20ejecuta()%20%7B%0A%20try%20%7B%0A%20%20const%20r1%20%3D%20await%20Promise.all(%5B%0A%20%20%20prom(%22a%22%2C%20300)%2C%0A%20%20%20prom(%22z%22%2C%202000)%2C%0A%20%20%20prom(%22b%22%2C%205000)%5D)%0A%20%20console.%0A%20%20%20log(%22%C3%89xito%201%3A%22%2C%20r1.join())%0A%20%7D%20catch%20(e)%20%7B%0A%20%20console.%0A%20%20%20log(%22Fall%C3%B3%201%3A%22%2C%20e.message)%0A%20%7D%0A%20try%20%7B%0A%20%20const%20r2%20%3D%20await%20Promise.all(%5B%0A%20%20%20prom(%22a%22%2C%20100)%2C%0A%20%20%20prom(%22%22%2C%201000)%2C%0A%20%20%20prom(%22b%22%2C%205000)%5D)%0A%20%20console.log(%22%C3%89xito%202%3A%22%2C%20r2)%0A%20%7D%20catch%20(e)%20%7B%0A%20%20console.%0A%20%20%20log(%22Fall%C3%B3%202%3A%22%2C%20e.message)%0A%20%7D%0A%7D"
+  <a href="https://gilpgnod.github.io/#ejecuta()%0A%2F**%0A%20*%20%40param%20%7Bstring%7D%20res%0A%20*%20%40param%20%7Bnumber%7D%20timeout%0A%20*%2F%0Afunction%20prom(res%2C%20timeout)%20%7B%0A%20return%20new%20Promise(%0A%20%20(resolve%2C%20reject)%20%3D%3E%0A%20%20%20setTimeout(%0A%20%20%20%20()%20%3D%3E%20%7B%0A%20%20%20%20%20if%20(res%20!%3D%3D%20%22%22)%20%7B%0A%20%20%20%20%20%20resolve(%60%C3%89xito%5B%24%7Bres%7D%5D%60)%0A%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20reject(new%20Error(%0A%20%20%20%20%20%20%20%60Falla%5B%24%7Bres%7D%5D%60))%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20timeout))%0A%7D%0Aasync%20function%20ejecuta()%20%7B%0A%20try%20%7B%0A%20%20const%20r1%20%3D%20await%20Promise.all(%5B%0A%20%20%20prom(%22a%22%2C%20300)%2C%0A%20%20%20prom(%22z%22%2C%202000)%2C%0A%20%20%20prom(%22b%22%2C%205000)%5D)%0A%20%20console.%0A%20%20%20log(%22%C3%89xito%201%3A%22%2C%20r1.join())%0A%20%7D%20catch%20(e)%20%7B%0A%20%20console.%0A%20%20%20log(%22Fall%C3%B3%201%3A%22%2C%20e.message)%0A%20%7D%0A%20try%20%7B%0A%20%20const%20r2%20%3D%20await%20Promise.all(%5B%0A%20%20%20prom(%22a%22%2C%20100)%2C%0A%20%20%20prom(%22%22%2C%201000)%2C%0A%20%20%20prom(%22b%22%2C%205000)%5D)%0A%20%20console.log(%22%C3%89xito%202%3A%22%2C%20r2)%0A%20%7D%20catch%20(e)%20%7B%0A%20%20console.%0A%20%20%20log(%22Fall%C3%B3%202%3A%22%2C%20e.message)%0A%20%7D%0A%7D"
     target="_blank" rel="noopener">Depúralo en GilPG Nod.</a>
  </p>
 </div>
